@@ -1,4 +1,4 @@
-h = figure('visible', 'off')
+h = figure
 clf
 
 
@@ -14,22 +14,31 @@ controlled = connect(G, C, Sum, 'r', 'y');
 
 %%% Part 2, continuous controller
 pzmap(C)
+saveas(h,'pre-exercise/part2-controller-pzmap-continuous.jpg')
+clr
+
 pole(C)
-% 
+%
 % ans =
-% 
+%
 %      0
 %   -200
 
 zero(C)
-% 
+%
 % ans =
-% 
+%
 %    -8.5901
 %    -0.9757
 
 impulse(C)
+saveas(h,'pre-exercise/part2-controller-impulse-continuous.jpg')
+clr
+
 step(C)
+saveas(h,'pre-exercise/part2-controller-step-continuous.jpg')
+clr
+
 stepinfo(C)
 % 
 % ans = 
@@ -45,6 +54,8 @@ stepinfo(C)
 % 
 
 bode(C)
+saveas(h,'pre-exercise/part2-controller-bode-continuous.jpg')
+clr
 
 bandwidth(C)
 % Warning: The "bandwidth" command returns NaN for models with infinite DC gain. 
@@ -56,10 +67,15 @@ bandwidth(C)
 %    NaN
 
 nyquist(C)
+saveas(h,'pre-exercise/part2-controller-nyquist-continuous.jpg')
+clr
 
 
 %%% Part 2, continuous system
 pzmap(controlled)
+saveas(h,'pre-exercise/part2-controlled-pzmap-continuous.jpg')
+clr
+
 pole(controlled)
 % 
 % ans =
@@ -79,7 +95,13 @@ zero(controlled)
 %    -0.9757
 
 impulse(controlled)
+saveas(h,'pre-exercise/part2-controlled-impulse-continuous.jpg')
+clr
+
 step(controlled)
+saveas(h,'pre-exercise/part2-controlled-step-continuous.jpg')
+clr
+
 stepinfo(controlled)
 % 
 % ans = 
@@ -93,6 +115,9 @@ stepinfo(controlled)
 %             Peak: 1.2021
 %         PeakTime: 0.1439
 bode(controlled)
+saveas(h,'pre-exercise/part2-controlled-bode-continuous.jpg')
+clr
+
 bandwidth(controlled)
 % 
 % ans =
@@ -100,6 +125,8 @@ bandwidth(controlled)
 %    34.1359
 
 nyquist(controlled)
+saveas(h,'pre-exercise/part2-controlled-nyquist-continuous.jpg')
+clr
 
 
 %%% Part 2 continuous analysis understanding
@@ -147,8 +174,6 @@ Ts = 1/bandwidth(controlled)
 %     Overloaded methods:
 %        DynamicSystem/c2d
 
-Ts1 = []
-Ts2 = 
 
 %%% Part 2, backward difference
 % Equivalent to impulse
