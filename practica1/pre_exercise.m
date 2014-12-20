@@ -138,6 +138,9 @@ Ts = 1/bandwidth(controlled)
 % 
 %     0.0293
 
+Ts1 = Ts/15
+Ts2 = Ts/150
+
 % To make discretizations I should use c2d
 % 
 % help c2d
@@ -187,7 +190,8 @@ Ts = 1/bandwidth(controlled)
 % left rectangular
 % c2d zoh
 % 1/s = Ts/(z - 1)
-
+zoh1 = c2d(controlled, Ts1, 'zoh')
+zoh2 = c2d(controlled, Ts2, 'zoh')
 
 % right rectangular
 % Equivalent to impulse
@@ -196,15 +200,21 @@ Ts = 1/bandwidth(controlled)
 % Part 2, Tustin bilinear
 % c2d tustin
 % 1/s = (Ts/2)*((1 + (z^-1))/(1-(z^-1)))
+tustin1 = c2d(controlled, Ts1, 'tustin')
+tustin2 = c2d(controlled, Ts2, 'tustin')
 
 % Part 2, Simpson
 % 1/s = (Ts/3)*((1 + 4*(z^-1) + (z^-2))/(1 - (z^-2)))
 
 % Part 2, Impulse
 % c2d impulse
+impulse1 = c2d(controlled, Ts1, 'impulse')
+impulse2 = c2d(controlled, Ts2, 'impulse')
 
 % Part 2, Step
 % Equivalent to forward difference
 
 % Part 2, Poles
 % c2d matched
+matched1 = c2d(controlled, Ts1, 'matched')
+matched2 = c2d(controlled, Ts2, 'matched')
