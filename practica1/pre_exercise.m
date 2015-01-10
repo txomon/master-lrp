@@ -249,10 +249,23 @@ for name = discretizations.keys
     clf(h)
 end
 
+% Comparisons for different graphics
 
+bode(continuous, backward1, backward2)
+saveas(h,'pre-exercise/part2-controller-bode-backward-comparison.jpg')
+clf(h)
 
+bode(continuous, tustin1, tustin2)
+saveas(h,'pre-exercise/part2-controller-bode-tustin-comparison.jpg')
+clf(h)
 
+bode(continuous, impulse1, impulse2)
+saveas(h,'pre-exercise/part2-controller-bode-impulse-comparison.jpg')
+clf(h)
 
+bode(continuous, step1, step2)
+saveas(h,'pre-exercise/part2-controller-bode-step-comparison.jpg')
+clf(h)
 
 %%% Part 4
 %
