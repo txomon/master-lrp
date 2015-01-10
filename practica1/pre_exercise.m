@@ -15,6 +15,7 @@ controlled = connect(G, C, Sum, 'r', 'y')
 %%% Part 2, continuous controller
 % Analyze the controller in continuous mode
 pzmap(C)
+set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
 saveas(h,'pre-exercise/part2-controller-pzmap-continuous.jpg')
 clf(h)
 
@@ -33,10 +34,12 @@ zero(C)
 %    -0.9757
 
 impulse(C)
+set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
 saveas(h,'pre-exercise/part2-controller-impulse-continuous.jpg')
 clf(h)
 
 step(C)
+set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
 saveas(h,'pre-exercise/part2-controller-step-continuous.jpg')
 clf(h)
 
@@ -55,6 +58,7 @@ stepinfo(C)
 % 
 
 bode(C)
+set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
 saveas(h,'pre-exercise/part2-controller-bode-continuous.jpg')
 clf(h)
 
@@ -68,6 +72,7 @@ bandwidth(C)
 %    NaN
 
 nyquist(C)
+set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
 saveas(h,'pre-exercise/part2-controller-nyquist-continuous.jpg')
 clf(h)
 
@@ -217,6 +222,7 @@ for name = discretizations.keys
     name = char(name)
     sys = discretizations(name)
     pzmap(sys)
+    set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
     saveas(h,['pre-exercise/part2-controller-pzmap-' name '.jpg'])
     clf(h)
     
@@ -227,10 +233,12 @@ for name = discretizations.keys
     zero(sys)
     
     impulse(sys)
+    set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
     saveas(h,['pre-exercise/part2-controller-impulse-' name '.jpg'])
     clf(h)
 
     step(sys)
+    set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
     saveas(h,['pre-exercise/part2-controller-step-' name '.jpg'])
     clf(h)
 
@@ -238,6 +246,7 @@ for name = discretizations.keys
     stepinfo(sys)
     
     bode(sys)
+    set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
     saveas(h,['pre-exercise/part2-controller-bode-' name '.jpg'])
     clf(h)
 
@@ -245,6 +254,7 @@ for name = discretizations.keys
     bandwidth(sys)
     
     nyquist(sys)
+    set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
     saveas(h,['pre-exercise/part2-controller-nyquist-' name '.jpg'])
     clf(h)
 end
@@ -252,20 +262,67 @@ end
 % Comparisons for different graphics
 
 bode(continuous, backward1, backward2)
+set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
 saveas(h,'pre-exercise/part2-controller-bode-backward-comparison.jpg')
 clf(h)
 
 bode(continuous, tustin1, tustin2)
+set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
 saveas(h,'pre-exercise/part2-controller-bode-tustin-comparison.jpg')
 clf(h)
 
 bode(continuous, impulse1, impulse2)
+set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
 saveas(h,'pre-exercise/part2-controller-bode-impulse-comparison.jpg')
 clf(h)
 
 bode(continuous, step1, step2)
+set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
 saveas(h,'pre-exercise/part2-controller-bode-step-comparison.jpg')
 clf(h)
+
+
+step(continuous, backward1, backward2)
+set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
+saveas(h,'pre-exercise/part2-controller-step-backward-comparison.jpg')
+clf(h)
+
+step(continuous, tustin1, tustin2)
+set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
+saveas(h,'pre-exercise/part2-controller-step-tustin-comparison.jpg')
+clf(h)
+
+step(continuous, impulse1, impulse2)
+set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
+saveas(h,'pre-exercise/part2-controller-step-impulse-comparison.jpg')
+clf(h)
+
+step(continuous, step1, step2)
+set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
+saveas(h,'pre-exercise/part2-controller-step-step-comparison.jpg')
+clf(h)
+
+
+impulse(continuous, backward1, backward2)
+set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
+saveas(h,'pre-exercise/part2-controller-impulse-backward-comparison.jpg')
+clf(h)
+
+impulse(continuous, tustin1, tustin2)
+set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
+saveas(h,'pre-exercise/part2-controller-impulse-tustin-comparison.jpg')
+clf(h)
+
+impulse(continuous, impulse1, impulse2)
+set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
+saveas(h,'pre-exercise/part2-controller-impulse-impulse-comparison.jpg')
+clf(h)
+
+impulse(continuous, step1, step2)
+set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
+saveas(h,'pre-exercise/part2-controller-impulse-step-comparison.jpg')
+clf(h)
+
 
 %%% Part 4
 %
