@@ -1,0 +1,1075 @@
+
+h =
+
+     2
+
+ 
+Transfer function:
+0.525 s^2 + 5.022 s + 4.4
+-------------------------
+      0.005 s^2 + s
+ 
+ 
+Transfer function:
+    52.1
+------------
+1.21 s^2 + s
+ 
+ 
+Transfer function from input "e" to output:
+0.525 s^2 + 5.022 s + 4.4
+-------------------------
+      0.005 s^2 + s
+ 
+ 
+Transfer function from input "e" to output "u":
+0.525 s^2 + 5.022 s + 4.4
+-------------------------
+      0.005 s^2 + s
+ 
+ 
+Transfer function from input "u" to output:
+    52.1
+------------
+1.21 s^2 + s
+ 
+ 
+Transfer function from input "u" to output "y":
+    52.1
+------------
+1.21 s^2 + s
+ 
+ 
+Transfer function from input "r" to output "e":
+1
+ 
+Transfer function from input "y" to output "e":
+-1
+ 
+ 
+Transfer function from input "r" to output "y":
+         4521 s^2 + 4.325e004 s + 3.789e004
+----------------------------------------------------
+s^4 + 200.8 s^3 + 4686 s^2 + 4.325e004 s + 3.789e004
+ 
+
+ans =
+
+     0
+  -200
+
+
+ans =
+
+   -8.590056910143753e+000
+   -9.756573755705337e-001
+
+
+ans = 
+
+        RiseTime: NaN
+    SettlingTime: NaN
+     SettlingMin: NaN
+     SettlingMax: NaN
+       Overshoot: NaN
+      Undershoot: NaN
+            Peak: Inf
+        PeakTime: Inf
+
+Warning: The "bandwidth" command returns NaN for models with infinite DC gain. 
+> In warning at 26
+  In DynamicSystem.DynamicSystem>DynamicSystem.bandwidth at 497
+  In pre_exercise at 61
+
+ans =
+
+   NaN
+
+
+Ts =
+
+    2.929510836502647e-002
+
+
+Ts1 =
+
+    1.953007224335098e-003
+
+
+Ts2 =
+
+    1.953007224335098e-004
+
+ 
+Transfer function from input "e" to output "u":
+0.525 s^2 + 5.022 s + 4.4
+-------------------------
+      0.005 s^2 + s
+ 
+ 
+backward1 =
+ 
+((44431504810070055682310350753501849971*z^2)/2882303761517117440 - (610937718291869292993*z)/20 + 15132094747964866560)/((200406788765567447*z - 144115188075855872)*(z - 1))
+ 
+ 
+Transfer function:
+154.2 z^2 - 305.5 z + 151.3
+---------------------------
+2.004 z^2 - 3.445 z + 1.441
+ 
+Sampling time: 0.001953
+ 
+ans =
+ 
+((44745512191237834055313570725564812542339*z^2)/92233720368547758080 - (19387173848189508013191*z)/20 + 484227031934875729920)/((4791819140634464929*z - 4611686018427387904)*(z - 1))
+ 
+ 
+Transfer function:
+485.1 z^2 - 969.4 z + 484.2
+---------------------------
+4.792 z^2 - 9.404 z + 4.612
+ 
+Sampling time: 0.0001953
+ 
+Transfer function from input "e" to output "u":
+88.67 z^2 - 175.7 z + 87.02
+---------------------------
+  z^2 - 1.673 z + 0.6732
+ 
+Sampling time: 0.001953
+ 
+Transfer function from input "e" to output "u":
+103.1 z^2 - 206 z + 102.9
+-------------------------
+ z^2 - 1.962 z + 0.9617
+ 
+Sampling time: 0.0001953
+ 
+Transfer function from input "e" to output "u":
+ -2e004 z^2 + 2e004 z
+----------------------
+z^2 - 1.677 z + 0.6766
+ 
+Sampling time: 0.001953
+ 
+Transfer function from input "e" to output "u":
+ -2e004 z^2 + 2e004 z
+----------------------
+z^2 - 1.962 z + 0.9617
+ 
+Sampling time: 0.0001953
+ 
+Transfer function from input "e" to output "u":
+105 z^2 - 208.4 z + 103.4
+-------------------------
+ z^2 - 1.677 z + 0.6766
+ 
+Sampling time: 0.001953
+ 
+Transfer function from input "e" to output "u":
+105 z^2 - 209.8 z + 104.8
+-------------------------
+ z^2 - 1.962 z + 0.9617
+ 
+Sampling time: 0.0001953
+
+discretizations = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 0
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+discretizations = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 1
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+discretizations = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 2
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+discretizations = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 3
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+discretizations = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 4
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+discretizations = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 5
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+discretizations = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 6
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+discretizations = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 7
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+discretizations = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 8
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+name =
+
+backward1
+
+ 
+Transfer function:
+154.2 z^2 - 305.5 z + 151.3
+---------------------------
+2.004 z^2 - 3.445 z + 1.441
+ 
+Sampling time: 0.001953
+Poles of backward1
+
+ans =
+
+    9.999999999999996e-001
+    7.191133043124578e-001
+
+Zeros of backward1
+
+ans =
+
+    9.980981579921363e-001
+    9.835003620362063e-001
+
+Stepinfo of backward1
+
+ans = 
+
+        RiseTime: NaN
+    SettlingTime: NaN
+     SettlingMin: NaN
+     SettlingMax: NaN
+       Overshoot: NaN
+      Undershoot: NaN
+            Peak: Inf
+        PeakTime: Inf
+
+Bandwidth of backward1
+Warning: The "bandwidth" command returns NaN for models with infinite DC gain. 
+> In warning at 26
+  In DynamicSystem.DynamicSystem>DynamicSystem.bandwidth at 497
+  In pre_exercise at 245
+
+ans =
+
+   NaN
+
+
+name =
+
+backward2
+
+ 
+Transfer function:
+485.1 z^2 - 969.4 z + 484.2
+---------------------------
+4.792 z^2 - 9.404 z + 4.612
+ 
+Sampling time: 0.0001953
+Poles of backward2
+
+ans =
+
+    9.999999999999918e-001
+    9.624081967786480e-001
+
+Zeros of backward2
+
+ans =
+
+    9.998094897106085e-001
+    9.983251654565442e-001
+
+Stepinfo of backward2
+
+ans = 
+
+        RiseTime: 1.093684045627655e-002
+    SettlingTime: 1.894417007605045e-002
+     SettlingMin: 5.210874206989473e+000
+     SettlingMax: 1.508751640785265e+001
+       Overshoot: 1.729851758429990e+003
+      Undershoot: 0
+            Peak: 1.012416790010427e+002
+        PeakTime: 0
+
+Bandwidth of backward2
+
+ans =
+
+   Inf
+
+
+name =
+
+impulse1
+
+ 
+Transfer function from input "e" to output "u":
+ -2e004 z^2 + 2e004 z
+----------------------
+z^2 - 1.677 z + 0.6766
+ 
+Sampling time: 0.001953
+Poles of impulse1
+
+ans =
+
+    1.000000000000000e+000
+    6.766497845496690e-001
+
+Zeros of impulse1
+
+ans =
+
+                         0
+    1.000071152700993e+000
+
+Stepinfo of impulse1
+
+ans = 
+
+        RiseTime: NaN
+    SettlingTime: NaN
+     SettlingMin: NaN
+     SettlingMax: NaN
+       Overshoot: NaN
+      Undershoot: NaN
+            Peak: Inf
+        PeakTime: Inf
+
+Bandwidth of impulse1
+Warning: The "bandwidth" command returns NaN for models with infinite DC gain. 
+> In warning at 26
+  In DynamicSystem.DynamicSystem>DynamicSystem.bandwidth at 497
+  In pre_exercise at 245
+
+ans =
+
+   NaN
+
+
+name =
+
+impulse2
+
+ 
+Transfer function from input "e" to output "u":
+ -2e004 z^2 + 2e004 z
+----------------------
+z^2 - 1.962 z + 0.9617
+ 
+Sampling time: 0.0001953
+Poles of impulse2
+
+ans =
+
+    9.999999999999957e-001
+    9.616928668830983e-001
+
+Zeros of impulse2
+
+ans =
+
+                         0
+    1.000008429423759e+000
+
+Stepinfo of impulse2
+
+ans = 
+
+        RiseTime: 1.074153973384304e-002
+    SettlingTime: 1.855356863118343e-002
+     SettlingMin: -5.210324358176313e+005
+     SettlingMax: -4.697291865780611e+005
+       Overshoot: 3.204782129397676e-001
+      Undershoot: 0
+            Peak: 5.210324358176313e+005
+        PeakTime: 4.198965532320460e-002
+
+Bandwidth of impulse2
+
+ans =
+
+   Inf
+
+
+name =
+
+step1
+
+ 
+Transfer function from input "e" to output "u":
+105 z^2 - 208.4 z + 103.4
+-------------------------
+ z^2 - 1.677 z + 0.6766
+ 
+Sampling time: 0.001953
+Poles of step1
+
+ans =
+
+    1.000000000000000e+000
+    6.766497845496690e-001
+
+Zeros of step1
+
+ans =
+
+    9.980430340240202e-001
+    9.864774963660870e-001
+
+Stepinfo of step1
+
+ans = 
+
+        RiseTime: NaN
+    SettlingTime: NaN
+     SettlingMin: NaN
+     SettlingMax: NaN
+       Overshoot: NaN
+      Undershoot: NaN
+            Peak: Inf
+        PeakTime: Inf
+
+Bandwidth of step1
+Warning: The "bandwidth" command returns NaN for models with infinite DC gain. 
+> In warning at 26
+  In DynamicSystem.DynamicSystem>DynamicSystem.bandwidth at 497
+  In pre_exercise at 245
+
+ans =
+
+   NaN
+
+
+name =
+
+step2
+
+ 
+Transfer function from input "e" to output "u":
+105 z^2 - 209.8 z + 104.8
+-------------------------
+ z^2 - 1.962 z + 0.9617
+ 
+Sampling time: 0.0001953
+Poles of step2
+
+ans =
+
+    9.999999999999957e-001
+    9.616928668830983e-001
+
+Zeros of step2
+
+ans =
+
+    9.998089916633053e-001
+    9.983586751103784e-001
+
+Stepinfo of step2
+
+ans = 
+
+        RiseTime: 1.074153973384304e-002
+    SettlingTime: 1.874886935361694e-002
+     SettlingMin: 5.207283924544285e+000
+     SettlingMax: 1.542777458289956e+001
+       Overshoot: 1.798074810409895e+003
+      Undershoot: 0
+            Peak: 105
+        PeakTime: 0
+
+Bandwidth of step2
+
+ans =
+
+   Inf
+
+
+name =
+
+tustin1
+
+ 
+Transfer function from input "e" to output "u":
+88.67 z^2 - 175.7 z + 87.02
+---------------------------
+  z^2 - 1.673 z + 0.6732
+ 
+Sampling time: 0.001953
+Poles of tustin1
+
+ans =
+
+    9.999999999999996e-001
+    6.732191008202566e-001
+
+Zeros of tustin1
+
+ans =
+
+    9.980963477692451e-001
+    9.833631107111519e-001
+
+Stepinfo of tustin1
+
+ans = 
+
+        RiseTime: NaN
+    SettlingTime: NaN
+     SettlingMin: NaN
+     SettlingMax: NaN
+       Overshoot: NaN
+      Undershoot: NaN
+            Peak: Inf
+        PeakTime: Inf
+
+Bandwidth of tustin1
+
+ans =
+
+    9.314111518959023e-014
+
+
+name =
+
+tustin2
+
+ 
+Transfer function from input "e" to output "u":
+103.1 z^2 - 206 z + 102.9
+-------------------------
+ z^2 - 1.962 z + 0.9617
+ 
+Sampling time: 0.0001953
+Poles of tustin2
+
+ans =
+
+    1.000000000000001e+000
+    9.616880898856117e-001
+
+Zeros of tustin2
+
+ans =
+
+    9.998094715620070e-001
+    9.983237617454662e-001
+
+Stepinfo of tustin2
+
+ans = 
+
+        RiseTime: 1.074153973384304e-002
+    SettlingTime: 1.855356863118343e-002
+     SettlingMin: 5.207262210913271e+000
+     SettlingMax: 1.522647279408302e+001
+       Overshoot: 1.763309821080754e+003
+      Undershoot: 0
+            Peak: 1.030848341558700e+002
+        PeakTime: 0
+
+Bandwidth of tustin2
+Warning: The "bandwidth" command returns NaN for models with infinite DC gain. 
+> In warning at 26
+  In DynamicSystem.DynamicSystem>DynamicSystem.bandwidth at 497
+  In pre_exercise at 245
+
+ans =
+
+   NaN
+
+ 
+ans =
+ 
+(13207326276619016024896892279671245*z^2)/(2305843009213693952*(34932167115046832599*z - 34875875514357121024)*(z - 1))
+ 
+ 
+Transfer function:
+         1.321 s^2
+----------------------------
+8055 s^2 - 1.61e004 s + 8042
+ 
+ 
+ans =
+ 
+(135243021072578701571098576170921405*z^2)/(73786976294838206464*(1116208149581634949793*z - 1116028016459427872768)*(z - 1))
+ 
+ 
+Transfer function:
+               1.352 s^2
+---------------------------------------
+8.236e005 s^2 - 1.647e006 s + 8.235e005
+ 
+ 
+Transfer function from input "u" to output "y":
+4.103e-005 z^2 + 8.205e-005 z + 4.103e-005
+------------------------------------------
+          z^2 - 1.998 z + 0.9984
+ 
+Sampling time: 0.001953
+ 
+Transfer function from input "u" to output "y":
+4.105e-007 z^2 + 8.211e-007 z + 4.105e-007
+------------------------------------------
+            z^2 - 2 z + 0.9998
+ 
+Sampling time: 0.0001953
+ 
+Transfer function from input "u" to output "y":
+0.08402 z + 1.866e-017
+----------------------
+z^2 - 1.998 z + 0.9984
+ 
+Sampling time: 0.001953
+ 
+Transfer function from input "u" to output "y":
+0.008409 z + 3.734e-018
+-----------------------
+  z^2 - 2 z + 0.9998
+ 
+Sampling time: 0.0001953
+ 
+Transfer function from input "u" to output "y":
+8.207e-005 z + 8.203e-005
+-------------------------
+ z^2 - 1.998 z + 0.9984
+ 
+Sampling time: 0.001953
+ 
+Transfer function from input "u" to output "y":
+8.211e-007 z + 8.211e-007
+-------------------------
+   z^2 - 2 z + 0.9998
+ 
+Sampling time: 0.0001953
+
+factories = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 0
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+factories = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 1
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+factories = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 2
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+factories = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 3
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+factories = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 4
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+factories = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 5
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+factories = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 6
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+factories = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 7
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+factories = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 8
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+factories = 
+
+  containers.Map handle
+  Package: containers
+
+  Properties:
+        Count: 9
+      KeyType: 'char'
+    ValueType: 'any'
+
+  Methods, Events, Superclasses
+
+
+name =
+
+backward1
+
+ 
+Transfer function:
+         1.321 s^2
+----------------------------
+8055 s^2 - 1.61e004 s + 8042
+ 
+Gain of backward1:
+
+ans = 
+
+     GainMargin: Inf
+    GMFrequency: 0
+    PhaseMargin: [1x0 double]
+    PMFrequency: [1x0 double]
+    DelayMargin: [1x0 double]
+    DMFrequency: [1x0 double]
+         Stable: 0
+
+
+name =
+
+backward2
+
+ 
+Transfer function:
+               1.352 s^2
+---------------------------------------
+8.236e005 s^2 - 1.647e006 s + 8.235e005
+ 
+Gain of backward2:
+
+ans = 
+
+     GainMargin: Inf
+    GMFrequency: 0
+    PhaseMargin: [1x0 double]
+    PMFrequency: [1x0 double]
+    DelayMargin: [1x0 double]
+    DMFrequency: [1x0 double]
+         Stable: 0
+
+
+name =
+
+continuous
+
+ 
+Transfer function from input "u" to output "y":
+    52.1
+------------
+1.21 s^2 + s
+ 
+Gain of continuous:
+
+ans = 
+
+     GainMargin: Inf
+    GMFrequency: Inf
+    PhaseMargin: 7.206886746119338e+000
+    PMFrequency: 6.535678217910649e+000
+    DelayMargin: 1.924573064099447e-002
+    DMFrequency: 6.535678217910649e+000
+         Stable: 1
+
+
+name =
+
+impulse1
+
+ 
+Transfer function from input "u" to output "y":
+0.08402 z + 1.866e-017
+----------------------
+z^2 - 1.998 z + 0.9984
+ 
+Sampling time: 0.001953
+Gain of impulse1:
+
+ans = 
+
+     GainMargin: 4.756679420499000e+001
+    GMFrequency: 1.608592438596508e+003
+    PhaseMargin: 3.155334580797711e-001
+    PMFrequency: 1.490071698752958e+002
+    DelayMargin: [1.892394899207831e-002 1]
+    DMFrequency: [1.490071698752958e+002 1.608592438596508e+003]
+         Stable: 1
+
+
+name =
+
+impulse2
+
+ 
+Transfer function from input "u" to output "y":
+0.008409 z + 3.734e-018
+-----------------------
+  z^2 - 2 z + 0.9998
+ 
+Sampling time: 0.0001953
+Gain of impulse2:
+
+ans = 
+
+     GainMargin: 4.756678398160591e+002
+    GMFrequency: 1.608592438596509e+004
+    PhaseMargin: 1.007407892685814e-001
+    PMFrequency: 4.697067063379984e+002
+    DelayMargin: [1.916691010333885e-002 1]
+    DMFrequency: [4.697067063379984e+002 1.608592438596509e+004]
+         Stable: 1
+
+
+name =
+
+step1
+
+ 
+Transfer function from input "u" to output "y":
+8.207e-005 z + 8.203e-005
+-------------------------
+ z^2 - 1.998 z + 0.9984
+ 
+Sampling time: 0.001953
+Gain of step1:
+
+ans = 
+
+     GainMargin: [1.966148445322934e+001 9.053840156160803e+007]
+    GMFrequency: [2.908824438467608e+001 1.608592438596508e+003]
+    PhaseMargin: 6.840974716936175e+000
+    PMFrequency: 6.535890828728800e+000
+    DelayMargin: 9.353770579727549e+000
+    DMFrequency: 6.535890828728800e+000
+         Stable: 1
+
+
+name =
+
+step2
+
+ 
+Transfer function from input "u" to output "y":
+8.211e-007 z + 8.211e-007
+-------------------------
+   z^2 - 2 z + 0.9998
+ 
+Sampling time: 0.0001953
+Gain of step2:
+
+ans = 
+
+     GainMargin: [1.965769217453185e+002 9.053837821072571e+010]
+    GMFrequency: [9.199850269451089e+001 1.608592438596509e+004]
+    PhaseMargin: 7.170094608552883e+000
+    PMFrequency: 6.535883678189128e+000
+    DelayMargin: 9.803792025713391e+001
+    DMFrequency: 6.535883678189128e+000
+         Stable: 1
+
+
+name =
+
+tustin1
+
+ 
+Transfer function from input "u" to output "y":
+4.103e-005 z^2 + 8.205e-005 z + 4.103e-005
+------------------------------------------
+          z^2 - 1.998 z + 0.9984
+ 
+Sampling time: 0.001953
+Gain of tustin1:
+
+ans = 
+
+     GainMargin: [1x0 double]
+    GMFrequency: [1x0 double]
+    PhaseMargin: 7.206635489817137e+000
+    PMFrequency: 6.535819759912557e+000
+    DelayMargin: 9.853851359365743e+000
+    DMFrequency: 6.535819759912557e+000
+         Stable: 1
+
+
+name =
+
+tustin2
+
+ 
+Transfer function from input "u" to output "y":
+4.105e-007 z^2 + 8.211e-007 z + 4.105e-007
+------------------------------------------
+            z^2 - 2 z + 0.9998
+ 
+Sampling time: 0.0001953
+Gain of tustin2:
+
+ans = 
+
+     GainMargin: [1x0 double]
+    GMFrequency: [1x0 double]
+    PhaseMargin: 7.206663437116245e+000
+    PMFrequency: 6.535881999980856e+000
+    DelayMargin: 9.853795735678038e+001
+    DMFrequency: 6.535881999980856e+000
+         Stable: 1
+
+>> 

@@ -5,12 +5,12 @@ clf
 C = tf([ 0.525 5.022 4.4 ], [ 0.005 1 0])
 G = tf([ 52.1 ] , [ 1.21 1 0 ])
 
-C.InputName = 'e';
-C.OutputName = 'u';
-G.InputName = 'u';
-G.OutputName = 'y';
-Sum = sumblk('e', 'r', 'y' , '+-');
-controlled = connect(G, C, Sum, 'r', 'y');
+C.InputName = 'e'
+C.OutputName = 'u'
+G.InputName = 'u'
+G.OutputName = 'y'
+Sum = sumblk('e', 'r', 'y' , '+-')
+controlled = connect(G, C, Sum, 'r', 'y')
 
 %%% Part 2, continuous controller
 % Analyze the controller in continuous mode
@@ -123,7 +123,6 @@ Ts2 = Ts/150
 
 
 % backward difference calculus
-% Equivalent to impulse
 % s = ((1 - (z^-1))/Ts)
 % controller, with z substitutions for backwards difference
 
@@ -201,68 +200,121 @@ impulse2 = c2d(C, Ts2, 'impulse')
 step1 = c2d(C, Ts1, 'zoh')
 step2 = c2d(C, Ts2, 'zoh')
 
+% We have been told to analyze the discretization. Will try to do as much
+% as posssible using numbers instead of graphs to avoid images in the
+% report
+discretizations = containers.Map()
+discretizations('backward1') = backward1
+discretizations('backward2') = backward2
+discretizations('tustin1') = tustin1
+discretizations('tustin2') = tustin2
+discretizations('impulse1') = impulse1
+discretizations('impulse2') = impulse2
+discretizations('step1') = step1
+discretizations('step2') = step2
 
-% Part 2, Poles
-% c2d matched
-matched1 = c2d(C, Ts1, 'matched')
-matched2 = c2d(C, Ts2, 'matched')
+for name = discretizations.keys
+    name = char(name)
+    sys = discretizations(name)
+    pzmap(sys)
+    saveas(h,['pre-exercise/part2-controller-pzmap-' name '.jpg'])
+    clf(h)
+    
+    disp(['Poles of ' name])
+    pole(sys)
+    
+    disp(['Zeros of ' name])
+    zero(sys)
+    
+    impulse(sys)
+    saveas(h,['pre-exercise/part2-controller-impulse-' name '.jpg'])
+    clf(h)
+
+    step(sys)
+    saveas(h,['pre-exercise/part2-controller-step-' name '.jpg'])
+    clf(h)
+
+    disp(['Stepinfo of ' name])
+    stepinfo(sys)
+    
+    bode(sys)
+    saveas(h,['pre-exercise/part2-controller-bode-' name '.jpg'])
+    clf(h)
+
+    disp(['Bandwidth of ' name])
+    bandwidth(sys)
+    
+    nyquist(sys)
+    saveas(h,['pre-exercise/part2-controller-nyquist-' name '.jpg'])
+    clf(h)
+end
 
 
-%%% Part 3
-pzmap(C)
-saveas(h,'pre-exercise/part2-controller-pzmap-continuous.jpg')
-clf(h)
 
-pole(C)
+
+
+
+%%% Part 4
 %
+% Discretize the system with all the methods and extract the gains in
+% continuous vs discrete in open loop
+
+% backward difference calculus
+% s = ((1 - (z^-1))/Ts)
+% in
+% (52.1/(1.21*s^2+s))
+% (52.1/(1.21*((1 - (z^-1))/Ts1)^2+((1 - (z^-1))/Ts1)))
+% (52.1/(1.21*((1 - (z^-1))/Ts2)^2+((1 - (z^-1))/Ts2)))
+
+% For backward1
+simplify((52.1/(1.21*((1 - (z^-1))/Ts1)^2+((1 - (z^-1))/Ts1))))
+%  
 % ans =
-%
-%      0
-%   -200
+%  
+% (13207326276619016024896892279671245*z^2)/(2305843009213693952*(34932167115046832599*z - 34875875514357121024)*(z - 1))
+%  
+% (13207326276619016024896892279671245*z^2)/(2305843009213693952*(34932167115046832599*z - 34875875514357121024)*(z - 1))
+% (1.320732627661902e+034*z^2)/((8.054809333891523e+037*z - 8.041829374498741e+037)*(z - 1))
+% (1.320732627661902*z^2)/(8054.809333891523*z^2 - 16096.63870839027*z + 8041.829374498741))
 
-zero(C)
-%
-% ans =
-%
-%    -8.5901
-%    -0.9757
+b1 = tf([1.320732627661902 0 0],[8054.809333891523 -16096.63870839027 8041.829374498741])
 
-impulse(C)
-saveas(h,'pre-exercise/part2-controller-impulse-continuous.jpg')
-clf(h)
-
-step(C)
-saveas(h,'pre-exercise/part2-controller-step-continuous.jpg')
-clf(h)
-
-stepinfo(C)
-% 
-% ans = 
-% 
-%         RiseTime: 0.0105
-%     SettlingTime: 0.0175
-%      SettlingMin: 5.2073
-%      SettlingMax: 15.0507
-%        Overshoot: 1.6178e+03
-%       Undershoot: 0
-%             Peak: 105
-%         PeakTime: 0
-% 
-
-bode(C)
-saveas(h,'pre-exercise/part2-controller-bode-continuous.jpg')
-clf(h)
-
-bandwidth(C)
-% Warning: The "bandwidth" command returns NaN for models with infinite DC gain. 
-% > In warning at 26
-%   In DynamicSystem.bandwidth at 37 
+simplify((52.1/(1.21*((1 - (z^-1))/Ts2)^2+((1 - (z^-1))/Ts2))))
 % 
 % ans =
-% 
-%    NaN
+%  
+% (135243021072578701571098576170921405*z^2)/(73786976294838206464*(1116208149581634949793*z - 1116028016459427872768)*(z - 1))
+%  
+% (135243021072578701571098576170921405*z^2)/(73786976294838206464*(1116208149581634949793*z - 1116028016459427872768)*(z - 1))
+% (1.352430210725787e+035*z^2)/(8.236162427328532e+040*z^2 -1.647099570681524e+041*z + 8.234833279486711e+040)
+% (1.352430210725787*z^2)/(823616.2427328532*z^2 -1647099.570681524*z + 823483.3279486711)
+b2 = tf([1.352430210725787 0 0],[823616.2427328532 -1647099.570681524 823483.3279486711])
 
-nyquist(C)
-saveas(h,'pre-exercise/part2-controller-nyquist-continuous.jpg')
-clf(h)
 
+t1 = c2d(G, Ts1, 'tustin')
+t2 = c2d(G, Ts2, 'tustin')
+
+i1 = c2d(G, Ts1, 'impulse')
+i2 = c2d(G, Ts2, 'impulse')
+
+s1 = c2d(G, Ts1, 'zoh')
+s2 = c2d(G, Ts2, 'zoh')
+
+
+factories = containers.Map()
+factories('continuous') = G
+factories('backward1') = b1
+factories('backward2') = b2
+factories('tustin1') = t1
+factories('tustin2') = t2
+factories('impulse1') = i1
+factories('impulse2') = i2
+factories('step1') = s1
+factories('step2') = s2
+
+for name = factories.keys
+    name = char(name)
+    sys = factories(name)
+    disp(['Gain of ' name ':'])
+    allmargin(sys)
+end
