@@ -1,5 +1,6 @@
 h = figure
-clf
+clf(h)
+
 
 
 C = tf([ 0.525 5.022 4.4 ], [ 0.005 1 0])
@@ -15,9 +16,7 @@ controlled = connect(G, C, Sum, 'r', 'y')
 %%% Part 2, continuous controller
 % Analyze the controller in continuous mode
 pzmap(C)
-set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-saveas(h,'pre-exercise/part2-controller-pzmap-continuous.jpg')
-clf(h)
+make_figure(h,'pre-exercise/part2-controller-pzmap-continuous.jpg')
 
 pole(C)
 %
@@ -34,14 +33,10 @@ zero(C)
 %    -0.9757
 
 impulse(C)
-set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-saveas(h,'pre-exercise/part2-controller-impulse-continuous.jpg')
-clf(h)
+make_figure(h,'pre-exercise/part2-controller-impulse-continuous.jpg')
 
 step(C)
-set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-saveas(h,'pre-exercise/part2-controller-step-continuous.jpg')
-clf(h)
+make_figure(h,'pre-exercise/part2-controller-step-continuous.jpg')
 
 stepinfo(C)
 % 
@@ -58,9 +53,7 @@ stepinfo(C)
 % 
 
 bode(C)
-set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-saveas(h,'pre-exercise/part2-controller-bode-continuous.jpg')
-clf(h)
+make_figure(h,'pre-exercise/part2-controller-bode-continuous.jpg')
 
 bandwidth(C)
 % Warning: The "bandwidth" command returns NaN for models with infinite DC gain. 
@@ -72,9 +65,7 @@ bandwidth(C)
 %    NaN
 
 nyquist(C)
-set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-saveas(h,'pre-exercise/part2-controller-nyquist-continuous.jpg')
-clf(h)
+make_figure(h,'pre-exercise/part2-controller-nyquist-continuous.jpg')
 
 
 %%% Part 2 controller discretization
@@ -222,9 +213,7 @@ for name = discretizations.keys
     name = char(name)
     sys = discretizations(name)
     pzmap(sys)
-    set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-    saveas(h,['pre-exercise/part2-controller-pzmap-' name '.jpg'])
-    clf(h)
+    make_figure(h,['pre-exercise/part2-controller-pzmap-' name '.jpg'])
     
     disp(['Poles of ' name])
     pole(sys)
@@ -233,95 +222,63 @@ for name = discretizations.keys
     zero(sys)
     
     impulse(sys)
-    set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-    saveas(h,['pre-exercise/part2-controller-impulse-' name '.jpg'])
-    clf(h)
+    make_figure(h,['pre-exercise/part2-controller-impulse-' name '.jpg'])
 
     step(sys)
-    set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-    saveas(h,['pre-exercise/part2-controller-step-' name '.jpg'])
-    clf(h)
+    make_figure(h,['pre-exercise/part2-controller-step-' name '.jpg'])
 
     disp(['Stepinfo of ' name])
     stepinfo(sys)
     
     bode(sys)
-    set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-    saveas(h,['pre-exercise/part2-controller-bode-' name '.jpg'])
-    clf(h)
+    make_figure(h,['pre-exercise/part2-controller-bode-' name '.jpg'])
 
     disp(['Bandwidth of ' name])
     bandwidth(sys)
     
     nyquist(sys)
-    set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-    saveas(h,['pre-exercise/part2-controller-nyquist-' name '.jpg'])
-    clf(h)
+    make_figure(h,['pre-exercise/part2-controller-nyquist-' name '.jpg'])
 end
 
 % Comparisons for different graphics
 
-bode(continuous, backward1, backward2)
-set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-saveas(h,'pre-exercise/part2-controller-bode-backward-comparison.jpg')
-clf(h)
+bode(C, backward1, backward2)
+make_figure(h,'pre-exercise/part2-controller-bode-backward-comparison.jpg')
 
-bode(continuous, tustin1, tustin2)
-set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-saveas(h,'pre-exercise/part2-controller-bode-tustin-comparison.jpg')
-clf(h)
+bode(C, tustin1, tustin2)
+make_figure(h,'pre-exercise/part2-controller-bode-tustin-comparison.jpg')
 
-bode(continuous, impulse1, impulse2)
-set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-saveas(h,'pre-exercise/part2-controller-bode-impulse-comparison.jpg')
-clf(h)
+bode(C, impulse1, impulse2)
+make_figure(h,'pre-exercise/part2-controller-bode-impulse-comparison.jpg')
 
-bode(continuous, step1, step2)
-set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-saveas(h,'pre-exercise/part2-controller-bode-step-comparison.jpg')
-clf(h)
+bode(C, step1, step2)
+make_figure(h,'pre-exercise/part2-controller-bode-step-comparison.jpg')
 
 
-step(continuous, backward1, backward2)
-set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-saveas(h,'pre-exercise/part2-controller-step-backward-comparison.jpg')
-clf(h)
+step(C, backward1, backward2)
+make_figure(h,'pre-exercise/part2-controller-step-backward-comparison.jpg')
 
-step(continuous, tustin1, tustin2)
-set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-saveas(h,'pre-exercise/part2-controller-step-tustin-comparison.jpg')
-clf(h)
+step(C, tustin1, tustin2)
+make_figure(h,'pre-exercise/part2-controller-step-tustin-comparison.jpg')
 
-step(continuous, impulse1, impulse2)
-set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-saveas(h,'pre-exercise/part2-controller-step-impulse-comparison.jpg')
-clf(h)
+step(C, impulse1, impulse2)
+make_figure(h,'pre-exercise/part2-controller-step-impulse-comparison.jpg')
 
-step(continuous, step1, step2)
-set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-saveas(h,'pre-exercise/part2-controller-step-step-comparison.jpg')
-clf(h)
+step(C, step1, step2)
+make_figure(h,'pre-exercise/part2-controller-step-step-comparison.jpg')
 
 
-impulse(continuous, backward1, backward2)
-set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-saveas(h,'pre-exercise/part2-controller-impulse-backward-comparison.jpg')
-clf(h)
+impulse(C, backward1, backward2)
+make_figure(h,'pre-exercise/part2-controller-impulse-backward-comparison.jpg')
 
-impulse(continuous, tustin1, tustin2)
-set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-saveas(h,'pre-exercise/part2-controller-impulse-tustin-comparison.jpg')
-clf(h)
+impulse(C, tustin1, tustin2)
+make_figure(h,'pre-exercise/part2-controller-impulse-tustin-comparison.jpg')
 
-impulse(continuous, impulse1, impulse2)
-set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-saveas(h,'pre-exercise/part2-controller-impulse-impulse-comparison.jpg')
-clf(h)
+impulse(C, impulse1, impulse2)
+make_figure(h,'pre-exercise/part2-controller-impulse-impulse-comparison.jpg')
 
-impulse(continuous, step1, step2)
-set(findall(gcf, 'Type', 'Line'), 'LineWidth', 2)
-saveas(h,'pre-exercise/part2-controller-impulse-step-comparison.jpg')
-clf(h)
+impulse(C, step1, step2)
+make_figure(h,'pre-exercise/part2-controller-impulse-step-comparison.jpg')
 
 
 %%% Part 4
