@@ -1,6 +1,6 @@
 h = figure
 clf(h)
-
+mkdir('pre-exercise')
 
 
 C = tf([ 0.525 5.022 4.4 ], [ 0.005 1 0])
@@ -304,7 +304,7 @@ simplify((52.1/(1.21*((1 - (z^-1))/Ts1)^2+((1 - (z^-1))/Ts1))))
 % (1.320732627661902e+034*z^2)/((8.054809333891523e+037*z - 8.041829374498741e+037)*(z - 1))
 % (1.320732627661902*z^2)/(8054.809333891523*z^2 - 16096.63870839027*z + 8041.829374498741))
 
-b1 = tf([1.320732627661902 0 0],[8054.809333891523 -16096.63870839027 8041.829374498741])
+b1 = tf([1.320732627661902 0 0],[8054.809333891523 -16096.63870839027 8041.829374498741], Ts1, 'Variable', 'z')
 
 simplify((52.1/(1.21*((1 - (z^-1))/Ts2)^2+((1 - (z^-1))/Ts2))))
 % 
@@ -315,7 +315,7 @@ simplify((52.1/(1.21*((1 - (z^-1))/Ts2)^2+((1 - (z^-1))/Ts2))))
 % (135243021072578701571098576170921405*z^2)/(73786976294838206464*(1116208149581634949793*z - 1116028016459427872768)*(z - 1))
 % (1.352430210725787e+035*z^2)/(8.236162427328532e+040*z^2 -1.647099570681524e+041*z + 8.234833279486711e+040)
 % (1.352430210725787*z^2)/(823616.2427328532*z^2 -1647099.570681524*z + 823483.3279486711)
-b2 = tf([1.352430210725787 0 0],[823616.2427328532 -1647099.570681524 823483.3279486711])
+b2 = tf([1.352430210725787 0 0],[823616.2427328532 -1647099.570681524 823483.3279486711], Ts2, 'Variable', 'z')
 
 
 t1 = c2d(G, Ts1, 'tustin')
@@ -330,14 +330,14 @@ s2 = c2d(G, Ts2, 'zoh')
 
 factories = containers.Map()
 factories('continuous') = G
-factories('backward1') = b1
-factories('backward2') = b2
-factories('tustin1') = t1
-factories('tustin2') = t2
-factories('impulse1') = i1
-factories('impulse2') = i2
-factories('step1') = s1
-factories('step2') = s2
+factories('backward1') = series(b1, backward1)
+factories('backward2') = series(b2, backward2)
+factories('tustin1') = series(t1, tustin1)
+factories('tustin2') = series(t2, tustin2)
+factories('impulse1') = series(i1, impulse1)
+factories('impulse2') = series(i2, impulse2)
+factories('step1') = series(s1, step1)
+factories('step2') = series(s2, step2)
 
 for name = factories.keys
     name = char(name)
