@@ -1,7 +1,6 @@
 1.- Rango dinámico se respete
 2.- Precisión
 
-Usar "be" para 1, "bf" para 2.
 
 El fp toolbox 
 =============
