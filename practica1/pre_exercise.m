@@ -329,7 +329,7 @@ s2 = c2d(G, Ts2, 'zoh')
 
 
 factories = containers.Map()
-factories('continuous') = G
+factories('continuous') = series(C,G)
 factories('backward1') = series(b1, backward1)
 factories('backward2') = series(b2, backward2)
 factories('tustin1') = series(t1, tustin1)
