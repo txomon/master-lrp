@@ -1,8 +1,11 @@
+>> clear all
 
 h =
 
      1
 
+Warning: Directory already exists. 
+> In pre_exercise at 3
  
 Transfer function:
 0.525 s^2 + 5.022 s + 4.4
@@ -70,8 +73,8 @@ ans =
 
 ans =
 
-   -8.590056910143753e+000
-   -9.756573755705337e-001
+   -8.5901
+   -0.9757
 
 Warning: Plot empty. 
 > In legend at 294
@@ -133,17 +136,17 @@ ans =
 
 Ts =
 
-    2.929510836502647e-002
+    0.0293
 
 
 Ts1 =
 
-    1.953007224335098e-003
+    0.0020
 
 
 Ts2 =
 
-    1.953007224335098e-004
+  1.9530e-004
 
  
 Transfer function from input "e" to output "u":
@@ -359,15 +362,15 @@ Poles of backward1
 
 ans =
 
-    9.999999999999996e-001
-    7.191133043124578e-001
+    1.0000
+    0.7191
 
 Zeros of backward1
 
 ans =
 
-    9.980981579921363e-001
-    9.835003620362063e-001
+    0.9981
+    0.9835
 
 Warning: Plot empty. 
 > In legend at 294
@@ -453,15 +456,15 @@ Poles of backward2
 
 ans =
 
-    9.999999999999918e-001
-    9.624081967786480e-001
+    1.0000
+    0.9624
 
 Zeros of backward2
 
 ans =
 
-    9.998094897106085e-001
-    9.983251654565442e-001
+    0.9998
+    0.9983
 
 Warning: Plot empty. 
 > In legend at 294
@@ -485,13 +488,13 @@ Stepinfo of backward2
 
 ans = 
 
-        RiseTime: 1.093684045627655e-002
-    SettlingTime: 1.894417007605045e-002
-     SettlingMin: 5.210874206989473e+000
-     SettlingMax: 1.508751640785265e+001
-       Overshoot: 1.729851758429990e+003
+        RiseTime: 0.0109
+    SettlingTime: 0.0189
+     SettlingMin: 5.2109
+     SettlingMax: 15.0875
+       Overshoot: 1.7299e+003
       Undershoot: 0
-            Peak: 1.012416790010427e+002
+            Peak: 101.2417
         PeakTime: 0
 
 Warning: Plot empty. 
@@ -543,15 +546,15 @@ Poles of impulse1
 
 ans =
 
-    1.000000000000000e+000
-    6.766497845496690e-001
+    1.0000
+    0.6766
 
 Zeros of impulse1
 
 ans =
 
-                         0
-    1.000071152700993e+000
+         0
+    1.0001
 
 Warning: Plot empty. 
 > In legend at 294
@@ -637,15 +640,15 @@ Poles of impulse2
 
 ans =
 
-    9.999999999999957e-001
-    9.616928668830983e-001
+    1.0000
+    0.9617
 
 Zeros of impulse2
 
 ans =
 
-                         0
-    1.000008429423759e+000
+         0
+    1.0000
 
 Warning: Plot empty. 
 > In legend at 294
@@ -669,14 +672,14 @@ Stepinfo of impulse2
 
 ans = 
 
-        RiseTime: 1.074153973384304e-002
-    SettlingTime: 1.855356863118343e-002
-     SettlingMin: -5.210324358176313e+005
-     SettlingMax: -4.697291865780611e+005
-       Overshoot: 3.204782129397676e-001
+        RiseTime: 0.0107
+    SettlingTime: 0.0186
+     SettlingMin: -5.2103e+005
+     SettlingMax: -4.6973e+005
+       Overshoot: 0.3205
       Undershoot: 0
-            Peak: 5.210324358176313e+005
-        PeakTime: 4.198965532320460e-002
+            Peak: 5.2103e+005
+        PeakTime: 0.0420
 
 Warning: Plot empty. 
 > In legend at 294
@@ -727,15 +730,15 @@ Poles of step1
 
 ans =
 
-    1.000000000000000e+000
-    6.766497845496690e-001
+    1.0000
+    0.6766
 
 Zeros of step1
 
 ans =
 
-    9.980430340240202e-001
-    9.864774963660870e-001
+    0.9980
+    0.9865
 
 Warning: Plot empty. 
 > In legend at 294
@@ -821,15 +824,15 @@ Poles of step2
 
 ans =
 
-    9.999999999999957e-001
-    9.616928668830983e-001
+    1.0000
+    0.9617
 
 Zeros of step2
 
 ans =
 
-    9.998089916633053e-001
-    9.983586751103784e-001
+    0.9998
+    0.9984
 
 Warning: Plot empty. 
 > In legend at 294
@@ -853,11 +856,11 @@ Stepinfo of step2
 
 ans = 
 
-        RiseTime: 1.074153973384304e-002
-    SettlingTime: 1.874886935361694e-002
-     SettlingMin: 5.207283924544285e+000
-     SettlingMax: 1.542777458289956e+001
-       Overshoot: 1.798074810409895e+003
+        RiseTime: 0.0107
+    SettlingTime: 0.0187
+     SettlingMin: 5.2073
+     SettlingMax: 15.4278
+       Overshoot: 1.7981e+003
       Undershoot: 0
             Peak: 105
         PeakTime: 0
@@ -911,15 +914,15 @@ Poles of tustin1
 
 ans =
 
-    9.999999999999996e-001
-    6.732191008202566e-001
+    1.0000
+    0.6732
 
 Zeros of tustin1
 
 ans =
 
-    9.980963477692451e-001
-    9.833631107111519e-001
+    0.9981
+    0.9834
 
 Warning: Plot empty. 
 > In legend at 294
@@ -965,7 +968,7 @@ Bandwidth of tustin1
 
 ans =
 
-    9.314111518959023e-014
+  9.3141e-014
 
 Warning: Plot empty. 
 > In legend at 294
@@ -1001,15 +1004,15 @@ Poles of tustin2
 
 ans =
 
-    1.000000000000001e+000
-    9.616880898856117e-001
+    1.0000
+    0.9617
 
 Zeros of tustin2
 
 ans =
 
-    9.998094715620070e-001
-    9.983237617454662e-001
+    0.9998
+    0.9983
 
 Warning: Plot empty. 
 > In legend at 294
@@ -1033,13 +1036,13 @@ Stepinfo of tustin2
 
 ans = 
 
-        RiseTime: 1.074153973384304e-002
-    SettlingTime: 1.855356863118343e-002
-     SettlingMin: 5.207262210913271e+000
-     SettlingMax: 1.522647279408302e+001
-       Overshoot: 1.763309821080754e+003
+        RiseTime: 0.0107
+    SettlingTime: 0.0186
+     SettlingMin: 5.2073
+     SettlingMax: 15.2265
+       Overshoot: 1.7633e+003
       Undershoot: 0
-            Peak: 1.030848341558700e+002
+            Peak: 103.0848
         PeakTime: 0
 
 Warning: Plot empty. 
@@ -1390,12 +1393,12 @@ Gain of backward1:
 
 ans = 
 
-     GainMargin: [1.962152497231763e-009 3.329491311065346e-008 2.360154030579504e-003]
-    GMFrequency: [0 2.680058896160931e-003 7.135289859209999e-001]
-    PhaseMargin: 6.460904325329831e+001
-    PMFrequency: 2.396540942234829e+001
-    DelayMargin: 2.409250595088791e+001
-    DMFrequency: 2.396540942234829e+001
+     GainMargin: 0.0024
+    GMFrequency: 0.7136
+    PhaseMargin: 64.6092
+    PMFrequency: 23.9658
+    DelayMargin: 24.0922
+    DMFrequency: 23.9658
          Stable: 1
 
 
@@ -1414,12 +1417,12 @@ Gain of backward2:
 
 ans = 
 
-     GainMargin: [1.504835069201415e-005 2.810822608679131e-004 2.183266890969182e-003]
-    GMFrequency: [0 2.460517300511512e-001 6.857431241302656e-001]
-    PhaseMargin: 6.319607180163983e+001
-    PMFrequency: 2.387220854986683e+001
-    DelayMargin: 2.365761728440378e+002
-    DMFrequency: 2.387220854986683e+001
+     GainMargin: 0.0029
+    GMFrequency: 0.7963
+    PhaseMargin: 63.1960
+    PMFrequency: 23.8722
+    DelayMargin: 236.5763
+    DMFrequency: 23.8722
          Stable: 1
 
 
@@ -1428,21 +1431,21 @@ name =
 continuous
 
  
-Transfer function from input "u" to output "y":
-    52.1
-------------
-1.21 s^2 + s
+Transfer function from input "e" to output "y":
+ 27.35 s^2 + 261.6 s + 229.2
+-----------------------------
+0.00605 s^4 + 1.215 s^3 + s^2
  
 Gain of continuous:
 
 ans = 
 
-     GainMargin: Inf
-    GMFrequency: Inf
-    PhaseMargin: 7.206886746119338e+000
-    PMFrequency: 6.535678217910649e+000
-    DelayMargin: 1.924573064099447e-002
-    DMFrequency: 6.535678217910649e+000
+     GainMargin: [0 0.0025 Inf]
+    GMFrequency: [0 0.7303 Inf]
+    PhaseMargin: 63.0401
+    PMFrequency: 23.8620
+    DelayMargin: 0.0461
+    DMFrequency: 23.8620
          Stable: 1
 
 
@@ -1451,7 +1454,7 @@ name =
 impulse1
 
  
-Transfer function from input "u" to output "u":
+Transfer function from input "e" to output "y":
      -1680 z^3 + 1680 z^2 + 3.731e-013 z
 ----------------------------------------------
 z^4 - 3.675 z^3 + 5.026 z^2 - 3.026 z + 0.6756
@@ -1461,7 +1464,7 @@ Gain of impulse1:
 
 ans = 
 
-     GainMargin: 1.625795912637770e-015
+     GainMargin: 1.6258e-015
     GMFrequency: 0
     PhaseMargin: [1x0 double]
     PMFrequency: [1x0 double]
@@ -1475,7 +1478,7 @@ name =
 impulse2
 
  
-Transfer function from input "u" to output "u":
+Transfer function from input "e" to output "y":
     -168.1 z^3 + 168.1 z^2 + 7.467e-014 z
 ----------------------------------------------
 z^4 - 3.962 z^3 + 5.885 z^2 - 3.885 z + 0.9615
@@ -1485,7 +1488,7 @@ Gain of impulse2:
 
 ans = 
 
-     GainMargin: 5.846075441324963e-013
+     GainMargin: 5.8461e-013
     GMFrequency: 0
     PhaseMargin: [1x0 double]
     PMFrequency: [1x0 double]
@@ -1499,7 +1502,7 @@ name =
 step1
 
  
-Transfer function from input "u" to output "u":
+Transfer function from input "e" to output "y":
 0.008618 z^3 - 0.008489 z^2 - 0.008608 z + 0.00848
 --------------------------------------------------
   z^4 - 3.675 z^3 + 5.026 z^2 - 3.026 z + 0.6756
@@ -1509,12 +1512,12 @@ Gain of step1:
 
 ans = 
 
-     GainMargin: [1x5 double]
-    GMFrequency: [1x5 double]
-    PhaseMargin: 6.597411143057597e+001
-    PMFrequency: 2.768002508180093e+001
-    DelayMargin: 2.130004829530050e+001
-    DMFrequency: 2.768002508180093e+001
+     GainMargin: [4.2624e-010 6.8915e-009 0.0021 36.4268 7.2850e+005]
+    GMFrequency: [0 0.0012 0.6756 415.5566 1.6086e+003]
+    PhaseMargin: 65.9741
+    PMFrequency: 27.6800
+    DelayMargin: 21.3000
+    DMFrequency: 27.6800
          Stable: 1
 
 
@@ -1523,7 +1526,7 @@ name =
 step2
 
  
-Transfer function from input "u" to output "u":
+Transfer function from input "e" to output "y":
 8.622e-005 z^3 - 8.606e-005 z^2 - 8.621e-005 z + 8.606e-005
 -----------------------------------------------------------
       z^4 - 3.962 z^3 + 5.885 z^2 - 3.885 z + 0.9615
@@ -1533,12 +1536,12 @@ Gain of step2:
 
 ans = 
 
-     GainMargin: [1x5 double]
-    GMFrequency: [1x5 double]
-    PhaseMargin: 6.344415079984212e+001
-    PMFrequency: 2.420805942103374e+001
-    DelayMargin: 2.342098359219462e+002
-    DMFrequency: 2.420805942103374e+001
+     GainMargin: [1.5327e-005 2.8552e-004 0.0022 425.7972 8.4653e+008]
+    GMFrequency: [0 0.2479 0.6805 1.3911e+003 1.6086e+004]
+    PhaseMargin: 63.4442
+    PMFrequency: 24.2081
+    DelayMargin: 234.2098
+    DMFrequency: 24.2081
          Stable: 1
 
 
@@ -1547,7 +1550,7 @@ name =
 tustin1
 
  
-Transfer function from input "u" to output "u":
+Transfer function from input "e" to output "y":
 0.003638 z^4 + 6.744e-005 z^3 - 0.007207 z^2 - 6.721e-005 z + 0.00357
 ---------------------------------------------------------------------
            z^4 - 3.672 z^3 + 5.015 z^2 - 3.016 z + 0.6721
@@ -1557,12 +1560,12 @@ Gain of tustin1:
 
 ans = 
 
-     GainMargin: 2.476462836765407e-003
-    GMFrequency: 7.302738477301668e-001
-    PhaseMargin: 6.304058054847643e+001
-    PMFrequency: 2.385860468246882e+001
-    DelayMargin: 2.361286479812141e+001
-    DMFrequency: 2.385860468246882e+001
+     GainMargin: 0.0025
+    GMFrequency: 0.7303
+    PhaseMargin: 63.0406
+    PMFrequency: 23.8586
+    DelayMargin: 23.6129
+    DMFrequency: 23.8586
          Stable: 1
 
 
@@ -1571,7 +1574,7 @@ name =
 tustin2
 
  
-Transfer function from input "u" to output "u":
+Transfer function from input "e" to output "y":
 4.232e-005 z^4 + 7.9e-008 z^3 - 8.456e-005 z^2 - 7.898e-008 z + 4.224e-005
 --------------------------------------------------------------------------
               z^4 - 3.962 z^3 + 5.885 z^2 - 3.885 z + 0.9615
@@ -1581,12 +1584,182 @@ Gain of tustin2:
 
 ans = 
 
-     GainMargin: 2.844074106231320e-003
-    GMFrequency: 7.826012934949013e-001
-    PhaseMargin: 6.304016577416417e+001
-    PMFrequency: 2.386208645700716e+001
-    DelayMargin: 2.360926405038576e+002
-    DMFrequency: 2.386208645700716e+001
+     GainMargin: 5.2923e-005
+    GMFrequency: 0
+    PhaseMargin: 63.0411
+    PMFrequency: 23.8638
+    DelayMargin: 236.0790
+    DMFrequency: 23.8638
          Stable: 1
+
+ 
+Transfer function from input "e" to output "u":
+     0.6352 s^4 + 6.602 s^3 + 10.35 s^2 + 4.4 s
+-----------------------------------------------------
+0.00605 s^4 + 1.215 s^3 + 28.35 s^2 + 261.6 s + 229.2
+ 
+ 
+Transfer function:
+1.242e006 z^4 - 4.942e006 z^3 + 7.376e006 z^2 - 4.892e006 z + 1.217e006
+-----------------------------------------------------------------------
+1.635e004 z^4 - 6.041e004 z^3 + 8.338e004 z^2 - 5.09e004 z + 1.159e004
+ 
+Sampling time: 0.001953
+ 
+Transfer function:
+3.996e008 z^4 - 1.597e009 z^3 + 2.395e009 z^2 - 1.596e009 z + 3.988e008
+-----------------------------------------------------------------------
+3.947e006 z^4 - 1.564e007 z^3 + 2.323e007 z^2 - 1.534e007 z + 3.798e006
+ 
+Sampling time: 0.0001953
+ 
+Transfer function from input "e" to output "u":
+88.67 z^4 - 352.9 z^3 + 526.6 z^2 - 349.3 z + 86.88
+----------------------------------------------------
+1.004 z^4 - 3.672 z^3 + 5.008 z^2 - 3.016 z + 0.6757
+ 
+Sampling time: 0.001953
+ 
+Transfer function from input "e" to output "u":
+103.1 z^4 - 412.1 z^3 + 617.9 z^2 - 411.7 z + 102.9
+---------------------------------------------------
+  z^4 - 3.962 z^3 + 5.885 z^2 - 3.885 z + 0.9616
+ 
+Sampling time: 0.0001953
+ 
+Transfer function from input "e" to output "u":
+-2e004 z^4 + 5.996e004 z^3 - 5.993e004 z^2 + 1.996e004 z
+--------------------------------------------------------
+      z^4 - 1684 z^3 + 1685 z^2 - 3.026 z + 0.6756
+ 
+Sampling time: 0.001953
+ 
+Transfer function from input "e" to output "u":
+-2e004 z^4 + 5.998e004 z^3 - 5.998e004 z^2 + 1.999e004 z
+--------------------------------------------------------
+      z^4 - 172.1 z^3 + 174 z^2 - 3.885 z + 0.9615
+ 
+Sampling time: 0.0001953
+ 
+Transfer function from input "e" to output "u":
+105 z^4 - 418.2 z^3 + 624.6 z^2 - 414.6 z + 103.2
+-------------------------------------------------
+  z^4 - 3.666 z^3 + 5.017 z^2 - 3.035 z + 0.684
+ 
+Sampling time: 0.001953
+ 
+Transfer function from input "e" to output "u":
+105 z^4 - 419.8 z^3 + 629.4 z^2 - 419.4 z + 104.8
+-------------------------------------------------
+ z^4 - 3.961 z^3 + 5.885 z^2 - 3.885 z + 0.9616
+ 
+Sampling time: 0.0001953
+Warning: Plot empty. 
+> In legend at 294
+  In make_figure at 6
+  In pre_exercise at 364
+
+ans =
+
+     1
+
+Warning: Plot empty. 
+> In legend at 294
+  In make_figure at 6
+  In pre_exercise at 367
+
+ans =
+
+     1
+
+Warning: Plot empty. 
+> In legend at 294
+  In make_figure at 6
+  In pre_exercise at 370
+
+ans =
+
+     1
+
+Warning: Plot empty. 
+> In legend at 294
+  In make_figure at 6
+  In pre_exercise at 373
+
+ans =
+
+     1
+
+Warning: Plot empty. 
+> In legend at 294
+  In make_figure at 6
+  In pre_exercise at 377
+
+ans =
+
+     1
+
+Warning: Plot empty. 
+> In legend at 294
+  In make_figure at 6
+  In pre_exercise at 380
+
+ans =
+
+     1
+
+Warning: Plot empty. 
+> In legend at 294
+  In make_figure at 6
+  In pre_exercise at 383
+
+ans =
+
+     1
+
+Warning: Plot empty. 
+> In legend at 294
+  In make_figure at 6
+  In pre_exercise at 386
+
+ans =
+
+     1
+
+Warning: Plot empty. 
+> In legend at 294
+  In make_figure at 6
+  In pre_exercise at 390
+
+ans =
+
+     1
+
+Warning: Plot empty. 
+> In legend at 294
+  In make_figure at 6
+  In pre_exercise at 393
+
+ans =
+
+     1
+
+Warning: Plot empty. 
+> In legend at 294
+  In make_figure at 6
+  In pre_exercise at 396
+
+ans =
+
+     1
+
+Warning: Plot empty. 
+> In legend at 294
+  In make_figure at 6
+  In pre_exercise at 399
+
+ans =
+
+     1
 
 >> 

@@ -330,14 +330,14 @@ s2 = c2d(G, Ts2, 'zoh')
 
 factories = containers.Map()
 factories('continuous') = series(C,G)
-factories('backward1') = series(b1, backward1)
-factories('backward2') = series(b2, backward2)
-factories('tustin1') = series(t1, tustin1)
-factories('tustin2') = series(t2, tustin2)
-factories('impulse1') = series(i1, impulse1)
-factories('impulse2') = series(i2, impulse2)
-factories('step1') = series(s1, step1)
-factories('step2') = series(s2, step2)
+factories('backward1') = series(backward1, b1)
+factories('backward2') = series(backward2, b2)
+factories('tustin1') = series(tustin1, t1)
+factories('tustin2') = series(tustin2, t2)
+factories('impulse1') = series(impulse1, i1)
+factories('impulse2') = series(impulse2, i2)
+factories('step1') = series(step1, s1)
+factories('step2') = series(step2, s2)
 
 for name = factories.keys
     name = char(name)
@@ -345,3 +345,55 @@ for name = factories.keys
     disp(['Gain of ' name ':'])
     allmargin(sys)
 end
+
+
+fc = feedback(C,G)
+fb1 = feedback(backward1, b1)
+fb2 = feedback(backward2, b2)
+ft1 = feedback(tustin1, t1)
+ft2 = feedback(tustin2, t2)
+fi1 = feedback(impulse1, i1)
+fi2 = feedback(impulse2, i2)
+fs1 = feedback(step1, s1)
+fs2 = feedback(step2, s2)
+
+
+% Comparisons for different graphics
+
+bode(fc, fb1, fb2)
+make_figure(h,'pre-exercise/part5-bode-backward-comparison.jpg')
+
+bode(fc, ft1, ft2)
+make_figure(h,'pre-exercise/part5-bode-tustin-comparison.jpg')
+
+bode(fc, fi1, fi2)
+make_figure(h,'pre-exercise/part5-bode-impulse-comparison.jpg')
+
+bode(fc, fs1, fs2)
+make_figure(h,'pre-exercise/part5-bode-step-comparison.jpg')
+
+
+step(fc, fb1, fb2)
+make_figure(h,'pre-exercise/part5-step-backward-comparison.jpg')
+
+step(fc, ft1, ft2)
+make_figure(h,'pre-exercise/part5-step-tustin-comparison.jpg')
+
+step(fc, fi1, fi2)
+make_figure(h,'pre-exercise/part5-step-impulse-comparison.jpg')
+
+step(fc, fs1, fs2)
+make_figure(h,'pre-exercise/part5-step-step-comparison.jpg')
+
+
+impulse(fc, fb1, fb2)
+make_figure(h,'pre-exercise/part5-impulse-backward-comparison.jpg')
+
+impulse(fc, ft1, ft2)
+make_figure(h,'pre-exercise/part5-impulse-tustin-comparison.jpg')
+
+impulse(fc, fi1, fi2)
+make_figure(h,'pre-exercise/part5-impulse-impulse-comparison.jpg')
+
+impulse(fc, fs1, fs2)
+make_figure(h,'pre-exercise/part5-impulse-step-comparison.jpg')
