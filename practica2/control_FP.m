@@ -3,6 +3,17 @@ clear all;
 
 global ek be0 be1 be2 au1 au2 be01 be012 au12
 
+ekm = numerictype(1, 17, 15);
+ekm = numerictype(1, 18, 9);
+ekm = numerictype(1, 18, 8);
+ekm = numerictype(1, 18, 9);
+ekm = numerictype(1, 20, 10);
+ekm = numerictype(1, 20, 12);
+ekm = numerictype(1, 18, 9);
+ekm = numerictype(1, 24, 16);
+ekm = numerictype(1, 17, 7);
+ekm = numerictype(1, 17, 15);
+uk = [];
 eka = [];
 be0a = [];
 be1a = [];
