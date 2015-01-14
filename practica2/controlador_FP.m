@@ -5,12 +5,12 @@ function u = controlador_FP(yk, setpoints, C)
 %discreto. Implementación directa.
 
 global ek be0 be1 be2 au1 au2 be01 be012 au12
+global ekt be0t be1t be2t au1t au2t be01t be012t au12t
 
 as = C.den{1,1};
 bs = C.num{1,1};
 
 %Parámetros del controlador
-%a0 = as(1);
 a1 = as(2);
 a2 = as(3);
 b0 = bs(1);

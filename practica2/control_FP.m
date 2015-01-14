@@ -3,17 +3,18 @@ clear all;
 
 global ek be0 be1 be2 au1 au2 be01 be012 au12
 
-ekm = numerictype(1, 17, 15);
-ekm = numerictype(1, 18, 9);
-ekm = numerictype(1, 18, 8);
-ekm = numerictype(1, 18, 9);
-ekm = numerictype(1, 20, 10);
-ekm = numerictype(1, 20, 12);
-ekm = numerictype(1, 18, 9);
-ekm = numerictype(1, 24, 16);
-ekm = numerictype(1, 17, 7);
-ekm = numerictype(1, 17, 15);
-uk = [];
+ukt = numerictype(1, 17, 15);
+ekt = numerictype(1, 17, 15);
+be0t = numerictype(1, 18, 9);
+be1t = numerictype(1, 18, 8);
+be2t = numerictype(1, 18, 9);
+au1t = numerictype(1, 20, 10);
+au2t = numerictype(1, 20, 12);
+be01t = numerictype(1, 18, 9);
+be012t = numerictype(1, 24, 16);
+au12t = numerictype(1, 17, 7);
+
+uka = [];
 eka = [];
 be0a = [];
 be1a = [];
@@ -64,12 +65,15 @@ scope5 = NumericTypeScope;
 scope6 = NumericTypeScope;
 scope7 = NumericTypeScope;
 scope8 = NumericTypeScope;
+scope9 = NumericTypeScope;
 
 for k=1:pasos
-    
+    %Llamamos a la función que simula el comportamiento de la planta
     yk = planta(uk, G_discrete);
+    %Llamamos a la función que simula el comportamiento del controlador
     uk = controlador_FP(yk, setpoints(k), C_discrete);
     
+    step(scope9,au12);
     step(scope0,ek);
     step(scope1,be0);
     step(scope2,be1);
@@ -80,6 +84,7 @@ for k=1:pasos
     step(scope7,be012);
     step(scope8,au12);
     
+    uka(end+1) = uk;
     eka(end+1) = ek;
     be0a(end+1) = be0;
     be1a(end+1) = be1;

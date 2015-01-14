@@ -4,13 +4,12 @@ function u = controlador(yk, setpoints, C)
 %Simula el cálculo de la señal de control del controlador C en tiempo
 %discreto. Implementación directa.
 
-global ek
+global ek be0 be1 be2 au1 au2 be01 be012 au12
 
 as = C.den{1,1};
 bs = C.num{1,1};
 
 %Parámetros del controlador
-%a0 = as(1);
 a1 = as(2);
 a2 = as(3);
 b0 = bs(1);
