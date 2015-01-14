@@ -1,7 +1,9 @@
-function [ sign int frac ] = calculate_precision( num )
+function [ sign int frac ] = calculate_precision( num, max_error )
 %CALCULATE_PRECISION Summary of this function goes here
 %   Detailed explanation goes here
-    max_error = 1 / 10000000;
+    if nargin < 2
+        max_error = 1 / 10000000;
+    end
     int = 0;
     float = 0;
     
