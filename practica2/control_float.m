@@ -168,11 +168,16 @@ global a1t a2t b0t b1t b2t
 as = C_discrete.den{1,1};
 bs = C_discrete.num{1,1};
 %Parámetros del controlador
-a1t = as(2);
-a2t = as(3);
-b0t = bs(1);
-b1t = bs(2);
-b2t = bs(3);
+a1t = calculate_precision(as(2));
+a1t = numerictype(a1t(1),a1t(2),a1t(3));
+a2t = calculate_precision(as(3));
+a2t = numerictype(a2t(1),a2t(2),a2t(3));
+b0t = calculate_precision(bs(1));
+b0t = numerictype(b0t(1),b0t(2),b0t(3));
+b1t = calculate_precision(bs(2));
+b1t = numerictype(b1t(1),b1t(2),b1t(3));
+b2t = calculate_precision(bs(3));
+b2t = numerictype(b2t(1),b2t(2),b2t(3));
 
 
 yka_d1 = zeros(pasos,1);
