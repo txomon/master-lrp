@@ -192,24 +192,37 @@ be012a_d1 = zeros(pasos,1);
 au12a_d1 = zeros(pasos,1);
 uka_d1 = zeros(pasos,1);
 
+scope0 = NumericTypeScope;
+scope1 = NumericTypeScope;
+scope2 = NumericTypeScope;
+scope3 = NumericTypeScope;
+scope4 = NumericTypeScope;
+scope5 = NumericTypeScope;
+scope6 = NumericTypeScope;
+scope7 = NumericTypeScope;
+scope8 = NumericTypeScope;
+scope9 = NumericTypeScope;
+scope10 = NumericTypeScope;
+
+
 for k=1:pasos
     %Llamamos a la función que simula el comportamiento de la planta
     yk = planta(uk, G_discrete);
-    yk = fi(yk, ykt);
     
     %Llamamos a la función que simula el comportamiento del controlador
     uk = controlador_FP(yk, setpoints(k), C_discrete);
     
+    step(scope0,yk);
+    step(scope1,ek);
+    step(scope2,be0);
+    step(scope3,be1);
+    step(scope4,be2);
+    step(scope5,au1);
+    step(scope6,au2);
+    step(scope7,be01);
+    step(scope8,be012);
     step(scope9,au12);
-    step(scope0,ek);
-    step(scope1,be0);
-    step(scope2,be1);
-    step(scope3,be2);
-    step(scope4,au1);
-    step(scope5,au2);
-    step(scope6,be01);
-    step(scope7,be012);
-    step(scope8,au12);
+    step(scope10,uk);
     
     yka_d1(k) = yk;
     eka_d1(k) = ek;
