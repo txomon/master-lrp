@@ -36,8 +36,8 @@ end
 bu0 = b0*uk;
 bu1 = b1*uk1;
 bu2 = b2*uk2;
-ay1 = a1*yk1;
-ay2 = a2*yk2;
+ay1 = double(a1)*double(yk1);
+ay2 = double(a2)*double(yk2);
 
 bu01 = bu0+bu1;
 bu012 = bu01+bu2;

@@ -1,5 +1,7 @@
 
 function u = controlador_FP(yk, setpoints, C)
+v = fipref;
+v.LoggingMode = 'on';
 
 %Simula el cálculo de la señal de control del controlador C en tiempo
 %discreto. Implementación directa.
@@ -18,7 +20,7 @@ b0 = fi(bs(1),b0t);
 b1 = fi(bs(2),b1t);
 b2 = fi(bs(3),b2t);
 
-yk = fi(yk, ykt)
+yk = fi(yk, ykt);
 
 % u(k)=b0.e(k)+b1*e(k-1)+b2*e(k-2)-a1*u(k-1)-a2*u(k-2);
 
