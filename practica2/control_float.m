@@ -386,3 +386,28 @@ for k=1:pasos
     uka_d2(k) = uk;
 end;
 represent_system(yka_d2,eka_d2,uka_d2,setpoints);
+
+nt = containers.Map();
+nt('ykt') = ykt;
+nt('ekt ') = ekt;
+nt('be0t') = be0t;
+nt('be1t ') = be1t;
+nt('be2t') = be2t;
+nt('au1t') = au1t;
+nt('au2t') = au2t;
+nt('be01t') = be01t;
+nt('be012t') = be012t;
+nt('au12t') = au12t;
+nt('ukt') = ukt;
+nt('a1t') = a1t;
+nt('a2t') = a2t;
+nt('b0t') = b0t;
+nt('b1t') = b1t;
+nt('b2t') = b2t;
+
+for name=nt.keys();
+    name = char(name);
+    type = fi(nt(name));
+    disp(['Signal type ' name]);
+    disp(type);
+end

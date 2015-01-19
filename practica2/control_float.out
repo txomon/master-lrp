@@ -1,0 +1,245 @@
+Analizando señal au1:
+    Max: 302.199012
+    Min: -151.120790
+    Mod: 0.000569
+    Var: 0.000069
+    Int: 10.000000
+    Flt: 14.000000
+Analizando señal au12:
+    Max: 302.217008
+    Min: -151.120790
+    Mod: 0.004092
+    Var: 0.000003
+    Int: 10.000000
+    Flt: 19.000000
+Analizando señal au2:
+    Max: 61.657282
+    Min: -123.297197
+    Mod: 0.000232
+    Var: 0.000028
+    Int: 7.000000
+    Flt: 16.000000
+Analizando señal be0:
+    Max: 89.463507
+    Min: -178.727490
+    Mod: 0.001416
+    Var: 0.001966
+    Int: 8.000000
+    Flt: 9.000000
+Analizando señal be01:
+    Max: 177.607638
+    Min: -179.113202
+    Mod: 0.000981
+    Var: 0.002385
+    Int: 9.000000
+    Flt: 9.000000
+Analizando señal be012:
+    Max: 175.799937
+    Min: -178.927283
+    Mod: 0.000017
+    Var: 0.000000
+    Int: 9.000000
+    Flt: 27.000000
+Analizando señal be1:
+    Max: 354.331650
+    Min: -177.363607
+    Mod: 0.002808
+    Var: 0.003897
+    Int: 10.000000
+    Flt: 9.000000
+Analizando señal be2:
+    Max: 87.902616
+    Min: -175.609187
+    Mod: 0.001391
+    Var: 0.001931
+    Int: 8.000000
+    Flt: 10.000000
+Analizando señal ek:
+    Max: 1.000000
+    Min: -1.997770
+    Mod: 0.000016
+    Var: 0.000022
+    Int: 1.000000
+    Flt: 16.000000
+Analizando señal uk:
+    Max: 89.463507
+    Min: -178.901815
+    Mod: 0.000337
+    Var: 0.000041
+    Int: 8.000000
+    Flt: 15.000000
+Analizando señal yk:
+    Max: 1.216554
+    Min: -1.434634
+    Mod: 0.006518
+    Var: 0.000022
+    Int: 2.000000
+    Flt: 16.000000
+Warning: 1 overflow occurred in the fi assignment operation. 
+> In embedded.fi.fi at 531
+  In fi at 218
+  In controlador_FP at 45
+  In control_float at 362
+Warning: 1 overflow occurred in the fi assignment operation. 
+> In embedded.fi.fi at 531
+  In fi at 218
+  In controlador_FP at 45
+  In control_float at 362
+Warning: 1 overflow occurred in the fi assignment operation. 
+> In embedded.fi.fi at 531
+  In fi at 218
+  In controlador_FP at 45
+  In control_float at 362
+Warning: 1 overflow occurred in the fi assignment operation. 
+> In embedded.fi.fi at 531
+  In fi at 218
+  In controlador_FP at 45
+  In control_float at 362
+Warning: 1 overflow occurred in the fi assignment operation. 
+> In embedded.fi.fi at 531
+  In fi at 218
+  In controlador_FP at 45
+  In control_float at 362
+Warning: 1 overflow occurred in the fi assignment operation. 
+> In embedded.fi.fi at 531
+  In fi at 218
+  In controlador_FP at 45
+  In control_float at 362
+Warning: 1 overflow occurred in the fi assignment operation. 
+> In embedded.fi.fi at 531
+  In fi at 218
+  In controlador_FP at 45
+  In control_float at 362
+Warning: 1 overflow occurred in the fi assignment operation. 
+> In embedded.fi.fi at 531
+  In fi at 218
+  In controlador_FP at 45
+  In control_float at 362
+Warning: 1 overflow occurred in the fi assignment operation. 
+> In embedded.fi.fi at 531
+  In fi at 218
+  In controlador_FP at 45
+  In control_float at 362
+Warning: 1 overflow occurred in the fi assignment operation. 
+> In embedded.fi.fi at 531
+  In fi at 218
+  In controlador_FP at 45
+  In control_float at 362
+Warning: 1 underflow occurred in the fi assignment operation. 
+> In embedded.fi.fi at 531
+  In fi at 218
+  In controlador_FP at 50
+  In control_float at 362
+Signal type a1t
+[]
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 16
+        FractionLength: 15
+Signal type a2t
+[]
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 16
+        FractionLength: 15
+Signal type au12t
+[]
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 16
+        FractionLength: 15
+Signal type au1t
+[]
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 16
+        FractionLength: 15
+Signal type au2t
+[]
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 16
+        FractionLength: 15
+Signal type b0t
+[]
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 16
+        FractionLength: 15
+Signal type b1t
+[]
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 16
+        FractionLength: 15
+Signal type b2t
+[]
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 16
+        FractionLength: 15
+Signal type be012t
+[]
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 16
+        FractionLength: 15
+Signal type be01t
+[]
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 16
+        FractionLength: 15
+Signal type be0t
+[]
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 16
+        FractionLength: 15
+Signal type be1t 
+[]
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 16
+        FractionLength: 15
+Signal type be2t
+[]
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 16
+        FractionLength: 15
+Signal type ekt 
+[]
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 16
+        FractionLength: 15
+Signal type ukt
+[]
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 16
+        FractionLength: 15
+Signal type ykt
+[]
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 16
+        FractionLength: 15
+>> 
