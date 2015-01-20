@@ -125,121 +125,105 @@ Warning: 1 overflow occurred in the fi assignment operation.
   In fi at 218
   In controlador_FP at 45
   In control_float at 362
-Warning: 1 underflow occurred in the fi assignment operation. 
+Warning: 1 overflow occurred in the fi assignment operation. 
 > In embedded.fi.fi at 531
   In fi at 218
-  In controlador_FP at 50
+  In controlador_FP at 45
   In control_float at 362
 Signal type a1t
-[]
 
           DataTypeMode: Fixed-point: binary point scaling
             Signedness: Signed
-            WordLength: 16
-        FractionLength: 15
+            WordLength: 8
+        FractionLength: 6
 Signal type a2t
-[]
 
           DataTypeMode: Fixed-point: binary point scaling
-            Signedness: Signed
-            WordLength: 16
-        FractionLength: 15
+            Signedness: Unsigned
+            WordLength: 8
+        FractionLength: 8
 Signal type au12t
-[]
 
           DataTypeMode: Fixed-point: binary point scaling
             Signedness: Signed
-            WordLength: 16
-        FractionLength: 15
+            WordLength: 17
+        FractionLength: 6
 Signal type au1t
-[]
 
           DataTypeMode: Fixed-point: binary point scaling
             Signedness: Signed
-            WordLength: 16
-        FractionLength: 15
+            WordLength: 25
+        FractionLength: 6
 Signal type au2t
-[]
 
           DataTypeMode: Fixed-point: binary point scaling
             Signedness: Signed
-            WordLength: 16
-        FractionLength: 15
+            WordLength: 14
+        FractionLength: 6
 Signal type b0t
-[]
 
           DataTypeMode: Fixed-point: binary point scaling
-            Signedness: Signed
-            WordLength: 16
-        FractionLength: 15
+            Signedness: Unsigned
+            WordLength: 14
+        FractionLength: 7
 Signal type b1t
-[]
 
           DataTypeMode: Fixed-point: binary point scaling
             Signedness: Signed
-            WordLength: 16
-        FractionLength: 15
+            WordLength: 17
+        FractionLength: 8
 Signal type b2t
-[]
 
           DataTypeMode: Fixed-point: binary point scaling
-            Signedness: Signed
-            WordLength: 16
-        FractionLength: 15
+            Signedness: Unsigned
+            WordLength: 15
+        FractionLength: 8
 Signal type be012t
-[]
 
           DataTypeMode: Fixed-point: binary point scaling
             Signedness: Signed
-            WordLength: 16
-        FractionLength: 15
+            WordLength: 20
+        FractionLength: 10
 Signal type be01t
-[]
 
           DataTypeMode: Fixed-point: binary point scaling
             Signedness: Signed
-            WordLength: 16
-        FractionLength: 15
+            WordLength: 15
+        FractionLength: 5
 Signal type be0t
-[]
 
           DataTypeMode: Fixed-point: binary point scaling
             Signedness: Signed
-            WordLength: 16
-        FractionLength: 15
+            WordLength: 14
+        FractionLength: 5
 Signal type be1t 
-[]
 
           DataTypeMode: Fixed-point: binary point scaling
             Signedness: Signed
             WordLength: 16
-        FractionLength: 15
+        FractionLength: 5
 Signal type be2t
-[]
 
           DataTypeMode: Fixed-point: binary point scaling
             Signedness: Signed
-            WordLength: 16
-        FractionLength: 15
+            WordLength: 13
+        FractionLength: 4
 Signal type ekt 
-[]
 
           DataTypeMode: Fixed-point: binary point scaling
             Signedness: Signed
-            WordLength: 16
-        FractionLength: 15
+            WordLength: 12
+        FractionLength: 10
 Signal type ukt
-[]
 
           DataTypeMode: Fixed-point: binary point scaling
             Signedness: Signed
-            WordLength: 16
-        FractionLength: 15
+            WordLength: 18
+        FractionLength: 9
 Signal type ykt
-[]
 
           DataTypeMode: Fixed-point: binary point scaling
             Signedness: Signed
-            WordLength: 16
-        FractionLength: 15
+            WordLength: 12
+        FractionLength: 9
 >> 

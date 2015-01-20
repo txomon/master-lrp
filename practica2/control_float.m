@@ -265,9 +265,9 @@ end;
 represent_system(yka_d1,eka_d1,uka_d1,setpoints);
 
 yk_d1_int = yk_c_int;
-yk_d1_flt = yk_c_flt   ;
+yk_d1_flt = yk_c_flt - 7 ;
 ek_d1_int = ek_c_int;
-ek_d1_flt = ek_c_flt  ;
+ek_d1_flt = ek_c_flt - 6 ;
 be0_d1_int = be0_c_int;
 be0_d1_flt = be0_c_flt - 4;
 be1_d1_int = be1_c_int;
@@ -281,11 +281,11 @@ au2_d1_flt = au2_c_flt - 10 ;
 be01_d1_int = be01_c_int;
 be01_d1_flt = be01_c_flt - 4;
 be012_d1_int = be012_c_int;
-be012_d1_flt = be012_c_flt - 4;
+be012_d1_flt = be012_c_flt - 17;
 au12_d1_int = au12_c_int;
 au12_d1_flt = au12_c_flt - 13;
 uk_d1_int = uk_c_int;
-uk_d1_flt = uk_c_flt;
+uk_d1_flt = uk_c_flt - 6;
 
 
 %Creamos las precisiones de las señales
@@ -407,7 +407,7 @@ nt('b2t') = b2t;
 
 for name=nt.keys();
     name = char(name);
-    type = fi(nt(name));
+    type = nt(name);
     disp(['Signal type ' name]);
     disp(type);
 end
