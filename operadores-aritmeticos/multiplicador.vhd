@@ -30,15 +30,15 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity multiplicador is
-    Port ( op_a : in  STD_LOGIC_VECTOR (15 downto 0);
-           op_b : in  STD_LOGIC_VECTOR (15 downto 0);
-           res : out  STD_LOGIC_VECTOR (31 downto 0);
+    Port ( op_a : in  STD_LOGIC_VECTOR (18 downto 0);
+           op_b : in  STD_LOGIC_VECTOR (18 downto 0);
+           res : out  STD_LOGIC_VECTOR (38 downto 0);
 			  clk : in  STD_LOGIC);
 end multiplicador;
 
 architecture Behavioral of multiplicador is
-signal r_a, r_b : STD_LOGIC_VECTOR (15 downto 0);
 signal r_res : STD_LOGIC_VECTOR (31 downto 0);
+signal r_a, r_b : STD_LOGIC_VECTOR (18 downto 0);
 begin
 	process(clk)
 	begin
@@ -49,6 +49,7 @@ begin
 		end if;
 	end process;
 	r_res <= std_logic_vector(unsigned(r_a) * unsigned(r_b));
+--	res <= std_logic_vector(unsigned(op_a)*unsigned(op_b));
 
 end Behavioral;
 
