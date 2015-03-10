@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    18:02:00 02/28/2015 
+-- Create Date:    18:16:36 03/10/2015 
 -- Design Name: 
--- Module Name:    multiplicador - Behavioral 
+-- Module Name:    divisor - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -29,27 +29,16 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity multiplicador is
-    Port ( op_a : in  STD_LOGIC_VECTOR (18 downto 0);
-           op_b : in  STD_LOGIC_VECTOR (18 downto 0);
-           res : out  STD_LOGIC_VECTOR (37 downto 0);
-			  clk : in  STD_LOGIC);
-end multiplicador;
+entity divisor is
+    Port ( op_a : in  STD_LOGIC_VECTOR (6 downto 0);
+           op_b : in  STD_LOGIC_VECTOR (6 downto 0);
+           res : out  STD_LOGIC_VECTOR (15 downto 0));
+end divisor;
 
-architecture Behavioral of multiplicador is
-signal r_res : STD_LOGIC_VECTOR (37 downto 0);
-signal r_a, r_b : STD_LOGIC_VECTOR (18 downto 0);
+architecture Behavioral of divisor is
+
 begin
-	process(clk)
-	begin
-		if rising_edge(clk) then
-			r_a <= op_a;
-			r_b <= op_b;
-			res <= r_res;
-		end if;
-	end process;
-	r_res <= std_logic_vector(unsigned(r_a) * unsigned(r_b));
---	res <= std_logic_vector(unsigned(op_a)*unsigned(op_b));
+res <= op_a / op_b;
 
 end Behavioral;
 
