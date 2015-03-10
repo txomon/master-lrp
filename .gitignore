@@ -112,3 +112,4 @@ netgen/
 planAhead_run_*/
 .Xil/
 *.xdl
+pa.fromNcd.tcl
