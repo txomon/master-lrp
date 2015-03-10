@@ -107,3 +107,8 @@ SDK_Export/
 **/hdl/
 !**/pcores/**/hdl/
 
+*.debug
+netgen/
+planAhead_run_*/
+.Xil/
+*.xdl

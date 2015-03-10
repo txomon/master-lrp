@@ -32,13 +32,23 @@ use IEEE.NUMERIC_STD.ALL;
 entity multiplicador is
     Port ( op_a : in  STD_LOGIC_VECTOR (15 downto 0);
            op_b : in  STD_LOGIC_VECTOR (15 downto 0);
-           res : out  STD_LOGIC_VECTOR (31 downto 0));
+           res : out  STD_LOGIC_VECTOR (31 downto 0);
+			  clk : in  STD_LOGIC);
 end multiplicador;
 
 architecture Behavioral of multiplicador is
-
+signal r_a, r_b : STD_LOGIC_VECTOR (15 downto 0);
+signal r_res : STD_LOGIC_VECTOR (31 downto 0);
 begin
-res <= std_logic_vector(unsigned(op_a) * unsigned(op_b));
+	process(clk)
+	begin
+		if rising_edge(clk) then
+			r_a <= op_a;
+			r_b <= op_b;
+			res <= r_res;
+		end if;
+	end process;
+	r_res <= std_logic_vector(unsigned(r_a) * unsigned(r_b));
 
 end Behavioral;
 
