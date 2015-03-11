@@ -32,13 +32,32 @@ use IEEE.NUMERIC_STD.ALL;
 entity divisor is
     Port ( op_a : in  STD_LOGIC_VECTOR (6 downto 0);
            op_b : in  STD_LOGIC_VECTOR (6 downto 0);
-           res : out  STD_LOGIC_VECTOR (15 downto 0));
+           res : out  STD_LOGIC_VECTOR (15 downto 0);
+			  clk : in  STD_LOGIC);
 end divisor;
 
 architecture Behavioral of divisor is
+component divisor_impl
+	port (
+	clk: in std_logic;
+	rfd: out std_logic;
+	dividend: in std_logic_vector(6 downto 0);
+	divisor: in std_logic_vector(6 downto 0);
+	quotient: out std_logic_vector(6 downto 0);
+	fractional: out std_logic_vector(7 downto 0));
+end component;
 
+	signal quotient : std_logic_vector(6 downto 0);
+	signal fractional : std_logic_vector(7 downto 0);
 begin
-res <= op_a / op_b;
-
+divisor_implementation: divisor_impl
+		port map (
+			clk => clk,
+			rfd => open,
+			dividend => op_a,
+			divisor => op_b,
+			quotient => quotient,
+			fractional => fractional);
+		res <= '0' & quotient & fractional;
 end Behavioral;
 
