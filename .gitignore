@@ -106,7 +106,6 @@ SDK_Export/
 **/*_bsp_*/*/
 **/hdl/
 !**/pcores/**/hdl/
-
 *.debug
 netgen/
 planAhead_run_*/

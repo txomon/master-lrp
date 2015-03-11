@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Wed Mar 11 14:06:38 2015
+# Date: Wed Mar 11 15:46:06 2015
 #
 ##############################################################
 #
@@ -12,7 +12,7 @@
 #
 ##############################################################
 #
-#  Generated from component: xilinx.com:ip:div_gen:3.0
+#  Generated from component: xilinx.com:ip:floating_point:5.0
 #
 ##############################################################
 #
@@ -36,26 +36,37 @@ SET verilogsim = false
 SET vhdlsim = true
 # END Project Options
 # BEGIN Select
-SELECT Divider_Generator family Xilinx,_Inc. 3.0
+SELECT Floating-point xilinx.com:ip:floating_point:5.0
 # END Select
 # BEGIN Parameters
-CSET algorithm_type=Radix2
-CSET ce=false
-CSET clocks_per_division=8
-CSET component_name=divisor_impl
-CSET divide_by_zero_detect=false
-CSET dividend_and_quotient_width=7
-CSET divisor_width=7
-CSET fractional_width=8
-CSET latency=18
-CSET latency_configuration=Automatic
-CSET operand_sign=Unsigned
-CSET remainder_type=Fractional
-CSET sclr=false
-CSET sclr_ce_priority=SCLR_overrides_CE
+CSET a_precision_type=Single
+CSET add_sub_value=Both
+CSET c_a_exponent_width=8
+CSET c_a_fraction_width=24
+CSET c_compare_operation=Programmable
+CSET c_has_ce=false
+CSET c_has_divide_by_zero=false
+CSET c_has_invalid_op=false
+CSET c_has_operation_nd=false
+CSET c_has_operation_rfd=false
+CSET c_has_overflow=false
+CSET c_has_rdy=false
+CSET c_has_sclr=false
+CSET c_has_underflow=false
+CSET c_latency=6
+CSET c_mult_usage=Full_Usage
+CSET c_optimization=Speed_Optimized
+CSET c_rate=1
+CSET c_result_exponent_width=8
+CSET c_result_fraction_width=24
+CSET c_speed=Maximum_speed
+CSET component_name=float_multiplier_impl
+CSET maximum_latency=true
+CSET operation_type=Multiply
+CSET result_precision_type=Single
 # END Parameters
 # BEGIN Extra information
-MISC pkg_timestamp=2013-10-13T18:46:09Z
+MISC pkg_timestamp=2012-07-02T11:22:24Z
 # END Extra information
 GENERATE
-# CRC: c83cbf4b
+# CRC: 69e7e655
