@@ -11,8 +11,8 @@
 --  synthesis tools.  Please note the "%%%" comments.  These are where we
 --  diverge from the VHDL-200X LRM.
 -- --------------------------------------------------------------------
--- Version    : $Revision: 2.0 $
--- Date       : $Date: 2011/01/26 15:55:27 $
+-- Version    : $Revision: 1.21 $
+-- Date       : $Date: 2007/09/26 18:08:53 $
 -- --------------------------------------------------------------------
 
 use STD.TEXTIO.all;
@@ -86,28 +86,28 @@ package fixed_pkg is
 
   -- Division
   -- ufixed(a downto b) / ufixed(c downto d) = ufixed(a-d downto b-c-1)
-  function "/" (l, r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
+--  function "/" (l, r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
 
   -- sfixed(a downto b) / sfixed(c downto d) = sfixed(a-d+1 downto b-c)
-  function "/" (l, r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
+--  function "/" (l, r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
 
   -- Remainder
   -- ufixed (a downto b) rem ufixed (c downto d)
   --   = ufixed (minimum(a,c) downto minimum(b,d))
-  function "rem" (l, r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
+--  function "rem" (l, r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
 
   -- sfixed (a downto b) rem sfixed (c downto d)
   --   = sfixed (minimum(a,c) downto minimum(b,d))
-  function "rem" (l, r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
+--  function "rem" (l, r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
 
   -- Modulo
   -- ufixed (a downto b) mod ufixed (c downto d)
   --        = ufixed (minimum(a,c) downto minimum(b, d))
-  function "mod" (l, r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
+--  function "mod" (l, r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
 
   -- sfixed (a downto b) mod sfixed (c downto d)
   --        = sfixed (c downto minimum(b, d))
-  function "mod" (l, r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
+--  function "mod" (l, r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
 
   ----------------------------------------------------------------------------
   -- In these routines the "real" or "natural" (integer)
@@ -155,40 +155,40 @@ package fixed_pkg is
   function "*" (l : NATURAL; r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
 
   -- ufixed(a downto b) / ufixed(a downto b) = ufixed(a-b downto b-a-1)
-  function "/" (l : UNRESOLVED_ufixed; r : REAL) return UNRESOLVED_ufixed;
+--  function "/" (l : UNRESOLVED_ufixed; r : REAL) return UNRESOLVED_ufixed;
 
-  -- ufixed(a downto b) / ufixed(a downto b) = ufixed(a-b downto b-a-1)
-  function "/" (l : REAL; r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
+--  -- ufixed(a downto b) / ufixed(a downto b) = ufixed(a-b downto b-a-1)
+--  function "/" (l : REAL; r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
 
   -- ufixed(a downto b) / ufixed(a downto 0) = ufixed(a downto b-a-1)
-  function "/" (l : UNRESOLVED_ufixed; r : NATURAL) return UNRESOLVED_ufixed;
+--  function "/" (l : UNRESOLVED_ufixed; r : NATURAL) return UNRESOLVED_ufixed;
 
   -- ufixed(c downto 0) / ufixed(c downto d) = ufixed(c-d downto -c-1)
-  function "/" (l : NATURAL; r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
+--  function "/" (l : NATURAL; r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
 
   -- ufixed (a downto b) rem ufixed (a downto b) = ufixed (a downto b)
-  function "rem" (l : UNRESOLVED_ufixed; r : REAL) return UNRESOLVED_ufixed;
+--  function "rem" (l : UNRESOLVED_ufixed; r : REAL) return UNRESOLVED_ufixed;
 
-  -- ufixed (c downto d) rem ufixed (c downto d) = ufixed (c downto d)
-  function "rem" (l : REAL; r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
+--  -- ufixed (c downto d) rem ufixed (c downto d) = ufixed (c downto d)
+--  function "rem" (l : REAL; r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
 
-  -- ufixed (a downto b) rem ufixed (a downto 0) = ufixed (a downto minimum(b,0))
-  function "rem" (l : UNRESOLVED_ufixed; r : NATURAL) return UNRESOLVED_ufixed;
+--  -- ufixed (a downto b) rem ufixed (a downto 0) = ufixed (a downto minimum(b,0))
+--  function "rem" (l : UNRESOLVED_ufixed; r : NATURAL) return UNRESOLVED_ufixed;
 
-  -- ufixed (c downto 0) rem ufixed (c downto d) = ufixed (c downto minimum(d,0))
-  function "rem" (l : NATURAL; r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
+--  -- ufixed (c downto 0) rem ufixed (c downto d) = ufixed (c downto minimum(d,0))
+--  function "rem" (l : NATURAL; r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
 
-  -- ufixed (a downto b) mod ufixed (a downto b) = ufixed (a downto b)
-  function "mod" (l : UNRESOLVED_ufixed; r : REAL) return UNRESOLVED_ufixed;
+--  -- ufixed (a downto b) mod ufixed (a downto b) = ufixed (a downto b)
+--  function "mod" (l : UNRESOLVED_ufixed; r : REAL) return UNRESOLVED_ufixed;
 
-  -- ufixed (c downto d) mod ufixed (c downto d) = ufixed (c downto d)
-  function "mod" (l : REAL; r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
+--  -- ufixed (c downto d) mod ufixed (c downto d) = ufixed (c downto d)
+--  function "mod" (l : REAL; r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
 
-  -- ufixed (a downto b) mod ufixed (a downto 0) = ufixed (a downto minimum(b,0))
-  function "mod" (l : UNRESOLVED_ufixed; r : NATURAL) return UNRESOLVED_ufixed;
+--  -- ufixed (a downto b) mod ufixed (a downto 0) = ufixed (a downto minimum(b,0))
+--  function "mod" (l : UNRESOLVED_ufixed; r : NATURAL) return UNRESOLVED_ufixed;
 
-  -- ufixed (c downto 0) mod ufixed (c downto d) = ufixed (c downto minimum(d,0))
-  function "mod" (l : NATURAL; r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
+--  -- ufixed (c downto 0) mod ufixed (c downto d) = ufixed (c downto minimum(d,0))
+--  function "mod" (l : NATURAL; r : UNRESOLVED_ufixed) return UNRESOLVED_ufixed;
 
   -- sfixed(a downto b) + sfixed(a downto b) = sfixed(a+1 downto b)
   function "+" (l : UNRESOLVED_sfixed; r : REAL) return UNRESOLVED_sfixed;
@@ -227,106 +227,106 @@ package fixed_pkg is
   function "*" (l : INTEGER; r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
 
   -- sfixed(a downto b) / sfixed(a downto b) = sfixed(a-b+1 downto b-a)
-  function "/" (l : UNRESOLVED_sfixed; r : REAL) return UNRESOLVED_sfixed;
+--  function "/" (l : UNRESOLVED_sfixed; r : REAL) return UNRESOLVED_sfixed;
 
   -- sfixed(c downto d) / sfixed(c downto d) = sfixed(c-d+1 downto d-c)
-  function "/" (l : REAL; r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
+--  function "/" (l : REAL; r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
 
   -- sfixed(a downto b) / sfixed(a downto 0) = sfixed(a+1 downto b-a)
-  function "/" (l : UNRESOLVED_sfixed; r : INTEGER) return UNRESOLVED_sfixed;
+--  function "/" (l : UNRESOLVED_sfixed; r : INTEGER) return UNRESOLVED_sfixed;
 
   -- sfixed(c downto 0) / sfixed(c downto d) = sfixed(c-d+1 downto -c)
-  function "/" (l : INTEGER; r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
+--  function "/" (l : INTEGER; r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
 
   -- sfixed (a downto b) rem sfixed (a downto b) = sfixed (a downto b)
-  function "rem" (l : UNRESOLVED_sfixed; r : REAL) return UNRESOLVED_sfixed;
+--  function "rem" (l : UNRESOLVED_sfixed; r : REAL) return UNRESOLVED_sfixed;
 
-  -- sfixed (c downto d) rem sfixed (c downto d) = sfixed (c downto d)
-  function "rem" (l : REAL; r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
+--  -- sfixed (c downto d) rem sfixed (c downto d) = sfixed (c downto d)
+--  function "rem" (l : REAL; r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
 
-  -- sfixed (a downto b) rem sfixed (a downto 0) = sfixed (a downto minimum(b,0))
-  function "rem" (l : UNRESOLVED_sfixed; r : INTEGER) return UNRESOLVED_sfixed;
+--  -- sfixed (a downto b) rem sfixed (a downto 0) = sfixed (a downto minimum(b,0))
+--  function "rem" (l : UNRESOLVED_sfixed; r : INTEGER) return UNRESOLVED_sfixed;
 
-  -- sfixed (c downto 0) rem sfixed (c downto d) = sfixed (c downto minimum(d,0))
-  function "rem" (l : INTEGER; r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
+--  -- sfixed (c downto 0) rem sfixed (c downto d) = sfixed (c downto minimum(d,0))
+--  function "rem" (l : INTEGER; r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
 
-  -- sfixed (a downto b) mod sfixed (a downto b) = sfixed (a downto b)
-  function "mod" (l : UNRESOLVED_sfixed; r : REAL) return UNRESOLVED_sfixed;
+--  -- sfixed (a downto b) mod sfixed (a downto b) = sfixed (a downto b)
+--  function "mod" (l : UNRESOLVED_sfixed; r : REAL) return UNRESOLVED_sfixed;
 
-  -- sfixed (c downto d) mod sfixed (c downto d) = sfixed (c downto d)
-  function "mod" (l : REAL; r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
+--  -- sfixed (c downto d) mod sfixed (c downto d) = sfixed (c downto d)
+--  function "mod" (l : REAL; r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
 
-  -- sfixed (a downto b) mod sfixed (a downto 0) = sfixed (a downto minimum(b,0))
-  function "mod" (l : UNRESOLVED_sfixed; r : INTEGER) return UNRESOLVED_sfixed;
+--  -- sfixed (a downto b) mod sfixed (a downto 0) = sfixed (a downto minimum(b,0))
+--  function "mod" (l : UNRESOLVED_sfixed; r : INTEGER) return UNRESOLVED_sfixed;
 
-  -- sfixed (c downto 0) mod sfixed (c downto d) = sfixed (c downto minimum(d,0))
-  function "mod" (l : INTEGER; r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
+--  -- sfixed (c downto 0) mod sfixed (c downto d) = sfixed (c downto minimum(d,0))
+--  function "mod" (l : INTEGER; r : UNRESOLVED_sfixed) return UNRESOLVED_sfixed;
 
   -- This version of divide gives the user more control
   -- ufixed(a downto b) / ufixed(c downto d) = ufixed(a-d downto b-c-1)
-  function divide (
-    l, r                 : UNRESOLVED_ufixed;
-    constant round_style : fixed_round_style_type := fixed_round_style;
-    constant guard_bits  : NATURAL                := fixed_guard_bits)
-    return UNRESOLVED_ufixed;
+--  function divide (
+--    l, r                 : UNRESOLVED_ufixed;
+--    constant round_style : fixed_round_style_type := fixed_round_style;
+--    constant guard_bits  : NATURAL                := fixed_guard_bits)
+--    return UNRESOLVED_ufixed;
 
   -- This version of divide gives the user more control
   -- sfixed(a downto b) / sfixed(c downto d) = sfixed(a-d+1 downto b-c)
-  function divide (
-    l, r                 : UNRESOLVED_sfixed;
-    constant round_style : fixed_round_style_type := fixed_round_style;
-    constant guard_bits  : NATURAL                := fixed_guard_bits)
-    return UNRESOLVED_sfixed;
+--  function divide (
+--    l, r                 : UNRESOLVED_sfixed;
+--    constant round_style : fixed_round_style_type := fixed_round_style;
+--    constant guard_bits  : NATURAL                := fixed_guard_bits)
+--    return UNRESOLVED_sfixed;
 
   -- These functions return 1/X
   -- 1 / ufixed(a downto b) = ufixed(-b downto -a-1)
-  function reciprocal (
-    arg                  : UNRESOLVED_ufixed;  -- fixed point input
-    constant round_style : fixed_round_style_type := fixed_round_style;
-    constant guard_bits  : NATURAL                := fixed_guard_bits)
-    return UNRESOLVED_ufixed;
+--  function reciprocal (
+--    arg                  : UNRESOLVED_ufixed;  -- fixed point input
+--    constant round_style : fixed_round_style_type := fixed_round_style;
+--    constant guard_bits  : NATURAL                := fixed_guard_bits)
+--    return UNRESOLVED_ufixed;
 
   -- 1 / sfixed(a downto b) = sfixed(-b+1 downto -a)
-  function reciprocal (
-    arg                  : UNRESOLVED_sfixed;  -- fixed point input
-    constant round_style : fixed_round_style_type := fixed_round_style;
-    constant guard_bits  : NATURAL                := fixed_guard_bits)
-    return UNRESOLVED_sfixed;
+--  function reciprocal (
+--    arg                  : UNRESOLVED_sfixed;  -- fixed point input
+--    constant round_style : fixed_round_style_type := fixed_round_style;
+--    constant guard_bits  : NATURAL                := fixed_guard_bits)
+--    return UNRESOLVED_sfixed;
 
   -- REM function
   -- ufixed (a downto b) rem ufixed (c downto d)
   --   = ufixed (minimum(a,c) downto minimum(b,d))
-  function remainder (
-    l, r                 : UNRESOLVED_ufixed;
-    constant round_style : fixed_round_style_type := fixed_round_style;
-    constant guard_bits  : NATURAL                := fixed_guard_bits)
-    return UNRESOLVED_ufixed;
+--  function remainder (
+--    l, r                 : UNRESOLVED_ufixed;
+--    constant round_style : fixed_round_style_type := fixed_round_style;
+--    constant guard_bits  : NATURAL                := fixed_guard_bits)
+--    return UNRESOLVED_ufixed;
 
   -- sfixed (a downto b) rem sfixed (c downto d)
   --   = sfixed (minimum(a,c) downto minimum(b,d))
-  function remainder (
-    l, r                 : UNRESOLVED_sfixed;
-    constant round_style : fixed_round_style_type := fixed_round_style;
-    constant guard_bits  : NATURAL                := fixed_guard_bits)
-    return UNRESOLVED_sfixed;
+--  function remainder (
+--    l, r                 : UNRESOLVED_sfixed;
+--    constant round_style : fixed_round_style_type := fixed_round_style;
+--    constant guard_bits  : NATURAL                := fixed_guard_bits)
+--    return UNRESOLVED_sfixed;
 
   -- mod function
   -- ufixed (a downto b) mod ufixed (c downto d)
   --        = ufixed (minimum(a,c) downto minimum(b, d))
-  function modulo (
-    l, r                 : UNRESOLVED_ufixed;
-    constant round_style : fixed_round_style_type := fixed_round_style;
-    constant guard_bits  : NATURAL                := fixed_guard_bits)
-    return UNRESOLVED_ufixed;
+--  function modulo (
+--    l, r                 : UNRESOLVED_ufixed;
+--    constant round_style : fixed_round_style_type := fixed_round_style;
+--    constant guard_bits  : NATURAL                := fixed_guard_bits)
+--    return UNRESOLVED_ufixed;
 
   -- sfixed (a downto b) mod sfixed (c downto d)
   --        = sfixed (c downto minimum(b, d))
-  function modulo (
-    l, r                    : UNRESOLVED_sfixed;
-    constant overflow_style : fixed_overflow_style_type := fixed_overflow_style;
-    constant round_style    : fixed_round_style_type    := fixed_round_style;
-    constant guard_bits     : NATURAL                   := fixed_guard_bits)
-    return UNRESOLVED_sfixed;
+--  function modulo (
+--    l, r                    : UNRESOLVED_sfixed;
+--    constant overflow_style : fixed_overflow_style_type := fixed_overflow_style;
+--    constant round_style    : fixed_round_style_type    := fixed_round_style;
+--    constant guard_bits     : NATURAL                   := fixed_guard_bits)
+--    return UNRESOLVED_sfixed;
 
   -- Procedure for those who need an "accumulator" function.
   -- add_carry (ufixed(a downto b), ufixed (c downto d))
@@ -1016,34 +1016,34 @@ package fixed_pkg is
   function to_slv (
     arg : UNRESOLVED_ufixed)            -- fixed point vector
     return STD_LOGIC_VECTOR;
-  alias to_StdLogicVector is to_slv [UNRESOLVED_ufixed
-                                     return STD_LOGIC_VECTOR];
-  alias to_Std_Logic_Vector is to_slv [UNRESOLVED_ufixed
-                                       return STD_LOGIC_VECTOR];
+--  alias to_StdLogicVector is to_slv [UNRESOLVED_ufixed
+--                                     return STD_LOGIC_VECTOR];
+--  alias to_Std_Logic_Vector is to_slv [UNRESOLVED_ufixed
+--                                       return STD_LOGIC_VECTOR];
 
   function to_slv (
     arg : UNRESOLVED_sfixed)            -- fixed point vector
     return STD_LOGIC_VECTOR;
-  alias to_StdLogicVector is to_slv [UNRESOLVED_sfixed
-                                     return STD_LOGIC_VECTOR];
-  alias to_Std_Logic_Vector is to_slv [UNRESOLVED_sfixed
-                                       return STD_LOGIC_VECTOR];
+--  alias to_StdLogicVector is to_slv [UNRESOLVED_sfixed
+--                                     return STD_LOGIC_VECTOR];
+--  alias to_Std_Logic_Vector is to_slv [UNRESOLVED_sfixed
+--                                       return STD_LOGIC_VECTOR];
 
   function to_sulv (
     arg : UNRESOLVED_ufixed)            -- fixed point vector
     return STD_ULOGIC_VECTOR;
-  alias to_StdULogicVector is to_sulv [UNRESOLVED_ufixed
-                                      return STD_ULOGIC_VECTOR];
-  alias to_Std_ULogic_Vector is to_sulv [UNRESOLVED_ufixed
-                                        return STD_ULOGIC_VECTOR];
+--  alias to_StdULogicVector is to_sulv [UNRESOLVED_ufixed
+--                                      return STD_ULOGIC_VECTOR];
+--  alias to_Std_ULogic_Vector is to_sulv [UNRESOLVED_ufixed
+--                                        return STD_ULOGIC_VECTOR];
 
   function to_sulv (
     arg : UNRESOLVED_sfixed)            -- fixed point vector
     return STD_ULOGIC_VECTOR;
-  alias to_StdULogicVector is to_sulv [UNRESOLVED_sfixed
-                                      return STD_ULOGIC_VECTOR];
-  alias to_Std_ULogic_Vector is to_sulv [UNRESOLVED_sfixed
-                                        return STD_ULOGIC_VECTOR];
+--  alias to_StdULogicVector is to_sulv [UNRESOLVED_sfixed
+--                                      return STD_ULOGIC_VECTOR];
+--  alias to_Std_ULogic_Vector is to_sulv [UNRESOLVED_sfixed
+--                                        return STD_ULOGIC_VECTOR];
 
   function to_ufixed (
     arg                  : STD_ULOGIC_VECTOR;  -- shifted vector
@@ -1455,8 +1455,8 @@ end package fixed_pkg;
 -- Proposed package body for the VHDL-200x-FT fixed_pkg package
 -- (Fixed point math package)
 -- This package body supplies a recommended implementation of these functions
--- Version    : $Revision: 2.0 $
--- Date       : $Date: 2011/01/26 15:55:27 $
+-- Version    : $Revision: 1.21 $
+-- Date       : $Date: 2007/09/26 18:08:53 $
 --
 --  Created for VHDL-200X-ft, David Bishop (dbishop@vhdl.org)
 -------------------------------------------------------------------------------
@@ -1591,47 +1591,58 @@ package body fixed_pkg is
     return not xor_reduce (arg);
   end function xnor_reduce;
   -- Match table, copied form new std_logic_1164
-  type stdlogic_table is array(STD_ULOGIC, STD_ULOGIC) of STD_ULOGIC;
-  constant match_logic_table : stdlogic_table := (
-    -----------------------------------------------------
-    -- U    X    0    1    Z    W    L    H    -         |   |  
-    -----------------------------------------------------
-    ('U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', '1'),  -- | U |
-    ('U', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '1'),  -- | X |
-    ('U', 'X', '1', '0', 'X', 'X', '1', '0', '1'),  -- | 0 |
-    ('U', 'X', '0', '1', 'X', 'X', '0', '1', '1'),  -- | 1 |
-    ('U', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '1'),  -- | Z |
-    ('U', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '1'),  -- | W |
-    ('U', 'X', '1', '0', 'X', 'X', '1', '0', '1'),  -- | L |
-    ('U', 'X', '0', '1', 'X', 'X', '0', '1', '1'),  -- | H |
-    ('1', '1', '1', '1', '1', '1', '1', '1', '1')   -- | - |
-    );
-
-  constant no_match_logic_table : stdlogic_table := (
-    -----------------------------------------------------
-    -- U    X    0    1    Z    W    L    H    -         |   |  
-    -----------------------------------------------------
-    ('U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', '0'),  -- | U |
-    ('U', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '0'),  -- | X |
-    ('U', 'X', '0', '1', 'X', 'X', '0', '1', '0'),  -- | 0 |
-    ('U', 'X', '1', '0', 'X', 'X', '1', '0', '0'),  -- | 1 |
-    ('U', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '0'),  -- | Z |
-    ('U', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '0'),  -- | W |
-    ('U', 'X', '0', '1', 'X', 'X', '0', '1', '0'),  -- | L |
-    ('U', 'X', '1', '0', 'X', 'X', '1', '0', '0'),  -- | H |
-    ('0', '0', '0', '0', '0', '0', '0', '0', '0')   -- | - |
-    );
+--  type stdlogic_table is array(STD_ULOGIC, STD_ULOGIC) of STD_ULOGIC;
+--  constant match_logic_table : stdlogic_table := (
+--    -----------------------------------------------------
+--    -- U    X    0    1    Z    W    L    H    -         |   |  
+--    -----------------------------------------------------
+--    ('U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', '1'),  -- | U |
+--    ('U', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '1'),  -- | X |
+--    ('U', 'X', '1', '0', 'X', 'X', '1', '0', '1'),  -- | 0 |
+--    ('U', 'X', '0', '1', 'X', 'X', '0', '1', '1'),  -- | 1 |
+--    ('U', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '1'),  -- | Z |
+--    ('U', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '1'),  -- | W |
+--    ('U', 'X', '1', '0', 'X', 'X', '1', '0', '1'),  -- | L |
+--    ('U', 'X', '0', '1', 'X', 'X', '0', '1', '1'),  -- | H |
+--    ('1', '1', '1', '1', '1', '1', '1', '1', '1')   -- | - |
+--    );
+  
+--  constant no_match_logic_table : stdlogic_table := (
+--    -----------------------------------------------------
+--    -- U    X    0    1    Z    W    L    H    -         |   |  
+--    -----------------------------------------------------
+--    ('U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', '0'),  -- | U |
+--    ('U', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '0'),  -- | X |
+--    ('U', 'X', '0', '1', 'X', 'X', '0', '1', '0'),  -- | 0 |
+--    ('U', 'X', '1', '0', 'X', 'X', '1', '0', '0'),  -- | 1 |
+--    ('U', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '0'),  -- | Z |
+--    ('U', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '0'),  -- | W |
+--    ('U', 'X', '0', '1', 'X', 'X', '0', '1', '0'),  -- | L |
+--    ('U', 'X', '1', '0', 'X', 'X', '1', '0', '0'),  -- | H |
+--    ('0', '0', '0', '0', '0', '0', '0', '0', '0')   -- | - |
+--    );
 
   -------------------------------------------------------------------
   -- ?= functions, Similar to "std_match", but returns "std_ulogic".
   -------------------------------------------------------------------
   function \?=\ (l, r : STD_ULOGIC) return STD_ULOGIC is
+    variable lx, rx : STD_ULOGIC;
   begin
-    return match_logic_table (l, r);
+--    return match_logic_table (l, r);
+    lx := to_x01(l);
+    rx := to_x01(r);
+    if lx = 'X' or rx = 'X' then
+      return 'X';
+    elsif lx = rx then
+      return '1';
+    else
+      return '0';
+    end if;
   end function \?=\;
   function \?/=\ (l, r : STD_ULOGIC) return STD_ULOGIC is
   begin
-    return no_match_logic_table (l, r);
+--    return no_match_logic_table (l, r);
+    return not \?=\ (l, r);
   end function \?/=\;
   -- "?=" operator is similar to "std_match", but returns a std_ulogic..
   -- Id: M.2B
@@ -1725,7 +1736,7 @@ package body fixed_pkg is
       for i in LX'low to LX'high loop
         result1 := \?/=\ (LX(i), RX(i));
         if result1 = 'U' then
-          result := 'U';
+          return 'U';
         elsif result1 = 'X' or result = 'X' then
           result := 'X';
         else
@@ -1768,6 +1779,7 @@ package body fixed_pkg is
       return result;
     end if;
   end function \?/=\;
+
   function Is_X ( s : UNSIGNED ) return BOOLEAN is
   begin
     return Is_X (STD_LOGIC_VECTOR (s));
@@ -2050,7 +2062,7 @@ package body fixed_pkg is
     return INTEGER is
   begin  -- function mine
     if (L = INTEGER'low or R = INTEGER'low) then
-      report fixed_pkg'instance_name
+      report "fixed_pkg:"
         & " Unbounded number passed, was a literal used?"
         severity error;
       return 0;
@@ -2069,7 +2081,7 @@ package body fixed_pkg is
     variable result      : UNRESOLVED_sfixed (arg'range);
   begin  -- function cleanvec
     assert not (arg'ascending and (arg'low /= INTEGER'low))
-      report fixed_pkg'instance_name
+      report "fixed_pkg:"
       & " Vector passed using a ""to"" range, expected is ""downto"""
       severity error;
     return arg;
@@ -2084,7 +2096,7 @@ package body fixed_pkg is
     variable result      : UNRESOLVED_ufixed (arg'range);
   begin  -- function cleanvec
     assert not (arg'ascending and (arg'low /= INTEGER'low))
-      report fixed_pkg'instance_name
+      report "fixed_pkg:"
       & " Vector passed using a ""to"" range, expected is ""downto"""
       severity error;
     return arg;
@@ -2291,14 +2303,14 @@ package body fixed_pkg is
     arg : UNRESOLVED_ufixed)            -- fixed point vector
     return STD_LOGIC_VECTOR is
   begin
-    return to_stdlogicvector(to_sulv(arg));
+    return std_logic_vector(to_sulv(arg));
   end function to_slv;
 
   function to_slv (
     arg : UNRESOLVED_sfixed)            -- fixed point vector
     return STD_LOGIC_VECTOR is
   begin
-    return to_stdlogicvector(to_sulv(arg));
+    return std_logic_vector(to_sulv(arg));
   end function to_slv;
 
   function to_ufixed (
@@ -2312,7 +2324,7 @@ package body fixed_pkg is
       return NAUF;
     end if;
     if (arg'length /= result'length) then
-      report fixed_pkg'instance_name & "TO_UFIXED(SLV) "
+      report "fixed_pkg:" & "TO_UFIXED(SLV) "
         & "Vector lengths do not match.  Input length is "
         & INTEGER'image(arg'length) & " and output will be "
         & INTEGER'image(result'length) & " wide."
@@ -2337,7 +2349,7 @@ package body fixed_pkg is
       return NASF;
     end if;
     if (arg'length /= result'length) then
-      report fixed_pkg'instance_name & "TO_SFIXED(SLV) "
+      report "fixed_pkg:" & "TO_SFIXED(SLV) "
         & "Vector lengths do not match.  Input length is "
         & INTEGER'image(arg'length) & " and output will be "
         & INTEGER'image(result'length) & " wide."
@@ -2522,336 +2534,336 @@ package body fixed_pkg is
     return result;
   end function "*";
 
-  function "/" (
-    l, r : UNRESOLVED_ufixed)    -- ufixed(a downto b) / ufixed(c downto d) = 
-    return UNRESOLVED_ufixed is         --  ufixed(a-d downto b-c-1)
-  begin
-    return divide (l, r);
-  end function "/";
+--  function "/" (
+--    l, r : UNRESOLVED_ufixed)    -- ufixed(a downto b) / ufixed(c downto d) = 
+--    return UNRESOLVED_ufixed is         --  ufixed(a-d downto b-c-1)
+--  begin
+--    return divide (l, r);
+--  end function "/";
 
-  function "/" (
-    l, r : UNRESOLVED_sfixed)    -- sfixed(a downto b) / sfixed(c downto d) = 
-    return UNRESOLVED_sfixed is         -- sfixed(a-d+1 downto b-c)
-  begin
-    return divide (l, r);
-  end function "/";
+--  function "/" (
+--    l, r : UNRESOLVED_sfixed)    -- sfixed(a downto b) / sfixed(c downto d) = 
+--    return UNRESOLVED_sfixed is         -- sfixed(a-d+1 downto b-c)
+--  begin
+--    return divide (l, r);
+--  end function "/";
 
   -- This version of divide gives the user more control
   -- ufixed(a downto b) / ufixed(c downto d) = ufixed(a-d downto b-c-1)
-  function divide (
-    l, r                 : UNRESOLVED_ufixed;
-    constant round_style : fixed_round_style_type := fixed_round_style;
-    constant guard_bits  : NATURAL                := fixed_guard_bits)
-    return UNRESOLVED_ufixed is
-    variable result : UNRESOLVED_ufixed (l'high - mine(r'low, r'low) downto
-                                         mine (l'low, l'low) - r'high -1);
-    variable dresult    : UNRESOLVED_ufixed (result'high downto result'low -guard_bits);
-    variable lresize    : UNRESOLVED_ufixed (l'high downto l'high - dresult'length+1);
-    variable lslv       : UNSIGNED (lresize'length-1 downto 0);
-    variable rslv       : UNSIGNED (r'length-1 downto 0);
-    variable result_slv : UNSIGNED (lresize'length-1 downto 0);
-  begin
-    if (l'length < 1 or r'length < 1 or
-        mins(r'low, r'low) /= r'low or mins(l'low, l'low) /= l'low) then
-      return NAUF;
-    end if;
-    lresize := resize (arg            => l,
-                       left_index     => lresize'high,
-                       right_index    => lresize'low,
-                       overflow_style => fixed_wrap,   -- vector only grows
-                       round_style    => fixed_truncate);
-    lslv := to_uns (cleanvec (lresize));
-    rslv := to_uns (cleanvec (r));
-    if (rslv = 0) then
-      report fixed_pkg'instance_name
-        & "DIVIDE(ufixed) Division by zero" severity error;
-      result := saturate (result'high, result'low);    -- saturate
-    else
-      result_slv := lslv / rslv;
-      dresult    := to_fixed (result_slv, dresult'high, dresult'low);
-      result := resize (arg            => dresult,
-                        left_index     => result'high,
-                        right_index    => result'low,
-                        overflow_style => fixed_wrap,  -- overflow impossible
-                        round_style    => round_style);
-    end if;
-    return result;
-  end function divide;
+--  function divide (
+--    l, r                 : UNRESOLVED_ufixed;
+--    constant round_style : fixed_round_style_type := fixed_round_style;
+--    constant guard_bits  : NATURAL                := fixed_guard_bits)
+--    return UNRESOLVED_ufixed is
+--    variable result : UNRESOLVED_ufixed (l'high - mine(r'low, r'low) downto
+--                                         mine (l'low, l'low) - r'high -1);
+--    variable dresult    : UNRESOLVED_ufixed (result'high downto result'low -guard_bits);
+--    variable lresize    : UNRESOLVED_ufixed (l'high downto l'high - dresult'length+1);
+--    variable lslv       : UNSIGNED (lresize'length-1 downto 0);
+--    variable rslv       : UNSIGNED (r'length-1 downto 0);
+--    variable result_slv : UNSIGNED (lresize'length-1 downto 0);
+--  begin
+--    if (l'length < 1 or r'length < 1 or
+--        mins(r'low, r'low) /= r'low or mins(l'low, l'low) /= l'low) then
+--      return NAUF;
+--    end if;
+--    lresize := resize (arg            => l,
+--                       left_index     => lresize'high,
+--                       right_index    => lresize'low,
+--                       overflow_style => fixed_wrap,   -- vector only grows
+--                       round_style    => fixed_truncate);
+--    lslv := to_uns (cleanvec (lresize));
+--    rslv := to_uns (cleanvec (r));
+--    if (rslv = 0) then
+--      report "fixed_pkg:"
+--        & "DIVIDE(ufixed) Division by zero" severity error;
+--      result := saturate (result'high, result'low);    -- saturate
+--    else
+--      result_slv := lslv / rslv;
+--      dresult    := to_fixed (result_slv, dresult'high, dresult'low);
+--      result := resize (arg            => dresult,
+--                        left_index     => result'high,
+--                        right_index    => result'low,
+--                        overflow_style => fixed_wrap,  -- overflow impossible
+--                        round_style    => round_style);
+--    end if;
+--    return result;
+--  end function divide;
 
   -- sfixed(a downto b) / sfixed(c downto d) = sfixed(a-d+1 downto b-c)
-  function divide (
-    l, r                 : UNRESOLVED_sfixed;
-    constant round_style : fixed_round_style_type := fixed_round_style;
-    constant guard_bits  : NATURAL                := fixed_guard_bits)
-    return UNRESOLVED_sfixed is
-    variable result     : UNRESOLVED_sfixed (l'high - mine(r'low, r'low) + 1 downto 
-                                             mine (l'low, l'low) - r'high);
-    variable dresult    : UNRESOLVED_sfixed (result'high downto result'low-guard_bits);
-    variable lresize    : UNRESOLVED_sfixed (l'high+1 downto l'high+1 -dresult'length+1);
-    variable lslv       : SIGNED (lresize'length-1 downto 0);
-    variable rslv       : SIGNED (r'length-1 downto 0);
-    variable result_slv : SIGNED (lresize'length-1 downto 0);
-  begin
-    if (l'length < 1 or r'length < 1 or
-        mins(r'low, r'low) /= r'low or mins(l'low, l'low) /= l'low) then
-      return NASF;
-    end if;
-    lresize := resize (arg            => l,
-                       left_index     => lresize'high,
-                       right_index    => lresize'low,
-                       overflow_style => fixed_wrap,   -- vector only grows
-                       round_style    => fixed_truncate);
-    lslv := to_s (cleanvec (lresize));
-    rslv := to_s (cleanvec (r));
-    if (rslv = 0) then
-      report fixed_pkg'instance_name
-        & "DIVIDE(sfixed) Division by zero" severity error;
-      result := saturate (result'high, result'low);
-    else
-      result_slv := lslv / rslv;
-      dresult    := to_fixed (result_slv, dresult'high, dresult'low);
-      result := resize (arg            => dresult,
-                        left_index     => result'high,
-                        right_index    => result'low,
-                        overflow_style => fixed_wrap,  -- overflow impossible
-                        round_style    => round_style);
-    end if;
-    return result;
-  end function divide;
+--  function divide (
+--    l, r                 : UNRESOLVED_sfixed;
+--    constant round_style : fixed_round_style_type := fixed_round_style;
+--    constant guard_bits  : NATURAL                := fixed_guard_bits)
+--    return UNRESOLVED_sfixed is
+--    variable result     : UNRESOLVED_sfixed (l'high - mine(r'low, r'low) + 1 downto 
+--                                             mine (l'low, l'low) - r'high);
+--    variable dresult    : UNRESOLVED_sfixed (result'high downto result'low-guard_bits);
+--    variable lresize    : UNRESOLVED_sfixed (l'high+1 downto l'high+1 -dresult'length+1);
+--    variable lslv       : SIGNED (lresize'length-1 downto 0);
+--    variable rslv       : SIGNED (r'length-1 downto 0);
+--    variable result_slv : SIGNED (lresize'length-1 downto 0);
+--  begin
+--    if (l'length < 1 or r'length < 1 or
+--        mins(r'low, r'low) /= r'low or mins(l'low, l'low) /= l'low) then
+--      return NASF;
+--    end if;
+--    lresize := resize (arg            => l,
+--                       left_index     => lresize'high,
+--                       right_index    => lresize'low,
+--                       overflow_style => fixed_wrap,   -- vector only grows
+--                       round_style    => fixed_truncate);
+--    lslv := to_s (cleanvec (lresize));
+--    rslv := to_s (cleanvec (r));
+--    if (rslv = 0) then
+--      report "fixed_pkg:"
+--        & "DIVIDE(sfixed) Division by zero" severity error;
+--      result := saturate (result'high, result'low);
+--    else
+--      result_slv := lslv / rslv;
+--      dresult    := to_fixed (result_slv, dresult'high, dresult'low);
+--      result := resize (arg            => dresult,
+--                        left_index     => result'high,
+--                        right_index    => result'low,
+--                        overflow_style => fixed_wrap,  -- overflow impossible
+--                        round_style    => round_style);
+--    end if;
+--    return result;
+--  end function divide;
 
   -- 1 / ufixed(a downto b) = ufixed(-b downto -a-1)
-  function reciprocal (
-    arg                  : UNRESOLVED_ufixed;  -- fixed point input
-    constant round_style : fixed_round_style_type := fixed_round_style;
-    constant guard_bits  : NATURAL                := fixed_guard_bits)
-    return UNRESOLVED_ufixed is
-    constant one : UNRESOLVED_ufixed (0 downto 0) := "1";
-  begin
-    return divide (l           => one,
-                   r           => arg,
-                   round_style => round_style,
-                   guard_bits  => guard_bits);
-  end function reciprocal;
+--  function reciprocal (
+--    arg                  : UNRESOLVED_ufixed;  -- fixed point input
+--    constant round_style : fixed_round_style_type := fixed_round_style;
+--    constant guard_bits  : NATURAL                := fixed_guard_bits)
+--    return UNRESOLVED_ufixed is
+--    constant one : UNRESOLVED_ufixed (0 downto 0) := "1";
+--  begin
+--    return divide (l           => one,
+--                   r           => arg,
+--                   round_style => round_style,
+--                   guard_bits  => guard_bits);
+--  end function reciprocal;
 
   -- 1 / sfixed(a downto b) = sfixed(-b+1 downto -a)
-  function reciprocal (
-    arg                  : UNRESOLVED_sfixed;              -- fixed point input
-    constant round_style : fixed_round_style_type := fixed_round_style;
-    constant guard_bits  : NATURAL                := fixed_guard_bits)
-    return UNRESOLVED_sfixed is
-    constant one     : UNRESOLVED_sfixed (1 downto 0) := "01";  -- extra bit.
-    variable resultx : UNRESOLVED_sfixed (-mine(arg'low, arg'low)+2 downto -arg'high);
-  begin
-    if (arg'length < 1 or resultx'length < 1) then
-      return NASF;
-    else
-      resultx := divide (l           => one,
-                         r           => arg,
-                         round_style => round_style,
-                         guard_bits  => guard_bits);
-      return resultx (resultx'high-1 downto resultx'low);  -- remove extra bit
-    end if;
-  end function reciprocal;
+--  function reciprocal (
+--    arg                  : UNRESOLVED_sfixed;              -- fixed point input
+--    constant round_style : fixed_round_style_type := fixed_round_style;
+--    constant guard_bits  : NATURAL                := fixed_guard_bits)
+--    return UNRESOLVED_sfixed is
+--    constant one     : UNRESOLVED_sfixed (1 downto 0) := "01";  -- extra bit.
+--    variable resultx : UNRESOLVED_sfixed (-mine(arg'low, arg'low)+2 downto -arg'high);
+--  begin
+--    if (arg'length < 1 or resultx'length < 1) then
+--      return NASF;
+--    else
+--      resultx := divide (l           => one,
+--                         r           => arg,
+--                         round_style => round_style,
+--                         guard_bits  => guard_bits);
+--      return resultx (resultx'high-1 downto resultx'low);  -- remove extra bit
+--    end if;
+--  end function reciprocal;
 
   -- ufixed (a downto b) rem ufixed (c downto d)
   --        = ufixed (min(a,c) downto min(b,d))
-  function "rem" (
-    l, r : UNRESOLVED_ufixed)           -- fixed point input
-    return UNRESOLVED_ufixed is
-  begin
-    return remainder (l, r);
-  end function "rem";
+--  function "rem" (
+--    l, r : UNRESOLVED_ufixed)           -- fixed point input
+--    return UNRESOLVED_ufixed is
+--  begin
+--    return remainder (l, r);
+--  end function "rem";
 
-  -- remainder
-  -- sfixed (a downto b) rem sfixed (c downto d)
-  --        = sfixed (min(a,c) downto min(b,d))
-  function "rem" (
-    l, r : UNRESOLVED_sfixed)           -- fixed point input
-    return UNRESOLVED_sfixed is
-  begin
-    return remainder (l, r);
-  end function "rem";
+--  -- remainder
+--  -- sfixed (a downto b) rem sfixed (c downto d)
+--  --        = sfixed (min(a,c) downto min(b,d))
+--  function "rem" (
+--    l, r : UNRESOLVED_sfixed)           -- fixed point input
+--    return UNRESOLVED_sfixed is
+--  begin
+--    return remainder (l, r);
+--  end function "rem";
 
   -- ufixed (a downto b) rem ufixed (c downto d)
   --        = ufixed (min(a,c) downto min(b,d))
-  function remainder (
-    l, r                 : UNRESOLVED_ufixed;            -- fixed point input
-    constant round_style : fixed_round_style_type := fixed_round_style;
-    constant guard_bits  : NATURAL                := fixed_guard_bits)
-    return UNRESOLVED_ufixed is
-    variable result     : UNRESOLVED_ufixed (minimum(l'high, r'high) downto
-                                             mine(l'low, r'low));
-    variable lresize    : UNRESOLVED_ufixed (maximum(l'high, r'low) downto
-                                             mins(r'low, r'low)-guard_bits);
-    variable rresize    : UNRESOLVED_ufixed (r'high downto r'low-guard_bits);
-    variable dresult    : UNRESOLVED_ufixed (rresize'range);
-    variable lslv       : UNSIGNED (lresize'length-1 downto 0);
-    variable rslv       : UNSIGNED (rresize'length-1 downto 0);
-    variable result_slv : UNSIGNED (rslv'range);
-  begin
-    if (l'length < 1 or r'length < 1 or
-        mins(r'low, r'low) /= r'low or mins(l'low, l'low) /= l'low) then
-      return NAUF;
-    end if;
-    lresize := resize (arg            => l,
-                       left_index     => lresize'high,
-                       right_index    => lresize'low,
-                       overflow_style => fixed_wrap,     -- vector only grows
-                       round_style    => fixed_truncate);
-    lslv := to_uns (lresize);
-    rresize := resize (arg            => r,
-                       left_index     => rresize'high,
-                       right_index    => rresize'low,
-                       overflow_style => fixed_wrap,     -- vector only grows
-                       round_style    => fixed_truncate);
-    rslv := to_uns (rresize);
-    if (rslv = 0) then
-      report fixed_pkg'instance_name
-        & "remainder(ufixed) Division by zero" severity error;
-      result := saturate (result'high, result'low);      -- saturate
-    else
-      if (r'low <= l'high) then
-        result_slv := lslv rem rslv;
-        dresult    := to_fixed (result_slv, dresult'high, dresult'low);
-        result := resize (arg            => dresult,
-                          left_index     => result'high,
-                          right_index    => result'low,
-                          overflow_style => fixed_wrap,  -- can't overflow
-                          round_style    => round_style);
-      end if;
-      if l'low < r'low then
-        result(mins(r'low-1, l'high) downto l'low) :=
-          cleanvec(l(mins(r'low-1, l'high) downto l'low));
-      end if;
-    end if;
-    return result;
-  end function remainder;
+--  function remainder (
+--    l, r                 : UNRESOLVED_ufixed;            -- fixed point input
+--    constant round_style : fixed_round_style_type := fixed_round_style;
+--    constant guard_bits  : NATURAL                := fixed_guard_bits)
+--    return UNRESOLVED_ufixed is
+--    variable result     : UNRESOLVED_ufixed (minimum(l'high, r'high) downto
+--                                             mine(l'low, r'low));
+--    variable lresize    : UNRESOLVED_ufixed (maximum(l'high, r'low) downto
+--                                             mins(r'low, r'low)-guard_bits);
+--    variable rresize    : UNRESOLVED_ufixed (r'high downto r'low-guard_bits);
+--    variable dresult    : UNRESOLVED_ufixed (rresize'range);
+--    variable lslv       : UNSIGNED (lresize'length-1 downto 0);
+--    variable rslv       : UNSIGNED (rresize'length-1 downto 0);
+--    variable result_slv : UNSIGNED (rslv'range);
+--  begin
+--    if (l'length < 1 or r'length < 1 or
+--        mins(r'low, r'low) /= r'low or mins(l'low, l'low) /= l'low) then
+--      return NAUF;
+--    end if;
+--    lresize := resize (arg            => l,
+--                       left_index     => lresize'high,
+--                       right_index    => lresize'low,
+--                       overflow_style => fixed_wrap,     -- vector only grows
+--                       round_style    => fixed_truncate);
+--    lslv := to_uns (lresize);
+--    rresize := resize (arg            => r,
+--                       left_index     => rresize'high,
+--                       right_index    => rresize'low,
+--                       overflow_style => fixed_wrap,     -- vector only grows
+--                       round_style    => fixed_truncate);
+--    rslv := to_uns (rresize);
+--    if (rslv = 0) then
+--      report "fixed_pkg:"
+--        & "remainder(ufixed) Division by zero" severity error;
+--      result := saturate (result'high, result'low);      -- saturate
+--    else
+--      if (r'low <= l'high) then
+--        result_slv := lslv rem rslv;
+--        dresult    := to_fixed (result_slv, dresult'high, dresult'low);
+--        result := resize (arg            => dresult,
+--                          left_index     => result'high,
+--                          right_index    => result'low,
+--                          overflow_style => fixed_wrap,  -- can't overflow
+--                          round_style    => round_style);
+--      end if;
+--      if l'low < r'low then
+--        result(mins(r'low-1, l'high) downto l'low) :=
+--          cleanvec(l(mins(r'low-1, l'high) downto l'low));
+--      end if;
+--    end if;
+--    return result;
+--  end function remainder;
 
-  -- remainder
-  -- sfixed (a downto b) rem sfixed (c downto d)
-  --        = sfixed (min(a,c) downto min(b,d))
-  function remainder (
-    l, r                 : UNRESOLVED_sfixed;  -- fixed point input
-    constant round_style : fixed_round_style_type := fixed_round_style;
-    constant guard_bits  : NATURAL                := fixed_guard_bits)
-    return UNRESOLVED_sfixed is
-    variable l_abs      : UNRESOLVED_ufixed (l'range);
-    variable r_abs      : UNRESOLVED_ufixed (r'range);
-    variable result     : UNRESOLVED_sfixed (minimum(r'high, l'high) downto
-                                             mine(r'low, l'low));
-    variable neg_result : UNRESOLVED_sfixed (minimum(r'high, l'high)+1 downto
-                                             mins(r'low, l'low));
-  begin
-    if (l'length < 1 or r'length < 1 or
-        mins(r'low, r'low) /= r'low or mins(l'low, l'low) /= l'low) then
-      return NASF;
-    end if;
-    l_abs := to_ufixed (l);
-    r_abs := to_ufixed (r);
-    result := UNRESOLVED_sfixed (remainder (
-      l           => l_abs,
-      r           => r_abs,
-      round_style => round_style));
-    neg_result := -result;
-    if l(l'high) = '1' then
-      result := neg_result(result'range);
-    end if;
-    return result;
-  end function remainder;
+--  -- remainder
+--  -- sfixed (a downto b) rem sfixed (c downto d)
+--  --        = sfixed (min(a,c) downto min(b,d))
+--  function remainder (
+--    l, r                 : UNRESOLVED_sfixed;  -- fixed point input
+--    constant round_style : fixed_round_style_type := fixed_round_style;
+--    constant guard_bits  : NATURAL                := fixed_guard_bits)
+--    return UNRESOLVED_sfixed is
+--    variable l_abs      : UNRESOLVED_ufixed (l'range);
+--    variable r_abs      : UNRESOLVED_ufixed (r'range);
+--    variable result     : UNRESOLVED_sfixed (minimum(r'high, l'high) downto
+--                                             mine(r'low, l'low));
+--    variable neg_result : UNRESOLVED_sfixed (minimum(r'high, l'high)+1 downto
+--                                             mins(r'low, l'low));
+--  begin
+--    if (l'length < 1 or r'length < 1 or
+--        mins(r'low, r'low) /= r'low or mins(l'low, l'low) /= l'low) then
+--      return NASF;
+--    end if;
+--    l_abs := to_ufixed (l);
+--    r_abs := to_ufixed (r);
+--    result := UNRESOLVED_sfixed (remainder (
+--      l           => l_abs,
+--      r           => r_abs,
+--      round_style => round_style));
+--    neg_result := -result;
+--    if l(l'high) = '1' then
+--      result := neg_result(result'range);
+--    end if;
+--    return result;
+--  end function remainder;
 
-  -- modulo
-  -- ufixed (a downto b) mod ufixed (c downto d)
-  --        = ufixed (min(a,c) downto min(b, d))
-  function "mod" (
-    l, r : UNRESOLVED_ufixed)           -- fixed point input
-    return UNRESOLVED_ufixed is
-  begin
-    return modulo (l, r);
-  end function "mod";
+--  -- modulo
+--  -- ufixed (a downto b) mod ufixed (c downto d)
+--  --        = ufixed (min(a,c) downto min(b, d))
+--  function "mod" (
+--    l, r : UNRESOLVED_ufixed)           -- fixed point input
+--    return UNRESOLVED_ufixed is
+--  begin
+--    return modulo (l, r);
+--  end function "mod";
 
-  -- sfixed (a downto b) mod sfixed (c downto d)
-  --        = sfixed (c downto min(b, d))
-  function "mod" (
-    l, r : UNRESOLVED_sfixed)           -- fixed point input
-    return UNRESOLVED_sfixed is
-  begin
-    return modulo(l, r);
-  end function "mod";
+--  -- sfixed (a downto b) mod sfixed (c downto d)
+--  --        = sfixed (c downto min(b, d))
+--  function "mod" (
+--    l, r : UNRESOLVED_sfixed)           -- fixed point input
+--    return UNRESOLVED_sfixed is
+--  begin
+--    return modulo(l, r);
+--  end function "mod";
 
-  -- modulo
-  -- ufixed (a downto b) mod ufixed (c downto d)
-  --        = ufixed (min(a,c) downto min(b, d))
-  function modulo (
-    l, r                 : UNRESOLVED_ufixed;  -- fixed point input
-    constant round_style : fixed_round_style_type := fixed_round_style;
-    constant guard_bits  : NATURAL                := fixed_guard_bits)
-    return UNRESOLVED_ufixed is
-  begin
-    return remainder(l           => l,
-                     r           => r,
-                     round_style => round_style,
-                     guard_bits  => guard_bits);
-  end function modulo;
+--  -- modulo
+--  -- ufixed (a downto b) mod ufixed (c downto d)
+--  --        = ufixed (min(a,c) downto min(b, d))
+--  function modulo (
+--    l, r                 : UNRESOLVED_ufixed;  -- fixed point input
+--    constant round_style : fixed_round_style_type := fixed_round_style;
+--    constant guard_bits  : NATURAL                := fixed_guard_bits)
+--    return UNRESOLVED_ufixed is
+--  begin
+--    return remainder(l           => l,
+--                     r           => r,
+--                     round_style => round_style,
+--                     guard_bits  => guard_bits);
+--  end function modulo;
 
-  -- sfixed (a downto b) mod sfixed (c downto d)
-  --        = sfixed (c downto min(b, d))
-  function modulo (
-    l, r                    : UNRESOLVED_sfixed;  -- fixed point input
-    constant overflow_style : fixed_overflow_style_type := fixed_overflow_style;
-    constant round_style    : fixed_round_style_type    := fixed_round_style;
-    constant guard_bits     : NATURAL                   := fixed_guard_bits)
-    return UNRESOLVED_sfixed is
-    variable l_abs : UNRESOLVED_ufixed (l'range);
-    variable r_abs : UNRESOLVED_ufixed (r'range);
-    variable result : UNRESOLVED_sfixed (r'high downto
-                                         mine(r'low, l'low));
-    variable dresult : UNRESOLVED_sfixed (minimum(r'high, l'high)+1 downto
-                                          mins(r'low, l'low));
-    variable dresult_not_zero : BOOLEAN;
-  begin
-    if (l'length < 1 or r'length < 1 or
-        mins(r'low, r'low) /= r'low or mins(l'low, l'low) /= l'low) then
-      return NASF;
-    end if;
-    l_abs := to_ufixed (l);
-    r_abs := to_ufixed (r);
-    dresult := "0" & UNRESOLVED_sfixed(remainder (l           => l_abs,
-                                                  r           => r_abs,
-                                                  round_style => round_style));
-    if (to_s(dresult) = 0) then
-      dresult_not_zero := false;
-    else
-      dresult_not_zero := true;
-    end if;
-    if to_x01(l(l'high)) = '1' and to_x01(r(r'high)) = '0'
-      and dresult_not_zero then
-      result := resize (arg            => r - dresult,
-                        left_index     => result'high,
-                        right_index    => result'low,
-                        overflow_style => overflow_style,
-                        round_style    => round_style);
-    elsif to_x01(l(l'high)) = '1' and to_x01(r(r'high)) = '1' then
-      result := resize (arg            => -dresult,
-                        left_index     => result'high,
-                        right_index    => result'low,
-                        overflow_style => overflow_style,
-                        round_style    => round_style);
-    elsif to_x01(l(l'high)) = '0' and to_x01(r(r'high)) = '1'
-      and dresult_not_zero then
-      result := resize (arg            => dresult + r,
-                        left_index     => result'high,
-                        right_index    => result'low,
-                        overflow_style => overflow_style,
-                        round_style    => round_style);
-    else
-      result := resize (arg            => dresult,
-                        left_index     => result'high,
-                        right_index    => result'low,
-                        overflow_style => overflow_style,
-                        round_style    => round_style);
-    end if;
-    return result;
-  end function modulo;
+--  -- sfixed (a downto b) mod sfixed (c downto d)
+--  --        = sfixed (c downto min(b, d))
+--  function modulo (
+--    l, r                    : UNRESOLVED_sfixed;  -- fixed point input
+--    constant overflow_style : fixed_overflow_style_type := fixed_overflow_style;
+--    constant round_style    : fixed_round_style_type    := fixed_round_style;
+--    constant guard_bits     : NATURAL                   := fixed_guard_bits)
+--    return UNRESOLVED_sfixed is
+--    variable l_abs : UNRESOLVED_ufixed (l'range);
+--    variable r_abs : UNRESOLVED_ufixed (r'range);
+--    variable result : UNRESOLVED_sfixed (r'high downto
+--                                         mine(r'low, l'low));
+--    variable dresult : UNRESOLVED_sfixed (minimum(r'high, l'high)+1 downto
+--                                          mins(r'low, l'low));
+--    variable dresult_not_zero : BOOLEAN;
+--  begin
+--    if (l'length < 1 or r'length < 1 or
+--        mins(r'low, r'low) /= r'low or mins(l'low, l'low) /= l'low) then
+--      return NASF;
+--    end if;
+--    l_abs := to_ufixed (l);
+--    r_abs := to_ufixed (r);
+--    dresult := "0" & UNRESOLVED_sfixed(remainder (l           => l_abs,
+--                                                  r           => r_abs,
+--                                                  round_style => round_style));
+--    if (to_s(dresult) = 0) then
+--      dresult_not_zero := false;
+--    else
+--      dresult_not_zero := true;
+--    end if;
+--    if to_x01(l(l'high)) = '1' and to_x01(r(r'high)) = '0'
+--      and dresult_not_zero then
+--      result := resize (arg            => r - dresult,
+--                        left_index     => result'high,
+--                        right_index    => result'low,
+--                        overflow_style => overflow_style,
+--                        round_style    => round_style);
+--    elsif to_x01(l(l'high)) = '1' and to_x01(r(r'high)) = '1' then
+--      result := resize (arg            => -dresult,
+--                        left_index     => result'high,
+--                        right_index    => result'low,
+--                        overflow_style => overflow_style,
+--                        round_style    => round_style);
+--    elsif to_x01(l(l'high)) = '0' and to_x01(r(r'high)) = '1'
+--      and dresult_not_zero then
+--      result := resize (arg            => dresult + r,
+--                        left_index     => result'high,
+--                        right_index    => result'low,
+--                        overflow_style => overflow_style,
+--                        round_style    => round_style);
+--    else
+--      result := resize (arg            => dresult,
+--                        left_index     => result'high,
+--                        right_index    => result'low,
+--                        overflow_style => overflow_style,
+--                        round_style    => round_style);
+--    end if;
+--    return result;
+--  end function modulo;
 
   -- Procedure for those who need an "accumulator" function
   procedure add_carry (
@@ -2878,7 +2890,7 @@ package body fixed_pkg is
       lslv       := to_uns (lresize);
       rslv       := to_uns (rresize);
       result_slv := lslv + rslv + cx;
-      c_out      := result_slv(left_index-right_index);
+      c_out      := result_slv(left_index);
       result := to_fixed(result_slv (left_index-right_index-1 downto 0),
                          left_index-1, right_index);
     end if;
@@ -2909,7 +2921,7 @@ package body fixed_pkg is
       lslv       := to_s (lresize);
       rslv       := to_s (rresize);
       result_slv := lslv + rslv + cx;
-      c_out      := result_slv(left_index-right_index);
+      c_out      := result_slv(left_index);
       result := to_fixed(result_slv (left_index-right_index-1 downto 0),
                          left_index-1, right_index);
     end if;
@@ -3206,7 +3218,7 @@ package body fixed_pkg is
       RESULT := to_sulv(L) and to_sulv(R);
     else
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """and"": Range error L'RANGE /= R'RANGE"
         severity warning;
       RESULT := (others => 'X');
@@ -3221,7 +3233,7 @@ package body fixed_pkg is
       RESULT := to_sulv(L) or to_sulv(R);
     else
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """or"": Range error L'RANGE /= R'RANGE"
         severity warning;
       RESULT := (others => 'X');
@@ -3236,7 +3248,7 @@ package body fixed_pkg is
       RESULT := to_sulv(L) nand to_sulv(R);
     else
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """nand"": Range error L'RANGE /= R'RANGE"
         severity warning;
       RESULT := (others => 'X');
@@ -3251,7 +3263,7 @@ package body fixed_pkg is
       RESULT := to_sulv(L) nor to_sulv(R);
     else
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """nor"": Range error L'RANGE /= R'RANGE"
         severity warning;
       RESULT := (others => 'X');
@@ -3266,7 +3278,7 @@ package body fixed_pkg is
       RESULT := to_sulv(L) xor to_sulv(R);
     else
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """xor"": Range error L'RANGE /= R'RANGE"
         severity warning;
       RESULT := (others => 'X');
@@ -3281,7 +3293,7 @@ package body fixed_pkg is
       RESULT := to_sulv(L) xnor to_sulv(R);
     else
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """xnor"": Range error L'RANGE /= R'RANGE"
         severity warning;
       RESULT := (others => 'X');
@@ -3303,7 +3315,7 @@ package body fixed_pkg is
       RESULT := to_sulv(L) and to_sulv(R);
     else
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """and"": Range error L'RANGE /= R'RANGE"
         severity warning;
       RESULT := (others => 'X');
@@ -3318,7 +3330,7 @@ package body fixed_pkg is
       RESULT := to_sulv(L) or to_sulv(R);
     else
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """or"": Range error L'RANGE /= R'RANGE"
         severity warning;
       RESULT := (others => 'X');
@@ -3333,7 +3345,7 @@ package body fixed_pkg is
       RESULT := to_sulv(L) nand to_sulv(R);
     else
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """nand"": Range error L'RANGE /= R'RANGE"
         severity warning;
       RESULT := (others => 'X');
@@ -3348,7 +3360,7 @@ package body fixed_pkg is
       RESULT := to_sulv(L) nor to_sulv(R);
     else
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """nor"": Range error L'RANGE /= R'RANGE"
         severity warning;
       RESULT := (others => 'X');
@@ -3363,7 +3375,7 @@ package body fixed_pkg is
       RESULT := to_sulv(L) xor to_sulv(R);
     else
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """xor"": Range error L'RANGE /= R'RANGE"
         severity warning;
       RESULT := (others => 'X');
@@ -3378,7 +3390,7 @@ package body fixed_pkg is
       RESULT := to_sulv(L) xnor to_sulv(R);
     else
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """xnor"": Range error L'RANGE /= R'RANGE"
         severity warning;
       RESULT := (others => 'X');
@@ -3697,7 +3709,7 @@ package body fixed_pkg is
   begin  -- ?=
     if ((L'length < 1) or (R'length < 1)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """?="": null detected, returning X"
         severity warning;
       return 'X';
@@ -3718,7 +3730,7 @@ package body fixed_pkg is
   begin  -- ?/=
     if ((L'length < 1) or (R'length < 1)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """?/="": null detected, returning X"
         severity warning;
       return 'X';
@@ -3739,7 +3751,7 @@ package body fixed_pkg is
   begin  -- ?>
     if ((l'length < 1) or (r'length < 1)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """?>"": null detected, returning X"
         severity warning;
       return 'X';
@@ -3760,7 +3772,7 @@ package body fixed_pkg is
   begin  -- ?>=
     if ((l'length < 1) or (r'length < 1)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """?>="": null detected, returning X"
         severity warning;
       return 'X';
@@ -3781,7 +3793,7 @@ package body fixed_pkg is
   begin  -- ?<
     if ((l'length < 1) or (r'length < 1)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """?<"": null detected, returning X"
         severity warning;
       return 'X';
@@ -3802,7 +3814,7 @@ package body fixed_pkg is
   begin  -- ?<=
     if ((l'length < 1) or (r'length < 1)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """?<="": null detected, returning X"
         severity warning;
       return 'X';
@@ -3823,7 +3835,7 @@ package body fixed_pkg is
   begin  -- ?=
     if ((L'length < 1) or (R'length < 1)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """?="": null detected, returning X"
         severity warning;
       return 'X';
@@ -3844,7 +3856,7 @@ package body fixed_pkg is
   begin  -- ?/=
     if ((L'length < 1) or (R'length < 1)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """?/="": null detected, returning X"
         severity warning;
       return 'X';
@@ -3865,7 +3877,7 @@ package body fixed_pkg is
   begin  -- ?>
     if ((l'length < 1) or (r'length < 1)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """?>"": null detected, returning X"
         severity warning;
       return 'X';
@@ -3886,7 +3898,7 @@ package body fixed_pkg is
   begin  -- ?>=
     if ((l'length < 1) or (r'length < 1)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """?>="": null detected, returning X"
         severity warning;
       return 'X';
@@ -3907,7 +3919,7 @@ package body fixed_pkg is
   begin  -- ?<
     if ((l'length < 1) or (r'length < 1)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """?<"": null detected, returning X"
         severity warning;
       return 'X';
@@ -3928,7 +3940,7 @@ package body fixed_pkg is
   begin  -- ?<=
     if ((l'length < 1) or (r'length < 1)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """?<="": null detected, returning X"
         severity warning;
       return 'X';
@@ -3948,7 +3960,7 @@ package body fixed_pkg is
       return std_match(to_sulv(L), to_sulv(R));
     else
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & "STD_MATCH: L'RANGE /= R'RANGE, returning FALSE"
         severity warning;
       return false;
@@ -3961,7 +3973,7 @@ package body fixed_pkg is
       return std_match(to_sulv(L), to_sulv(R));
     else
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & "STD_MATCH: L'RANGE /= R'RANGE, returning FALSE"
         severity warning;
       return false;
@@ -3979,13 +3991,13 @@ package body fixed_pkg is
   begin
     if (l'length < 1 or r'length < 1) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """="": null argument detected, returning FALSE"
         severity warning;
       return false;
     elsif (Is_X(l) or Is_X(r)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """="": metavalue detected, returning FALSE"
         severity warning;
       return false;
@@ -4007,13 +4019,13 @@ package body fixed_pkg is
   begin
     if (l'length < 1 or r'length < 1) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """="": null argument detected, returning FALSE"
         severity warning;
       return false;
     elsif (Is_X(l) or Is_X(r)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """="": metavalue detected, returning FALSE"
         severity warning;
       return false;
@@ -4035,13 +4047,13 @@ package body fixed_pkg is
   begin
     if (l'length < 1 or r'length < 1) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """/="": null argument detected, returning TRUE"
         severity warning;
       return true;
     elsif (Is_X(l) or Is_X(r)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """/="": metavalue detected, returning TRUE"
         severity warning;
       return true;
@@ -4063,13 +4075,13 @@ package body fixed_pkg is
   begin
     if (l'length < 1 or r'length < 1) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """/="": null argument detected, returning TRUE"
         severity warning;
       return true;
     elsif (Is_X(l) or Is_X(r)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """/="": metavalue detected, returning TRUE"
         severity warning;
       return true;
@@ -4091,13 +4103,13 @@ package body fixed_pkg is
   begin
     if (l'length < 1 or r'length < 1) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """>"": null argument detected, returning FALSE"
         severity warning;
       return false;
     elsif (Is_X(l) or Is_X(r)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """>"": metavalue detected, returning FALSE"
         severity warning;
       return false;
@@ -4119,13 +4131,13 @@ package body fixed_pkg is
   begin
     if (l'length < 1 or r'length < 1) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """>"": null argument detected, returning FALSE"
         severity warning;
       return false;
     elsif (Is_X(l) or Is_X(r)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """>"": metavalue detected, returning FALSE"
         severity warning;
       return false;
@@ -4147,13 +4159,13 @@ package body fixed_pkg is
   begin
     if (l'length < 1 or r'length < 1) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """<"": null argument detected, returning FALSE"
         severity warning;
       return false;
     elsif (Is_X(l) or Is_X(r)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """<"": metavalue detected, returning FALSE"
         severity warning;
       return false;
@@ -4175,13 +4187,13 @@ package body fixed_pkg is
   begin
     if (l'length < 1 or r'length < 1) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """<"": null argument detected, returning FALSE"
         severity warning;
       return false;
     elsif (Is_X(l) or Is_X(r)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """<"": metavalue detected, returning FALSE"
         severity warning;
       return false;
@@ -4203,13 +4215,13 @@ package body fixed_pkg is
   begin
     if (l'length < 1 or r'length < 1) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """>="": null argument detected, returning FALSE"
         severity warning;
       return false;
     elsif (Is_X(l) or Is_X(r)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """>="": metavalue detected, returning FALSE"
         severity warning;
       return false;
@@ -4231,13 +4243,13 @@ package body fixed_pkg is
   begin
     if (l'length < 1 or r'length < 1) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """>="": null argument detected, returning FALSE"
         severity warning;
       return false;
     elsif (Is_X(l) or Is_X(r)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """>="": metavalue detected, returning FALSE"
         severity warning;
       return false;
@@ -4259,13 +4271,13 @@ package body fixed_pkg is
   begin
     if (l'length < 1 or r'length < 1) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """<="": null argument detected, returning FALSE"
         severity warning;
       return false;
     elsif (Is_X(l) or Is_X(r)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """<="": metavalue detected, returning FALSE"
         severity warning;
       return false;
@@ -4287,13 +4299,13 @@ package body fixed_pkg is
   begin
     if (l'length < 1 or r'length < 1) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """<="": null argument detected, returning FALSE"
         severity warning;
       return false;
     elsif (Is_X(l) or Is_X(r)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & """<="": metavalue detected, returning FALSE"
         severity warning;
       return false;
@@ -4394,7 +4406,7 @@ package body fixed_pkg is
       end loop;
       if argx /= 0 then
         assert NO_WARNING
-          report fixed_pkg'instance_name
+          report "fixed_pkg:"
           & "TO_UFIXED(NATURAL): vector truncated"
           severity warning;
         if overflow_style = fixed_saturate then
@@ -4447,7 +4459,7 @@ package body fixed_pkg is
       end loop;
       if argx /= 0 or left_index < 0 or sign /= sresult(sresult'left) then
         assert NO_WARNING
-          report fixed_pkg'instance_name
+          report "fixed_pkg:"
           & "TO_SFIXED(INTEGER): vector truncated"
           severity warning;
         if overflow_style = fixed_saturate then                -- saturate
@@ -4492,14 +4504,14 @@ package body fixed_pkg is
       return NAUF;
     end if;
     if (arg < 0.0) then
-      report fixed_pkg'instance_name
+      report "fixed_pkg:"
         & "TO_UFIXED: Negative argument passed "
         & REAL'image(arg) severity error;
       return result;
     end if;
     presult := arg;
     if presult >= (2.0**(left_index+1)) then
-      assert NO_WARNING report fixed_pkg'instance_name
+      assert NO_WARNING report "fixed_pkg:"
         & "TO_UFIXED(REAL): vector truncated"
         severity warning;
       if overflow_style = fixed_wrap then
@@ -4547,7 +4559,7 @@ package body fixed_pkg is
       return NASF;
     end if;
     if (arg >= (2.0**left_index) or arg < -(2.0**left_index)) then
-      assert NO_WARNING report fixed_pkg'instance_name
+      assert NO_WARNING report "fixed_pkg:"
         & "TO_SFIXED(REAL): vector truncated"
         severity warning;
       if overflow_style = fixed_saturate then
@@ -4848,7 +4860,7 @@ package body fixed_pkg is
     variable result : UNRESOLVED_ufixed (width-fraction-1 downto -fraction);
   begin
     if (arg'length /= result'length) then
-      report fixed_pkg'instance_name
+      report "fixed_pkg:"
         & "TO_UFIX (STD_ULOGIC_VECTOR) "
         & "Vector lengths do not match.  Input length is "
         & INTEGER'image(arg'length) & " and output will be "
@@ -4870,7 +4882,7 @@ package body fixed_pkg is
     variable result : UNRESOLVED_sfixed (width-fraction-1 downto -fraction);
   begin
     if (arg'length /= result'length) then
-      report fixed_pkg'instance_name
+      report "fixed_pkg:"
         & "TO_SFIX (STD_ULOGIC_VECTOR) "
         & "Vector lengths do not match.  Input length is "
         & INTEGER'image(arg'length) & " and output will be "
@@ -5011,7 +5023,7 @@ package body fixed_pkg is
     arg_int := to_x01(cleanvec(arg));
     if (Is_X(arg_int)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & "TO_REAL (ufixed): metavalue detected, returning 0.0"
         severity warning;
       return 0.0;
@@ -5042,7 +5054,7 @@ package body fixed_pkg is
     arg_int := to_x01(cleanvec(arg));
     if (Is_X(arg_int)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & "TO_REAL (sfixed): metavalue detected, returning 0.0"
         severity warning;
       return 0.0;
@@ -5069,7 +5081,7 @@ package body fixed_pkg is
     end if;
     if (Is_X (arg)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & "TO_INTEGER (ufixed): metavalue detected, returning 0"
         severity warning;
       return 0;
@@ -5099,7 +5111,7 @@ package body fixed_pkg is
     end if;
     if (Is_X (arg)) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & "TO_INTEGER (sfixed): metavalue detected, returning 0"
         severity warning;
       return 0;
@@ -5123,7 +5135,7 @@ package body fixed_pkg is
   begin
     if (s'length < 1) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & "TO_01(ufixed): null detected, returning NULL"
         severity warning;
       return NAUF;
@@ -5139,7 +5151,7 @@ package body fixed_pkg is
   begin
     if (s'length < 1) then
       assert NO_WARNING
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
         & "TO_01(sfixed): null detected, returning NULL"
         severity warning;
       return NASF;
@@ -5674,101 +5686,101 @@ package body fixed_pkg is
     return (to_sfixed (l, r'high, r'low) * r);
   end function "*";
 
-  function "/" (
-    l : UNRESOLVED_ufixed;              -- fixed point input
-    r : REAL)
-    return UNRESOLVED_ufixed is
-  begin
-    return (l / to_ufixed (r, l'high, l'low));
-  end function "/";
+--  function "/" (
+--    l : UNRESOLVED_ufixed;              -- fixed point input
+--    r : REAL)
+--    return UNRESOLVED_ufixed is
+--  begin
+--    return (l / to_ufixed (r, l'high, l'low));
+--  end function "/";
 
-  function "/" (
-    l : REAL;
-    r : UNRESOLVED_ufixed)              -- fixed point input
-    return UNRESOLVED_ufixed is
-  begin
-    return (to_ufixed (l, r'high, r'low) / r);
-  end function "/";
+--  function "/" (
+--    l : REAL;
+--    r : UNRESOLVED_ufixed)              -- fixed point input
+--    return UNRESOLVED_ufixed is
+--  begin
+--    return (to_ufixed (l, r'high, r'low) / r);
+--  end function "/";
 
-  function "/" (
-    l : UNRESOLVED_sfixed;              -- fixed point input
-    r : REAL)
-    return UNRESOLVED_sfixed is
-  begin
-    return (l / to_sfixed (r, l'high, l'low));
-  end function "/";
+--  function "/" (
+--    l : UNRESOLVED_sfixed;              -- fixed point input
+--    r : REAL)
+--    return UNRESOLVED_sfixed is
+--  begin
+--    return (l / to_sfixed (r, l'high, l'low));
+--  end function "/";
 
-  function "/" (
-    l : REAL;
-    r : UNRESOLVED_sfixed)              -- fixed point input
-    return UNRESOLVED_sfixed is
-  begin
-    return (to_sfixed (l, r'high, r'low) / r);
-  end function "/";
+--  function "/" (
+--    l : REAL;
+--    r : UNRESOLVED_sfixed)              -- fixed point input
+--    return UNRESOLVED_sfixed is
+--  begin
+--    return (to_sfixed (l, r'high, r'low) / r);
+--  end function "/";
 
-  function "rem" (
-    l : UNRESOLVED_ufixed;              -- fixed point input
-    r : REAL)
-    return UNRESOLVED_ufixed is
-  begin
-    return (l rem to_ufixed (r, l'high, l'low));
-  end function "rem";
+--  function "rem" (
+--    l : UNRESOLVED_ufixed;              -- fixed point input
+--    r : REAL)
+--    return UNRESOLVED_ufixed is
+--  begin
+--    return (l rem to_ufixed (r, l'high, l'low));
+--  end function "rem";
 
-  function "rem" (
-    l : REAL;
-    r : UNRESOLVED_ufixed)              -- fixed point input
-    return UNRESOLVED_ufixed is
-  begin
-    return (to_ufixed (l, r'high, r'low) rem r);
-  end function "rem";
+--  function "rem" (
+--    l : REAL;
+--    r : UNRESOLVED_ufixed)              -- fixed point input
+--    return UNRESOLVED_ufixed is
+--  begin
+--    return (to_ufixed (l, r'high, r'low) rem r);
+--  end function "rem";
 
-  function "rem" (
-    l : UNRESOLVED_sfixed;              -- fixed point input
-    r : REAL)
-    return UNRESOLVED_sfixed is
-  begin
-    return (l rem to_sfixed (r, l'high, l'low));
-  end function "rem";
+--  function "rem" (
+--    l : UNRESOLVED_sfixed;              -- fixed point input
+--    r : REAL)
+--    return UNRESOLVED_sfixed is
+--  begin
+--    return (l rem to_sfixed (r, l'high, l'low));
+--  end function "rem";
 
-  function "rem" (
-    l : REAL;
-    r : UNRESOLVED_sfixed)              -- fixed point input
-    return UNRESOLVED_sfixed is
-  begin
-    return (to_sfixed (l, r'high, r'low) rem r);
-  end function "rem";
+--  function "rem" (
+--    l : REAL;
+--    r : UNRESOLVED_sfixed)              -- fixed point input
+--    return UNRESOLVED_sfixed is
+--  begin
+--    return (to_sfixed (l, r'high, r'low) rem r);
+--  end function "rem";
 
-  function "mod" (
-    l : UNRESOLVED_ufixed;              -- fixed point input
-    r : REAL)
-    return UNRESOLVED_ufixed is
-  begin
-    return (l mod to_ufixed (r, l'high, l'low));
-  end function "mod";
+--  function "mod" (
+--    l : UNRESOLVED_ufixed;              -- fixed point input
+--    r : REAL)
+--    return UNRESOLVED_ufixed is
+--  begin
+--    return (l mod to_ufixed (r, l'high, l'low));
+--  end function "mod";
 
-  function "mod" (
-    l : REAL;
-    r : UNRESOLVED_ufixed)              -- fixed point input
-    return UNRESOLVED_ufixed is
-  begin
-    return (to_ufixed (l, r'high, r'low) mod r);
-  end function "mod";
+--  function "mod" (
+--    l : REAL;
+--    r : UNRESOLVED_ufixed)              -- fixed point input
+--    return UNRESOLVED_ufixed is
+--  begin
+--    return (to_ufixed (l, r'high, r'low) mod r);
+--  end function "mod";
 
-  function "mod" (
-    l : UNRESOLVED_sfixed;              -- fixed point input
-    r : REAL)
-    return UNRESOLVED_sfixed is
-  begin
-    return (l mod to_sfixed (r, l'high, l'low));
-  end function "mod";
+--  function "mod" (
+--    l : UNRESOLVED_sfixed;              -- fixed point input
+--    r : REAL)
+--    return UNRESOLVED_sfixed is
+--  begin
+--    return (l mod to_sfixed (r, l'high, l'low));
+--  end function "mod";
 
-  function "mod" (
-    l : REAL;
-    r : UNRESOLVED_sfixed)              -- fixed point input
-    return UNRESOLVED_sfixed is
-  begin
-    return (to_sfixed (l, r'high, r'low) mod r);
-  end function "mod";
+--  function "mod" (
+--    l : REAL;
+--    r : UNRESOLVED_sfixed)              -- fixed point input
+--    return UNRESOLVED_sfixed is
+--  begin
+--    return (to_sfixed (l, r'high, r'low) mod r);
+--  end function "mod";
 
   -- Overloaded math functions for integers
   function "+" (
@@ -5870,101 +5882,101 @@ package body fixed_pkg is
   end function "*";
 
   -- Overloaded functions
-  function "/" (
-    l : UNRESOLVED_ufixed;              -- fixed point input
-    r : NATURAL)
-    return UNRESOLVED_ufixed is
-  begin
-    return (l / to_ufixed (r, l'high, 0));
-  end function "/";
+--  function "/" (
+--    l : UNRESOLVED_ufixed;              -- fixed point input
+--    r : NATURAL)
+--    return UNRESOLVED_ufixed is
+--  begin
+--    return (l / to_ufixed (r, l'high, 0));
+--  end function "/";
 
-  function "/" (
-    l : NATURAL;
-    r : UNRESOLVED_ufixed)              -- fixed point input
-    return UNRESOLVED_ufixed is
-  begin
-    return (to_ufixed (l, r'high, 0) / r);
-  end function "/";
+--  function "/" (
+--    l : NATURAL;
+--    r : UNRESOLVED_ufixed)              -- fixed point input
+--    return UNRESOLVED_ufixed is
+--  begin
+--    return (to_ufixed (l, r'high, 0) / r);
+--  end function "/";
 
-  function "/" (
-    l : UNRESOLVED_sfixed;              -- fixed point input
-    r : INTEGER)
-    return UNRESOLVED_sfixed is
-  begin
-    return (l / to_sfixed (r, l'high, 0));
-  end function "/";
+--  function "/" (
+--    l : UNRESOLVED_sfixed;              -- fixed point input
+--    r : INTEGER)
+--    return UNRESOLVED_sfixed is
+--  begin
+--    return (l / to_sfixed (r, l'high, 0));
+--  end function "/";
 
-  function "/" (
-    l : INTEGER;
-    r : UNRESOLVED_sfixed)              -- fixed point input
-    return UNRESOLVED_sfixed is
-  begin
-    return (to_sfixed (l, r'high, 0) / r);
-  end function "/";
+--  function "/" (
+--    l : INTEGER;
+--    r : UNRESOLVED_sfixed)              -- fixed point input
+--    return UNRESOLVED_sfixed is
+--  begin
+--    return (to_sfixed (l, r'high, 0) / r);
+--  end function "/";
 
-  function "rem" (
-    l : UNRESOLVED_ufixed;              -- fixed point input
-    r : NATURAL)
-    return UNRESOLVED_ufixed is
-  begin
-    return (l rem to_ufixed (r, l'high, 0));
-  end function "rem";
+--  function "rem" (
+--    l : UNRESOLVED_ufixed;              -- fixed point input
+--    r : NATURAL)
+--    return UNRESOLVED_ufixed is
+--  begin
+--    return (l rem to_ufixed (r, l'high, 0));
+--  end function "rem";
 
-  function "rem" (
-    l : NATURAL;
-    r : UNRESOLVED_ufixed)              -- fixed point input
-    return UNRESOLVED_ufixed is
-  begin
-    return (to_ufixed (l, r'high, 0) rem r);
-  end function "rem";
+--  function "rem" (
+--    l : NATURAL;
+--    r : UNRESOLVED_ufixed)              -- fixed point input
+--    return UNRESOLVED_ufixed is
+--  begin
+--    return (to_ufixed (l, r'high, 0) rem r);
+--  end function "rem";
 
-  function "rem" (
-    l : UNRESOLVED_sfixed;              -- fixed point input
-    r : INTEGER)
-    return UNRESOLVED_sfixed is
-  begin
-    return (l rem to_sfixed (r, l'high, 0));
-  end function "rem";
+--  function "rem" (
+--    l : UNRESOLVED_sfixed;              -- fixed point input
+--    r : INTEGER)
+--    return UNRESOLVED_sfixed is
+--  begin
+--    return (l rem to_sfixed (r, l'high, 0));
+--  end function "rem";
 
-  function "rem" (
-    l : INTEGER;
-    r : UNRESOLVED_sfixed)              -- fixed point input
-    return UNRESOLVED_sfixed is
-  begin
-    return (to_sfixed (l, r'high, 0) rem r);
-  end function "rem";
+--  function "rem" (
+--    l : INTEGER;
+--    r : UNRESOLVED_sfixed)              -- fixed point input
+--    return UNRESOLVED_sfixed is
+--  begin
+--    return (to_sfixed (l, r'high, 0) rem r);
+--  end function "rem";
 
-  function "mod" (
-    l : UNRESOLVED_ufixed;              -- fixed point input
-    r : NATURAL)
-    return UNRESOLVED_ufixed is
-  begin
-    return (l mod to_ufixed (r, l'high, 0));
-  end function "mod";
+--  function "mod" (
+--    l : UNRESOLVED_ufixed;              -- fixed point input
+--    r : NATURAL)
+--    return UNRESOLVED_ufixed is
+--  begin
+--    return (l mod to_ufixed (r, l'high, 0));
+--  end function "mod";
 
-  function "mod" (
-    l : NATURAL;
-    r : UNRESOLVED_ufixed)              -- fixed point input
-    return UNRESOLVED_ufixed is
-  begin
-    return (to_ufixed (l, r'high, 0) mod r);
-  end function "mod";
+--  function "mod" (
+--    l : NATURAL;
+--    r : UNRESOLVED_ufixed)              -- fixed point input
+--    return UNRESOLVED_ufixed is
+--  begin
+--    return (to_ufixed (l, r'high, 0) mod r);
+--  end function "mod";
 
-  function "mod" (
-    l : UNRESOLVED_sfixed;              -- fixed point input
-    r : INTEGER)
-    return UNRESOLVED_sfixed is
-  begin
-    return (l mod to_sfixed (r, l'high, 0));
-  end function "mod";
+--  function "mod" (
+--    l : UNRESOLVED_sfixed;              -- fixed point input
+--    r : INTEGER)
+--    return UNRESOLVED_sfixed is
+--  begin
+--    return (l mod to_sfixed (r, l'high, 0));
+--  end function "mod";
 
-  function "mod" (
-    l : INTEGER;
-    r : UNRESOLVED_sfixed)              -- fixed point input
-    return UNRESOLVED_sfixed is
-  begin
-    return (to_sfixed (l, r'high, 0) mod r);
-  end function "mod";
+--  function "mod" (
+--    l : INTEGER;
+--    r : UNRESOLVED_sfixed)              -- fixed point input
+--    return UNRESOLVED_sfixed is
+--  begin
+--    return (to_sfixed (l, r'high, 0) mod r);
+--  end function "mod";
 
   -- overloaded ufixed compare functions with integer
   function "=" (
@@ -6906,7 +6918,7 @@ package body fixed_pkg is
       when 'X' => result := "XXX"; good := true;
       when others =>
         assert not ISSUE_ERROR
-          report fixed_pkg'instance_name
+          report "fixed_pkg:"
           & "OREAD Error: Read a '" & c &
           "', expected an Octal character (0-7)."
           severity error;
@@ -6943,7 +6955,7 @@ package body fixed_pkg is
       when 'X'       => result := "XXXX"; good := true;
       when others =>
         assert not ISSUE_ERROR
-          report fixed_pkg'instance_name
+          report "fixed_pkg:"
           & "HREAD Error: Read a '" & c &
           "', expected a Hex character (0-F)."
           severity error;
@@ -7108,17 +7120,17 @@ package body fixed_pkg is
       i := value'high;
       while i >= VALUE'low loop
         if readOk = false then              -- Bail out if there was a bad read
-          report fixed_pkg'instance_name & "READ(ufixed) "
+          report "fixed_pkg:" & "READ(ufixed) "
             & "End of string encountered"
             severity error;
           return;
         elsif c = '_' then
           if i = value'high then
-            report fixed_pkg'instance_name & "READ(ufixed) "
+            report "fixed_pkg:" & "READ(ufixed) "
               & "String begins with an ""_""" severity error;
             return;
           elsif lastu then
-            report fixed_pkg'instance_name & "READ(ufixed) "
+            report "fixed_pkg:" & "READ(ufixed) "
               & "Two underscores detected in input string ""__"""
               severity error;
             return;
@@ -7127,11 +7139,11 @@ package body fixed_pkg is
           end if;
         elsif c = '.' then                -- binary point
           if founddot then
-            report fixed_pkg'instance_name & "READ(ufixed) "
+            report "fixed_pkg:" & "READ(ufixed) "
               & "Two binary points found in input string" severity error;
             return;
           elsif i /= -1 then                 -- Seperator in the wrong spot
-            report fixed_pkg'instance_name & "READ(ufixed) "
+            report "fixed_pkg:" & "READ(ufixed) "
               & "Decimal point does not match number format "
               severity error;
             return;
@@ -7139,12 +7151,12 @@ package body fixed_pkg is
           founddot := true;
           lastu := false;
         elsif c = ' ' or c = NBSP or c = HT then  -- reading done.
-          report fixed_pkg'instance_name & "READ(ufixed) "
+          report "fixed_pkg:" & "READ(ufixed) "
             & "Short read, Space encounted in input string"
             severity error;
           return;
         elsif char_to_MVL9plus(c) = error then
-          report fixed_pkg'instance_name & "READ(ufixed) "
+          report "fixed_pkg:" & "READ(ufixed) "
             & "Character '" &
             c & "' read, expected STD_ULOGIC literal."
             severity error;
@@ -7235,17 +7247,17 @@ package body fixed_pkg is
       i := value'high;
       while i >= VALUE'low loop
         if readOk = false then              -- Bail out if there was a bad read
-          report fixed_pkg'instance_name & "READ(sfixed) "
+          report "fixed_pkg:" & "READ(sfixed) "
             & "End of string encountered"
             severity error;
           return;
         elsif c = '_' then
           if i = value'high then
-            report fixed_pkg'instance_name & "READ(sfixed) "
+            report "fixed_pkg:" & "READ(sfixed) "
               & "String begins with an ""_""" severity error;
             return;
           elsif lastu then
-            report fixed_pkg'instance_name & "READ(sfixed) "
+            report "fixed_pkg:" & "READ(sfixed) "
               & "Two underscores detected in input string ""__"""
               severity error;
             return;
@@ -7254,11 +7266,11 @@ package body fixed_pkg is
           end if;
         elsif c = '.' then                -- binary point
           if founddot then
-            report fixed_pkg'instance_name & "READ(sfixed) "
+            report "fixed_pkg:" & "READ(sfixed) "
               & "Two binary points found in input string" severity error;
             return;
           elsif i /= -1 then                 -- Seperator in the wrong spot
-            report fixed_pkg'instance_name & "READ(sfixed) "
+            report "fixed_pkg:" & "READ(sfixed) "
               & "Decimal point does not match number format "
               severity error;
             return;
@@ -7266,12 +7278,12 @@ package body fixed_pkg is
           founddot := true;
           lastu := false;
         elsif c = ' ' or c = NBSP or c = HT then  -- reading done.
-          report fixed_pkg'instance_name & "READ(sfixed) "
+          report "fixed_pkg:" & "READ(sfixed) "
             & "Short read, Space encounted in input string"
             severity error;
           return;
         elsif char_to_MVL9plus(c) = error then
-          report fixed_pkg'instance_name & "READ(sfixed) "
+          report "fixed_pkg:" & "READ(sfixed) "
             & "Character '" &
             c & "' read, expected STD_ULOGIC literal."
             severity error;
@@ -7340,12 +7352,12 @@ package body fixed_pkg is
     begin
       if message then
         if smath then
-          report fixed_pkg'instance_name
+          report "fixed_pkg:"
             & "OREAD(sfixed) "
             & mess
             severity error;
         else
-          report fixed_pkg'instance_name
+          report "fixed_pkg:"
             & "OREAD(ufixed) "
             & mess
             severity error;
@@ -7439,13 +7451,13 @@ package body fixed_pkg is
     if igood then                       -- We did not get another error
       if not ((i = -1) and               -- We read everything, and high bits 0
               (or_reduce (slv(hbv-lbv downto VALUE'high+1-lbv)) = '0')) then
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
           & "OREAD(ufixed): Vector truncated."
           severity error;
       else
         if (or_reduce (slv(VALUE'low-lbv-1 downto 0)) = '1') then
           assert NO_WARNING
-            report fixed_pkg'instance_name
+            report "fixed_pkg:"
             & "OREAD(ufixed): Vector truncated"
             severity warning;
         end if;
@@ -7507,13 +7519,13 @@ package body fixed_pkg is
                 or_reduce (slv(hbv-lbv downto VALUE'high+1-lbv)) = '0') or
                (slv(VALUE'high-lbv) = '1' and
                 and_reduce (slv(hbv-lbv downto VALUE'high+1-lbv)) = '1'))) then
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
           & "OREAD(sfixed): Vector truncated."
           severity error;
       else
         if (or_reduce (slv(VALUE'low-lbv-1 downto 0)) = '1') then
           assert NO_WARNING
-            report fixed_pkg'instance_name
+            report "fixed_pkg:"
             & "OREAD(sfixed): Vector truncated"
             severity warning;
         end if;
@@ -7597,12 +7609,12 @@ package body fixed_pkg is
     begin
       if message then
         if smath then
-          report fixed_pkg'instance_name
+          report "fixed_pkg:"
             & "HREAD(sfixed) "
             & mess
             severity error;
         else
-          report fixed_pkg'instance_name
+          report "fixed_pkg:"
             & "HREAD(ufixed) "
             & mess
             severity error;
@@ -7693,13 +7705,13 @@ package body fixed_pkg is
     if igood then
       if not ((i = -1) and               -- We read everything, and high bits 0
               (or_reduce (slv(hbv-lbv downto VALUE'high+1-lbv)) = '0')) then
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
           & "HREAD(ufixed): Vector truncated."
           severity error;
       else
         if (or_reduce (slv(VALUE'low-lbv-1 downto 0)) = '1') then
           assert NO_WARNING
-            report fixed_pkg'instance_name
+            report "fixed_pkg:"
             & "HREAD(ufixed): Vector truncated"
             severity warning;
         end if;
@@ -7761,13 +7773,13 @@ package body fixed_pkg is
                     or_reduce (slv(hbv-lbv downto VALUE'high+1-lbv)) = '0') or
                    (slv(VALUE'high-lbv) = '1' and
                     and_reduce (slv(hbv-lbv downto VALUE'high+1-lbv)) = '1'))) then
-        report fixed_pkg'instance_name
+        report "fixed_pkg:"
           & "HREAD(sfixed): Vector truncated."
           severity error;
       else
         if (or_reduce (slv(VALUE'low-lbv-1 downto 0)) = '1') then
           assert NO_WARNING
-            report fixed_pkg'instance_name
+            report "fixed_pkg:"
             & "HREAD(sfixed): Vector truncated"
             severity warning;
         end if;
@@ -8046,7 +8058,7 @@ package body fixed_pkg is
     read (L, result, good);
     deallocate (L);
     assert (good)
-      report fixed_pkg'instance_name
+      report "fixed_pkg:"
       & "from_string: Bad string "& bstring severity error;
     return result;
   end function from_string;
@@ -8067,7 +8079,7 @@ package body fixed_pkg is
     oread (L, result, good);
     deallocate (L);
     assert (good)
-      report fixed_pkg'instance_name
+      report "fixed_pkg:"
       & "from_ostring: Bad string "& ostring severity error;
     return result;
   end function from_ostring;
@@ -8085,7 +8097,7 @@ package body fixed_pkg is
     hread (L, result, good);
     deallocate (L);
     assert (good)
-      report fixed_pkg'instance_name
+      report "fixed_pkg:"
       & "from_hstring: Bad string "& hstring severity error;
     return result;
   end function from_hstring;
@@ -8103,7 +8115,7 @@ package body fixed_pkg is
     read (L, result, good);
     deallocate (L);
     assert (good)
-      report fixed_pkg'instance_name
+      report "fixed_pkg:"
       & "from_string: Bad string "& bstring severity error;
     return result;
   end function from_string;
@@ -8121,7 +8133,7 @@ package body fixed_pkg is
     oread (L, result, good);
     deallocate (L);
     assert (good)
-      report fixed_pkg'instance_name
+      report "fixed_pkg:"
       & "from_ostring: Bad string "& ostring severity error;
     return result;
   end function from_ostring;
@@ -8139,7 +8151,7 @@ package body fixed_pkg is
     hread (L, result, good);
     deallocate (L);
     assert (good)
-      report fixed_pkg'instance_name
+      report "fixed_pkg:"
       & "from_hstring: Bad string "& hstring severity error;
     return result;
   end function from_hstring;
@@ -8216,12 +8228,12 @@ package body fixed_pkg is
             r := r + 1;
           end if;
         elsif xarg(i) = ' ' or xarg(i) = NBSP or xarg(i) = HT then
-          report fixed_pkg'instance_name
+          report "fixed_pkg:"
             & "Found a space in the input STRING " & xarg
             severity error;
         elsif xarg(i) = '.' then
           if founddot then
-            report fixed_pkg'instance_name
+            report "fixed_pkg:"
               & "Found two binary points in input string " & xarg
               severity error;
           else
@@ -8312,7 +8324,7 @@ package body fixed_pkg is
     return UNRESOLVED_ufixed is
   begin
     return to_ufixed (
-      arg => to_stdulogicvector (arg),
+      arg => std_ulogic_vector (arg),
       left_index => left_index,
       right_index => right_index);
   end function to_ufixed;
@@ -8323,7 +8335,7 @@ package body fixed_pkg is
     return UNRESOLVED_ufixed is
   begin
     return to_ufixed (
-      arg => to_stdulogicvector (arg),
+      arg => std_ulogic_vector (arg),
       size_res => size_res);
   end function to_ufixed;
 
@@ -8334,7 +8346,7 @@ package body fixed_pkg is
     return UNRESOLVED_sfixed is
   begin
     return to_sfixed (
-      arg => to_stdulogicvector (arg),
+      arg => std_ulogic_vector (arg),
       left_index => left_index,
       right_index => right_index);
   end function to_sfixed;
@@ -8345,7 +8357,7 @@ package body fixed_pkg is
     return UNRESOLVED_sfixed is
   begin
     return to_sfixed (
-      arg => to_stdulogicvector (arg),
+      arg => std_ulogic_vector (arg),
       size_res => size_res);
   end function to_sfixed;
 
@@ -8357,7 +8369,7 @@ package body fixed_pkg is
     return UNRESOLVED_ufixed is
   begin
     return to_UFix (
-      arg => to_stdulogicvector (arg),
+      arg => std_ulogic_vector (arg),
       width => width,
       fraction => fraction);
   end function to_UFix;
@@ -8370,7 +8382,7 @@ package body fixed_pkg is
     return UNRESOLVED_sfixed is
   begin
     return to_SFix (
-      arg => to_stdulogicvector (arg),
+      arg => std_ulogic_vector (arg),
       width => width,
       fraction => fraction);
   end function to_SFix;

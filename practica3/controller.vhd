@@ -83,7 +83,9 @@ entity controller is
 end controller;
 
 architecture Behavioral of controller is
-type ykt is type sfixed(2 downto -9);
+
+type ykt is sfixed(2 downto -9);
+
 begin
 
 
