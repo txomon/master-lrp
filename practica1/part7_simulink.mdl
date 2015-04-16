@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.6"
+    ComputedModelVersion    "1.16"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -26,9 +26,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Docencia"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Apr 15 17:53:36 2015"
-  RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:6>"
+  LastModifiedDate	  "Thu Apr 16 19:50:58 2015"
+  RTWModifiedTimeStamp	  351106656
+  ModelVersionFormat	  "1.%<AutoIncrement:16>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -681,6 +681,32 @@ Model {
       InitialOutput	      "[]"
     }
     Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Step
+      Time		      "1"
+      Before		      "0"
+      After		      "1"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+      ZeroCross		      on
+    }
+    Block {
       BlockType		      SubSystem
       ShowPortLabels	      "FromPortIcon"
       Permissions	      "ReadWrite"
@@ -721,7 +747,7 @@ Model {
   }
   System {
     Name		    "part7_simulink"
-    Location		    [408, 645, 944, 934]
+    Location		    [1000, 432, 1842, 652]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -735,10 +761,37 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "18"
+    SIDHighWatermark	    "31"
+    Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      SID		      "31"
+      Ports		      [2]
+      Position		      [480, 101, 510, 134]
+      Floating		      off
+      Location		      [129, 345, 903, 788]
+      Open		      off
+      NumInputPorts	      "2"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+      }
+      YMin		      "-5~-5"
+      YMax		      "5~5"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Step
+      Name		      "Step"
+      SID		      "30"
+      Position		      [45, 110, 75, 140]
+      SampleTime	      "0"
+    }
     Block {
       BlockType		      SubSystem
-      Name		      "Subsystem"
+      Name		      "delta"
       SID		      "1"
       Ports		      [1, 1]
       Position		      [190, 44, 290, 86]
@@ -751,8 +804,8 @@ Model {
       RequestExecContextInheritance off
       MaskHideContents	      off
       System {
-	Name			"Subsystem"
-	Location		[96, 151, 1325, 781]
+	Name			"delta"
+	Location		[16, 126, 968, 468]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -769,15 +822,15 @@ Model {
 	  BlockType		  Inport
 	  Name			  "In1"
 	  SID			  "2"
-	  Position		  [105, 338, 135, 352]
+	  Position		  [15, 173, 45, 187]
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Gain
 	  Name			  "Gain1"
 	  SID			  "8"
-	  Position		  [525, 182, 715, 228]
-	  Gain			  "0.095238095238095"
+	  Position		  [435, 17, 625, 63]
+	  Gain			  "delta.num{1}(1)"
 	  ParamDataTypeStr	  "sfix(8)"
 	  OutDataTypeStr	  "fixdt(1,14,8)"
 	  SaturateOnIntegerOverflow off
@@ -786,8 +839,8 @@ Model {
 	  BlockType		  Gain
 	  Name			  "Gain2"
 	  SID			  "9"
-	  Position		  [645, 245, 825, 285]
-	  Gain			  "0.956571428571429"
+	  Position		  [555, 80, 735, 120]
+	  Gain			  "delta.num{1}(2)"
 	  ParamDataTypeStr	  "sfix(8)"
 	  OutDataTypeStr	  "fixdt(1,14,8)"
 	  SaturateOnIntegerOverflow off
@@ -796,19 +849,8 @@ Model {
 	  BlockType		  Gain
 	  Name			  "Gain3"
 	  SID			  "10"
-	  Position		  [780, 331, 835, 359]
-	  Gain			  "0.88"
-	  ParamDataTypeStr	  "sfix(8)"
-	  OutDataTypeStr	  "fixdt(1,14,8)"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "Gain4"
-	  SID			  "11"
-	  Position		  [240, 389, 430, 441]
-	  BlockMirror		  on
-	  Gain			  "9.070294784580499e-004 "
+	  Position		  [625, 151, 755, 199]
+	  Gain			  "delta.num{1}(3)"
 	  ParamDataTypeStr	  "sfix(8)"
 	  OutDataTypeStr	  "fixdt(1,14,8)"
 	  SaturateOnIntegerOverflow off
@@ -817,9 +859,9 @@ Model {
 	  BlockType		  Gain
 	  Name			  "Gain5"
 	  SID			  "12"
-	  Position		  [425, 447, 590, 483]
+	  Position		  [335, 282, 500, 318]
 	  BlockMirror		  on
-	  Gain			  "0.190476190476190"
+	  Gain			  "-delta.den{1}(2)"
 	  ParamDataTypeStr	  "sfix(8)"
 	  OutDataTypeStr	  "fixdt(1,14,8)"
 	  SaturateOnIntegerOverflow off
@@ -829,7 +871,7 @@ Model {
 	  Name			  "Integer Delay1"
 	  SID			  "15"
 	  Ports			  [1, 1]
-	  Position		  [520, 328, 555, 362]
+	  Position		  [430, 163, 465, 197]
 	  LibraryVersion	  "1.225"
 	  UserDataPersistent	  on
 	  UserData		  "DataTag0"
@@ -845,7 +887,7 @@ Model {
 	  Name			  "Integer Delay2"
 	  SID			  "16"
 	  Ports			  [1, 1]
-	  Position		  [655, 328, 690, 362]
+	  Position		  [565, 163, 600, 197]
 	  LibraryVersion	  "1.225"
 	  UserDataPersistent	  on
 	  UserData		  "DataTag1"
@@ -861,7 +903,7 @@ Model {
 	  Name			  "Sum"
 	  SID			  "17"
 	  Ports			  [3, 1]
-	  Position		  [905, 325, 945, 365]
+	  Position		  [815, 160, 855, 200]
 	  ShowName		  off
 	  IconShape		  "round"
 	  Inputs		  "|+++"
@@ -874,7 +916,7 @@ Model {
 	  Name			  "Sum1"
 	  SID			  "18"
 	  Ports			  [3, 1]
-	  Position		  [190, 325, 230, 365]
+	  Position		  [100, 160, 140, 200]
 	  ShowName		  off
 	  IconShape		  "round"
 	  Inputs		  "|+++"
@@ -886,7 +928,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "Out1"
 	  SID			  "3"
-	  Position		  [990, 338, 1020, 352]
+	  Position		  [900, 173, 930, 187]
 	  IconDisplay		  "Port number"
 	}
 	Line {
@@ -937,11 +979,6 @@ Model {
 	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [0, 70]
-	    DstBlock		    "Gain4"
-	    DstPort		    1
-	  }
-	  Branch {
 	    Points		    [0, -140]
 	    DstBlock		    "Gain1"
 	    DstPort		    1
@@ -970,25 +1007,18 @@ Model {
 	Line {
 	  SrcBlock		  "Gain3"
 	  SrcPort		  1
-	  Points		  [55, 0]
+	  Points		  [45, 0]
 	  DstBlock		  "Sum"
 	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Gain4"
-	  SrcPort		  1
-	  Points		  [-25, 0]
-	  DstBlock		  "Sum1"
-	  DstPort		  3
 	}
       }
     }
     Block {
       BlockType		      SubSystem
-      Name		      "Subsystem1"
+      Name		      "tustin"
       SID		      "4"
       Ports		      [1, 1]
-      Position		      [195, 159, 295, 201]
+      Position		      [190, 159, 290, 201]
       LibraryVersion	      "1.225"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -998,9 +1028,9 @@ Model {
       RequestExecContextInheritance off
       MaskHideContents	      off
       System {
-	Name			"Subsystem1"
-	Location		[194, 289, 692, 589]
-	Open			off
+	Name			"tustin"
+	Location		[18, 579, 1126, 967]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1016,28 +1046,266 @@ Model {
 	  BlockType		  Inport
 	  Name			  "In1"
 	  SID			  "5"
-	  Position		  [110, 103, 140, 117]
+	  Position		  [15, 173, 45, 187]
 	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain1"
+	  SID			  "20"
+	  Position		  [430, 17, 620, 63]
+	  Gain			  "tustin.num{1}(1)"
+	  ParamDataTypeStr	  "sfix(8)"
+	  OutDataTypeStr	  "fixdt(1,14,8)"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain2"
+	  SID			  "21"
+	  Position		  [550, 80, 730, 120]
+	  Gain			  "tustin.num{1}(2)"
+	  ParamDataTypeStr	  "sfix(8)"
+	  OutDataTypeStr	  "fixdt(1,14,8)"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain3"
+	  SID			  "22"
+	  Position		  [705, 160, 905, 200]
+	  Gain			  "tustin.num{1}(3)"
+	  ParamDataTypeStr	  "sfix(8)"
+	  OutDataTypeStr	  "fixdt(1,14,8)"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain4"
+	  SID			  "23"
+	  Position		  [160, 309, 350, 361]
+	  BlockMirror		  on
+	  Gain			  "-tustin.num{1}(3)"
+	  ParamDataTypeStr	  "sfix(8)"
+	  OutDataTypeStr	  "fixdt(1,14,8)"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain5"
+	  SID			  "24"
+	  Position		  [305, 244, 495, 286]
+	  BlockMirror		  on
+	  Gain			  "-tustin.den{1}(2)"
+	  ParamDataTypeStr	  "sfix(8)"
+	  OutDataTypeStr	  "fixdt(1,14,8)"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Integer Delay1"
+	  SID			  "25"
+	  Ports			  [1, 1]
+	  Position		  [425, 163, 460, 197]
+	  LibraryVersion	  "1.225"
+	  UserDataPersistent	  on
+	  UserData		  "DataTag2"
+	  SourceBlock		  "simulink/Discrete/Integer Delay"
+	  SourceType		  "Integer Delay"
+	  NumDelays		  "1"
+	  InputProcessing	  "Elements as channels (sample based)"
+	  vinit			  "0.0"
+	  samptime		  "-1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Integer Delay2"
+	  SID			  "26"
+	  Ports			  [1, 1]
+	  Position		  [560, 163, 595, 197]
+	  LibraryVersion	  "1.225"
+	  UserDataPersistent	  on
+	  UserData		  "DataTag3"
+	  SourceBlock		  "simulink/Discrete/Integer Delay"
+	  SourceType		  "Integer Delay"
+	  NumDelays		  "1"
+	  InputProcessing	  "Elements as channels (sample based)"
+	  vinit			  "0.0"
+	  samptime		  "-1"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  SID			  "27"
+	  Ports			  [3, 1]
+	  Position		  [970, 160, 1010, 200]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  SID			  "28"
+	  Ports			  [3, 1]
+	  Position		  [95, 160, 135, 200]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "Out1"
 	  SID			  "6"
-	  Position		  [360, 103, 390, 117]
+	  Position		  [1055, 173, 1085, 187]
 	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Integer Delay1"
+	  SrcPort		  1
+	  Points		  [50, 0]
+	  Branch {
+	    DstBlock		    "Integer Delay2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -80]
+	    DstBlock		    "Gain2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 90]
+	    DstBlock		    "Gain5"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Integer Delay2"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  Branch {
+	    DstBlock		    "Gain3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 155]
+	    DstBlock		    "Gain4"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  Points		  [310, 0; 0, 155; 25, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Gain2"
+	  SrcPort		  1
+	  Points		  [180, 0; 0, 115]
+	  DstBlock		  "Sum"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  Points		  [225, 0]
+	  Branch {
+	    DstBlock		    "Integer Delay1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -140]
+	    DstBlock		    "Gain1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Gain5"
+	  SrcPort		  1
+	  Points		  [-155, 0; 0, -115; -60, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "In1"
 	  SrcPort		  1
+	  Points		  [35, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
 	  DstBlock		  "Out1"
 	  DstPort		  1
 	}
+	Line {
+	  SrcBlock		  "Gain3"
+	  SrcPort		  1
+	  Points		  [50, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain4"
+	  SrcPort		  1
+	  Points		  [-40, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  3
+	}
       }
+    }
+    Line {
+      SrcBlock		      "Step"
+      SrcPort		      1
+      Points		      [45, 0]
+      Branch {
+	Points			[0, -60]
+	DstBlock		"delta"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 55]
+	DstBlock		"tustin"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "delta"
+      SrcPort		      1
+      Points		      [115, 0; 0, 45]
+      DstBlock		      "Scope"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "tustin"
+      SrcPort		      1
+      Points		      [115, 0; 0, -55]
+      DstBlock		      "Scope"
+      DstPort		      2
     }
   }
 }
 MatData {
-  NumRecords		  2
+  NumRecords		  4
+  DataRecord {
+    Tag			    DataTag3
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag2
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
   DataRecord {
     Tag			    DataTag1
     Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
